@@ -345,6 +345,7 @@ let tabSwitchCount = 0;
 let appMode = '';
 let currentActiveAudioId = '';
 let currentAttempt = 1;
+let sessionStartTime = null;
 let isSpamBlocked = false; let rapidClickCount = 0; let lastMCQClickTime = 0; let lastClickedMCQItem = null;
 let lastGapFillInputTime = 0; let lastGapFillInputEl = null;
 let isHalfListenCompleted = false; let lastAudioTime = 0;
@@ -524,6 +525,7 @@ function lockScript() { isScriptUnlocked = false; btnShowScript.style.color = 'v
 function loadExercise() {
   appMode = 'practice'; currentAttempt = 1; rapidClickCount = 0; tabSwitchCount = 0;
   isHalfListenCompleted = false; lastAudioTime = 0;
+  sessionStartTime = new Date();
   btnShowScript.style.display = 'flex'; lockScript();
   hideAllViews();
 
@@ -537,6 +539,22 @@ function loadExercise() {
     currentActiveAudioId = 'audio-mcq';
   }
   mainContainer.classList.add('wide-container');
+
+  // Ghi 1 dòng "đã bắt đầu" ngay khi mở bài — để phát hiện trường hợp bỏ dở không nộp bài
+  if (!isTeacher()) {
+    logToSheet({
+      timestamp: sessionStartTime.toISOString(),
+      studentName: currentUser.name,
+      userType: currentUser.type,
+      exercise: 'PET B1 Listening',
+      exerciseId: currentExercise.id,
+      part: currentExercise.part,
+      title: currentExercise.title,
+      attempt: currentAttempt,
+      status: 'started',
+      completed: false
+    });
+  }
 }
 
 /* ===== MCQ (Part 1 / 2 / 4) ===== */
@@ -716,8 +734,13 @@ function autoFillAnswersGapfill() {
 /* ===== Gửi kết quả & Retry (dùng chung) ===== */
 function sendResultToSheet(score, total) {
   const userLabel = (currentUser.type === 'teacher') ? ('[TEST] ' + currentUser.name) : currentUser.name;
+  const endTime = new Date();
+  const durationSeconds = sessionStartTime ? Math.round((endTime - sessionStartTime) / 1000) : null;
   logToSheet({
-    timestamp: new Date().toISOString(),
+    timestamp: endTime.toISOString(),
+    startTime: sessionStartTime ? sessionStartTime.toISOString() : null,
+    endTime: endTime.toISOString(),
+    durationSeconds: durationSeconds,
     studentName: userLabel,
     userType: currentUser.type,
     exercise: 'PET B1 Listening',
@@ -725,14 +748,32 @@ function sendResultToSheet(score, total) {
     part: currentExercise.part,
     title: currentExercise.title,
     score: score, total: total,
+    wrong: total - score,
     percent: Math.round((score / total) * 100),
     attempt: currentAttempt,
+    status: 'completed',
+    completed: true,
     tabSwitchCount: tabSwitchCount
   });
 }
 
 function retryExercise() {
   currentAttempt++; lockScript(); tabSwitchCount = 0; isHalfListenCompleted = false; lastAudioTime = 0;
+  sessionStartTime = new Date();
+  if (!isTeacher()) {
+    logToSheet({
+      timestamp: sessionStartTime.toISOString(),
+      studentName: currentUser.name,
+      userType: currentUser.type,
+      exercise: 'PET B1 Listening',
+      exerciseId: currentExercise.id,
+      part: currentExercise.part,
+      title: currentExercise.title,
+      attempt: currentAttempt,
+      status: 'started',
+      completed: false
+    });
+  }
   closeOverlay();
   if (currentExercise.type === 'gapfill') {
     const audio = document.getElementById('audio-gapfill'); audio.currentTime = 0; audio.pause();
@@ -848,20 +889,26 @@ function qaResetAttempt() {
 }
 function qaTestSheetWebhook() {
   if (!currentExercise) { showToast('⚠️ Chưa có bài nào đang mở để test.'); return; }
+  const now = new Date();
   logToSheet({
-    timestamp: new Date().toISOString(),
+    timestamp: now.toISOString(),
+    startTime: now.toISOString(),
+    endTime: now.toISOString(),
+    durationSeconds: 0,
     studentName: '[QA-TEST] ' + (currentUser ? currentUser.name : 'unknown'),
     userType: 'teacher',
     exercise: 'PET B1 Listening',
     exerciseId: currentExercise.id,
     part: currentExercise.part,
     title: currentExercise.title,
-    score: 0, total: 0, percent: 0,
+    score: 0, total: 0, wrong: 0, percent: 0,
     attempt: 0,
+    status: 'completed',
+    completed: true,
     tabSwitchCount: 0,
     note: 'Đây là dữ liệu TEST gửi thủ công từ QA Debug Panel, không phải bài làm thật.'
   });
-  showToast('🧪 Đã gửi 1 dòng dữ liệu thử lên Google Sheet (tag [QA-TEST]). Mở Sheet để kiểm tra dòng mới xuất hiện.');
+  showToast('🧪 Đã gửi 1 dòng dữ liệu thử (đủ toàn bộ cột) lên Google Sheet (tag [QA-TEST]). Mở Sheet để kiểm tra dòng mới xuất hiện.');
 }
 
 /* ============================================================
