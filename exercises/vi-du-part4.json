@@ -1,0 +1,25 @@
+{
+  "id": "vi-du-part4",
+  "part": "Part 4",
+  "title": "[VÍ DỤ] Part 4 - Interview (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe một cuộc phỏng vấn. Chọn đáp án đúng A, B hoặc C cho mỗi câu.",
+  "audio": "audio/vi-du-part4.mp3",
+  "fullScript": [
+    "Toàn bộ lời thoại của bài phỏng vấn được điền vào đây..."
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "prompt": "Câu hỏi số 1 là gì?",
+      "options": {
+        "A": "Lựa chọn A",
+        "B": "Lựa chọn B",
+        "C": "Lựa chọn C"
+      },
+      "answer": "A",
+      "script": "...<span class='highlight'>đoạn thoại chứa đáp án đúng</span>..."
+    }
+  ]
+}

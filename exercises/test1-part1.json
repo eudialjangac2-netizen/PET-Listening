@@ -1,0 +1,59 @@
+{
+  "id": "test1-part1",
+  "part": "Part 1",
+  "title": "Simply B1 PET Test 1 - Part 1 (Multiple Choice Pictures)",
+  "type": "mcq",
+  "rightPanelMode": "image",
+  "instruction": "Bạn sẽ nghe 7 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test1-part1.mp3",
+  "images": [
+    "images/test1-part1-trang1.jpg",
+    "images/test1-part1-trang2.jpg"
+  ],
+  "fullScript": [
+    "<b>Question 1. What will the girl bring to the dinner?</b><br>Boy: Hi Jane, don't forget you are coming to ours for dinner on Saturday. We are eating at about 8.30 so why don't you come about 7.30? My parents are very happy that we'll be eating together.<br>Girl: That me too! I'm looking forward to it. Shall I bring something to drink?<br>Boy: No, you don't need to bring anything with you. We are having roast chicken for the dinner.<br>Girl: That sounds nice. Roast chicken is my favourite. <span class='highlight'>I'll bake us something to eat for dessert then. Maybe I'll make a chocolate cake</span> as I know you'll like that.",
+    "<b>Question 2. Where is the girl hurting now?</b><br>Boy: What did you do to your hand, Sally?<br>Girl: Oh, it's nothing. I fell off my bike but it's only a small cut. <span class='highlight'>The bike landed on my leg though and now it's very sore.</span> Fortunately it didn't have to go to hospital.<br>Boy: Oh dear! Well, at least you didn't hit your head on the ground when you fell.<br>Girl: I know, I was very lucky. It could have been a lot worse.",
+    "<b>Question 3. Where was the dog found?</b><br>Boy: I see you found your dog, Bill. Was she in the park?<br>Girl: No, although I did lose her in the park when she saw a cat and ran away. Normally she stays with me but I think the cat made her too excited and she didn't come back when I called her.<br>Boy: You must have been really worried, especially with that busy road next to the park.<br>Girl: I was. I went home worried after she ran off, but then I got a phone call from the butcher to say <span class='highlight'>she was looking through his window at the sausages!</span> He kept her until I collected her.",
+    "<b>Question 4. What programme does the girl want to watch on TV today?</b><br>Girl: What are you watching? Oh, another volleyball match.<br>Boy: I thought you liked volleyball.<br>Girl: Yes, but I don't mind missing it this one time. <span class='highlight'>Mum wants to watch Work in the Sky, there's a special report on pilots.</span><br>Boy: OK, what time does it start?<br>Girl: Right now!",
+    "<b>Question 5. Which DVD did the boy like most?</b><br>Girl: What did you get for your birthday?<br>Boy: Lots of really good DVDs. I had a racing one, a basketball game and a karaoke one that you sing along to.<br>Girl: I bet you loved the car racing one, didn't you?<br>Boy: <span class='highlight'>To be honest I enjoyed having a good sing more than anything.</span> It was so much fun. The other night some friends dropped by and we had such a great time singing and dancing.",
+    "<b>Question 6. Which sport did the girl do for the first time last summer?</b><br>Boy: Hi Carlotta. How was your summer holiday?<br>Girl: It was amazing. We spent most of our time swimming and we did a bit of water skiing. I like skiing but then I thought I'd like to try something new for a change. My brother had been surfboarding on the first day of the holiday and although it looked like fun I was a bit nervous about trying it. I stuck to water skiing for a couple of days but then I had a chat with the surfboarding instructor and he told me how to do it safely. <span class='highlight'>I have to say it was great fun once I got used to it and stopped being so nervous.</span> I'll definitely do it again next summer.",
+    "<b>Question 7. What can you buy half price today?</b><br>Woman: Good morning shoppers. Why not visit the fresh fruit and vegetable stalls to buy some healthy food for your family? Don't forget you can buy some lovely meat at either of our wonderful butchers. <span class='highlight'>For all you book lovers, Books Galore has 50% off all novels today</span> so now's a good chance to buy your beach books for the summer holidays. Finally, look out for the shopping centre staff who are giving out free cinema tickets to ten lucky customers today. Happy shopping!"
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "answer": "A",
+      "script": "Girl: That sounds nice. Roast chicken is my favourite. <span class='highlight'>I'll bake us something to eat for dessert then. Maybe I'll make a chocolate cake</span> as I know you'll like that."
+    },
+    {
+      "num": 2,
+      "answer": "A",
+      "script": "Girl: ... <span class='highlight'>The bike landed on my leg though and now it's very sore.</span>"
+    },
+    {
+      "num": 3,
+      "answer": "C",
+      "script": "Girl: ...I got a phone call from the butcher to say <span class='highlight'>she was looking through his window at the sausages!</span> He kept her until I collected her."
+    },
+    {
+      "num": 4,
+      "answer": "B",
+      "script": "Girl: ... <span class='highlight'>Mum wants to watch Work in the Sky, there's a special report on pilots.</span>"
+    },
+    {
+      "num": 5,
+      "answer": "A",
+      "script": "Boy: <span class='highlight'>To be honest I enjoyed having a good sing more than anything.</span> ...we had such a great time singing and dancing."
+    },
+    {
+      "num": 6,
+      "answer": "C",
+      "script": "Girl: ...My brother had been surfboarding... <span class='highlight'>I have to say it was great fun once I got used to it and stopped being so nervous.</span>"
+    },
+    {
+      "num": 7,
+      "answer": "B",
+      "script": "Woman: <span class='highlight'>For all you book lovers, Books Galore has 50% off all novels today</span>..."
+    }
+  ]
+}

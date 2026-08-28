@@ -1,0 +1,29 @@
+{
+  "id": "vi-du-part1",
+  "part": "Part 1",
+  "title": "[VÍ DỤ] Part 1 - Multiple Choice (Pictures)",
+  "type": "mcq",
+  "rightPanelMode": "image",
+  "instruction": "Bạn sẽ nghe 7 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/vi-du-part1.mp3",
+  "images": [
+    "images/vi-du-part1-trang1.jpg",
+    "images/vi-du-part1-trang2.jpg"
+  ],
+  "fullScript": [
+    "<b>Question 1. ...</b><br>Woman: ... <br>Man: ...",
+    "<b>Question 2. ...</b><br>Man: ... <br>Woman: ..."
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "answer": "B",
+      "script": "...<span class='highlight'>đoạn thoại chứa đáp án đúng</span>..."
+    },
+    {
+      "num": 2,
+      "answer": "A",
+      "script": "...<span class='highlight'>đoạn thoại chứa đáp án đúng</span>..."
+    }
+  ]
+}

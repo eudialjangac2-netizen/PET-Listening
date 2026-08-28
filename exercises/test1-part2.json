@@ -1,0 +1,85 @@
+{
+  "id": "test1-part2",
+  "part": "Part 2",
+  "title": "Simply B1 PET Test 1 - Part 2 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 6 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test1-part2.mp3",
+  "fullScript": [
+    "<b>Question 8. You will hear two friends talking about a family visit to a cafe.</b><br>Girl: I really enjoyed it. It's much nicer than the old cafe in town.<br>Boy: How was your mother's hot chocolate?<br>Girl: It was lovely especially with all the cream they put on top and <span class='highlight'>the cake was fantastic. It was really delicious.</span><br>Boy: I realised that when she had a second piece. I don't think she is sticking to her diet today, do you?<br>Girl: No, but she deserves a day off after such a difficult week, I guess. Anyway, the pictures on the wall were a bit strange though.<br>Boy: Do you think so? My father and I really liked them. I guess they were a bit too modern for your liking, weren't they?",
+    "<b>Question 9. You will hear a boy talking about his big brother learning to drive.</b><br>Boy: How did your big brother's driving lesson go? He must have been really nervous.<br>Girl: He wasn't really. He can't wait to drive as it's so boring waiting for our parents to drive him to places all the time. Sometimes he wants to go somewhere and he can't because either he can't get there or he can't get home after.<br>Boy: Wasn't he worried he might crash the car or that someone might crash into him?<br>Girl: <span class='highlight'>He was too excited to be worried. In fact, it was great fun. This is the start of a new part of his life... Freedom to do what he wants at last!</span> I also want to learn to drive as soon as I finish school.",
+    "<b>Question 10. You will hear two friends talking about getting a Saturday job.</b><br>Boy: We need to do something about getting a Saturday job, don't we? I've had enough of not having any money and asking my parents all the time whenever I want to buy something.<br>Girl: <span class='highlight'>Me too, we need to be careful we don't get jobs that make us too tired to do our school work.</span><br>Boy: Right!<br>Girl: Let's look at shop work because then we will be in the warm and the hours won't be too long.<br>Boy: Good idea. We can look online to find a job. There must be lots of jobs out there if we look hard enough.<br>Girl: Well, let's get started then. I'll get my laptop.",
+    "<b>Question 11. You will hear two friends talking about a film they have seen.</b><br>Girl: I was disappointed by that film. It seemed to go on forever. I'm surprised because the reviews were really good and other people seemed to like it.<br>Boy: I know what you mean. It did have plenty of action which I liked but <span class='highlight'>the characters were not very realistic.</span> There is no way the policeman would have behaved the way he did.<br>Girl: <span class='highlight'>Yes, I have to agree with you there. No one would behave like that in real life.</span> And when the woman saw the criminal, she didn't even seem scared.<br>Boy: Let's see a comedy next time.",
+    "<b>Question 12. You will hear a boy telling his friend about a school trip to a museum.</b><br>Girl: How was the trip to the museum? Was it a bit boring?<br>Boy: <span class='highlight'>Well surprisingly, I had a great time.</span> There was a fantastic natural history exhibition with huge dinosaurs. Also the space rooms were great. You could sit in a space rocket and watch videos of the planets and stars.<br>Girl: Really? But I thought you didn't want to go?<br>Boy: I didn't but there was some interesting stuff there. I hadn't realised the museum was that big either. Having said that, I wouldn't really want to go again but I'm glad I went.",
+    "<b>Question 13. You will hear two friends talking about a new teacher.</b><br>Girl: So what do you think about the new English teacher?<br>Boy: Well, it's funny because I didn't like her at first but actually I'm enjoying his lessons now. English isn't my favourite subject but I like it more than I used to.<br>Girl: I agree. <span class='highlight'>She really brings the lessons to life. She's not like the other teachers.</span><br>Boy: And she's not too serious but she keeps us all under control. So far she hasn't given us too much homework either and that's always a good thing."
+  ],
+  "questions": [
+    {
+      "num": 8,
+      "prompt": "You will hear two friends talking about a family visit to a cafe. What did the girl's mother like best?",
+      "options": {
+        "A": "the apple juice",
+        "B": "the pictures hanging on the walls",
+        "C": "the cake along with her drink"
+      },
+      "answer": "C",
+      "script": "Girl: It was lovely especially with all the cream they put on top and <span class='highlight'>the cake was fantastic. It was really delicious.</span>"
+    },
+    {
+      "num": 9,
+      "prompt": "You will hear a boy talking about his big brother learning to drive. How did the boy's brother feel about his first lesson?",
+      "options": {
+        "A": "quite nervous as he was afraid of crashing",
+        "B": "excited to have the chance to get around on his own",
+        "C": "bored as he already knew how to drive"
+      },
+      "answer": "B",
+      "script": "Girl: <span class='highlight'>He was too excited to be worried. In fact, it was great fun... Freedom to do what he wants at last!</span>"
+    },
+    {
+      "num": 10,
+      "prompt": "You will hear two friends talking about getting a Saturday job. The girl thinks that",
+      "options": {
+        "A": "it's a good idea to look for a job.",
+        "B": "they would both be too tired.",
+        "C": "they should take any job they can get."
+      },
+      "answer": "A",
+      "script": "Girl: <span class='highlight'>Me too, we need to be careful we don't get jobs that make us too tired to do our school work.</span>"
+    },
+    {
+      "num": 11,
+      "prompt": "You will hear two friends talking about a film they have seen. What do they agree on?",
+      "options": {
+        "A": "The film was better than they had expected.",
+        "B": "The characters were not believable.",
+        "C": "There should have been less action."
+      },
+      "answer": "B",
+      "script": "Boy: <span class='highlight'>the characters were not very realistic.</span> Girl: <span class='highlight'>Yes, I have to agree with you there. No one would behave like that in real life.</span>"
+    },
+    {
+      "num": 12,
+      "prompt": "You will hear a boy telling his friend about a school trip to a museum. How did he feel about it?",
+      "options": {
+        "A": "He would be willing to visit it again soon.",
+        "B": "He thought it was a waste of time.",
+        "C": "It was more interesting than he had expected."
+      },
+      "answer": "C",
+      "script": "Boy: <span class='highlight'>Well surprisingly, I had a great time.</span> ...I didn't [want to go] but there was some interesting stuff there."
+    },
+    {
+      "num": 13,
+      "prompt": "You will hear two friends talking about a new teacher. They think the new teacher is",
+      "options": {
+        "A": "more interesting than the rest of the teachers.",
+        "B": "funny and never gives them any homework.",
+        "C": "too serious sometimes."
+      },
+      "answer": "A",
+      "script": "Girl: <span class='highlight'>She really brings the lessons to life. She's not like the other teachers.</span>"
+    }
+  ]
+}

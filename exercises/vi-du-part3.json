@@ -1,0 +1,30 @@
+{
+  "id": "vi-du-part3",
+  "part": "Part 3",
+  "title": "[VÍ DỤ] Part 3 - Gap Fill",
+  "type": "gapfill",
+  "instruction": "Nghe và điền 1 từ hoặc số vào mỗi chỗ trống.",
+  "audio": "audio/vi-du-part3.mp3",
+  "fullScript": [
+    "Toàn bộ lời thoại của bài nghe được điền vào đây..."
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "label": "Tên khách hàng:",
+      "acceptedAnswers": [
+        "Smith",
+        "smith"
+      ],
+      "script": "...<span class='highlight'>đoạn thoại chứa đáp án đúng</span>..."
+    },
+    {
+      "num": 2,
+      "label": "Số điện thoại:",
+      "acceptedAnswers": [
+        "0755 776 886"
+      ],
+      "script": "...<span class='highlight'>đoạn thoại chứa đáp án đúng</span>..."
+    }
+  ]
+}

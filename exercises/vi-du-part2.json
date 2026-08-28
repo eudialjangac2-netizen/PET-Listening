@@ -1,0 +1,25 @@
+{
+  "id": "vi-du-part2",
+  "part": "Part 2",
+  "title": "[VÍ DỤ] Part 2 - Multiple Choice (Short texts)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe một đoạn hội thoại hoặc bài nói dài. Chọn đáp án đúng A, B hoặc C cho mỗi câu.",
+  "audio": "audio/vi-du-part2.mp3",
+  "fullScript": [
+    "Toàn bộ lời thoại của bài nghe được điền vào đây..."
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "prompt": "Câu hỏi số 1 là gì?",
+      "options": {
+        "A": "Lựa chọn A",
+        "B": "Lựa chọn B",
+        "C": "Lựa chọn C"
+      },
+      "answer": "C",
+      "script": "...<span class='highlight'>đoạn thoại chứa đáp án đúng</span>..."
+    }
+  ]
+}
