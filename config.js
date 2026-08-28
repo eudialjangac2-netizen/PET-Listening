@@ -9,4 +9,4 @@ const TEACHER_NAME_KEY   = "GVPET72";
 const TEACHER_CODE_KEY   = "72GRADEBPET";
 
 // Google Apps Script Webhook — toàn bộ kết quả làm bài sẽ được gửi (POST) về đây
-const SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbw0_Ii4tEke87RKbb2oT8pt5oOgq8soeA2372u0lERbaVybt0mSf72BXVCLNZKmiZh2/exec";
+const SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyaIMcaYJpf8Mu7BkLQ6gD9iF7xYSdQ1aiT83tg8m6u2Z2Ziyt_yVOG_vE9GIbplKc8LQ/exec";
