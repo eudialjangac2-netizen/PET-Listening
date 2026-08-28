@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PET B1 Listening – Cá Voi Bay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Livvic:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #eaf4fc; --card: #ffffff; --ink: #2c4a63;
+    --accent: #6fa3d1; --accent-dark: #3d6f9e; --accent-deep: #2c5680;
+    --line: #cfe4f3; --ok: #e1f7ea; --ok-border: #2e9b5f;
+    --bad: #fde2e2; --bad-border: #d24a4a; --muted: #6f8aa1;
+    --pink: #f3b8c6; --pink-dark: #e08ba0; --star: #a9c7e6;
+    --shadow: 0 18px 45px rgba(44, 74, 99, 0.14);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Livvic', sans-serif; color: var(--ink);
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(circle at 8% 12%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0) 40%),
+      radial-gradient(circle at 92% 85%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0) 45%);
+    display: flex; justify-content: center; padding: 50px 16px 80px; min-height: 100vh; position: relative;
+  }
+  h1, h2, h3, .btn-script, button.action-btn, .sheet-title { font-family: 'Baloo 2', sans-serif; }
+
+  .sky-deco { position: fixed; pointer-events: none; z-index: 0; opacity: 0.9; }
+  .sky-deco.moon { top: 30px; right: 60px; width: 46px; }
+  .sky-deco.star1 { top: 90px; left: 8%; width: 26px; animation: twinkle 3.5s ease-in-out infinite; }
+  .sky-deco.star2 { bottom: 70px; right: 10%; width: 20px; animation: twinkle 4.2s ease-in-out infinite 0.6s; }
+  .sky-deco.cloud-tl { top: 10px; left: -20px; width: 160px; opacity: 0.7;}
+  .sky-deco.cloud-br { bottom: -10px; right: -30px; width: 200px; opacity: 0.6;}
+  @keyframes twinkle { 0%,100% { opacity: 0.9; transform: scale(1);} 50% { opacity: 0.3; transform: scale(0.8);} }
+  @media (max-width: 800px) { .sky-deco { display: none; } }
+
+  .container { max-width: 800px; width: 100%; background: var(--card); padding: 40px 46px; border-radius: 22px; box-shadow: var(--shadow); border: 1px solid var(--line); position: relative; transition: max-width 0.3s ease; z-index: 1; }
+  .container.wide-container { max-width: 1200px; }
+
+  .btn-home { position: fixed; top: 20px; right: 20px; background: var(--card); border: 2px solid var(--line); color: var(--muted); width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 4px 10px rgba(44,74,99,0.08); z-index: 990; transition: all 0.3s ease; }
+  .btn-home:hover { border-color: var(--accent); color: var(--accent-dark); transform: translateY(-3px); box-shadow: 0 6px 15px rgba(111,163,209,0.25); }
+  .btn-home svg { width: 22px; height: 22px; }
+
+  .btn-logout { position: fixed; top: 20px; left: 20px; background: var(--card); border: 2px solid var(--line); color: var(--muted); padding: 0 18px; height: 50px; border-radius: 25px; display: none; align-items: center; justify-content: center; cursor: pointer; font-family: 'Baloo 2', sans-serif; font-weight: 600; font-size: 15px; box-shadow: 0 4px 10px rgba(44,74,99,0.08); z-index: 990; }
+  .btn-logout:hover { border-color: var(--bad-border); color: var(--bad-border); }
+
+  .btn-script { position: fixed; top: 20px; left: 20px; background: var(--card); border: 2px solid var(--accent); color: var(--accent-dark); padding: 0 20px; height: 50px; border-radius: 25px; display: none; align-items: center; justify-content: center; cursor: pointer; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; box-shadow: 0 4px 10px rgba(44,74,99,0.08); z-index: 990; transition: all 0.3s ease; }
+  .btn-script:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(111,163,209,0.3); }
+  .btn-script svg { width: 20px; height: 20px; margin-right: 8px; }
+
+  .view { display: none; } .view.active { display: block; animation: fadeIn 0.4s; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+
+  h1, h2 { color: var(--accent-deep); border-bottom: 2px dashed var(--line); padding-bottom: 10px; }
+  .instruction { font-style: italic; color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+  .part-badge { display: inline-block; background: var(--accent); color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; padding: 4px 14px; border-radius: 20px; margin-bottom: 8px; }
+  audio { width: 100%; margin-bottom: 20px; outline: none; border-radius: 30px; }
+
+  .whale-hero { text-align: center; margin-bottom: 10px; }
+  .whale-hero-img { width: 210px; height: auto; }
+  .login-form { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+  .login-form label { font-weight: 600; font-size: 15px; color: var(--ink); margin-bottom: -6px; }
+  .login-form input { padding: 13px 16px; border-radius: 12px; border: 2px solid var(--line); font-family: inherit; font-size: 16px; outline: none; transition: border-color 0.2s; background: #fbfdff; }
+  .login-form input:focus { border-color: var(--accent); }
+  .login-error { color: var(--bad-border); font-size: 14px; font-weight: 600; min-height: 18px; }
+  .btn-login { margin-top: 6px; }
+  .qa-badge { display: inline-block; background: var(--pink); color: #8a3350; font-weight: 700; font-size: 13px; padding: 5px 14px; border-radius: 20px; margin-bottom: 10px; }
+
+  .not-found-box { text-align: center; padding: 30px 10px; }
+  .not-found-box .emoji { font-size: 50px; margin-bottom: 10px; }
+
+  .split-layout { display: flex; gap: 26px; }
+  .left-panel, .right-panel { border: 1px solid var(--line); border-radius: 16px; padding: 20px; background: #fff; }
+  .left-panel { flex: 1; display: flex; flex-direction: column; position: relative; }
+  .right-panel { flex: 1.5; background: #f6fafd; }
+  .right-panel.image-mode { text-align: center; }
+  .right-panel img { max-width: 100%; height: auto; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(44,74,99,0.12); }
+  .img-placeholder { border: 2px dashed var(--line); border-radius: 12px; padding: 40px 20px; color: var(--muted); font-size: 15px; margin-bottom: 15px; background: #fbfdff; }
+
+  .sheet-title { text-align: center; font-weight: 700; font-size: 19px; color: var(--accent-deep); margin-bottom: 20px; border-bottom: 2px dashed var(--line); padding-bottom: 10px; }
+  .mcq-item { margin-bottom: 24px; }
+  .bubble-row { display: flex; align-items: center; justify-content: center; gap: 18px; }
+  .q-number { font-size: 18px; font-weight: 700; width: 30px; text-align: right; margin-right: 6px; font-family: 'Baloo 2', sans-serif;}
+  .bubble { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--muted); display: flex; justify-content: center; align-items: center; cursor: pointer; font-weight: 700; font-size: 17px; color: var(--muted); transition: all 0.2s; font-family: 'Baloo 2', sans-serif; }
+  .bubble:hover { border-color: var(--accent); color: var(--accent-dark); background: #eef7ff; }
+  .bubble.selected { background-color: var(--accent); border-color: var(--accent); color: #fff; }
+  .bubble.correct { background-color: var(--ok-border) !important; border-color: var(--ok-border) !important; color: #fff !important; }
+  .bubble.incorrect { background-color: var(--bad-border) !important; border-color: var(--bad-border) !important; color: #fff !important; }
+
+  .text-q-block { margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px dashed var(--line); }
+  .text-q-block:last-child { border-bottom: none; }
+  .text-q-prompt { font-weight: 700; margin-bottom: 10px; }
+  .text-q-options div { margin-bottom: 4px; color: var(--ink); }
+  .text-q-options b { color: var(--accent-dark); margin-right: 6px; }
+
+  .gapfill-item { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .gapfill-item .q-number { width: auto; }
+  .gapfill-item label { font-weight: 600; }
+  .answer-input { flex: 1; min-width: 160px; padding: 10px 14px; border-radius: 10px; border: 2px solid var(--line); font-size: 16px; font-family: inherit; outline: none; }
+  .answer-input:focus { border-color: var(--accent); }
+  .answer-input.correct { border-color: var(--ok-border); background: var(--ok); }
+  .answer-input.incorrect { border-color: var(--bad-border); background: var(--bad); }
+
+  .explanation { display: none; margin-top: 15px; padding: 12px 15px; background: #f1f8ff; border-left: 3px solid var(--accent); font-size: 15px; color: var(--muted); line-height: 1.5; text-align: left; border-radius: 0 8px 8px 0;}
+  .show-explanation .explanation { display: block; animation: fadeIn 0.3s; }
+  .highlight { font-weight: 700; color: var(--accent-dark); }
+
+  .submit-area { text-align: center; margin-top: 24px; padding-top: 10px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  button.action-btn { background: var(--accent); color: white; border: none; padding: 12px 30px; font-size: 16px; font-weight: 700; cursor: pointer; border-radius: 30px; transition: all 0.2s; box-shadow: 0 4px 10px rgba(111,163,209,0.35); }
+  button.action-btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
+  .btn-secondary { background: var(--muted) !important; box-shadow: 0 4px 10px rgba(111,138,161,0.3) !important; }
+  .btn-secondary:hover { background: #566f84 !important; }
+  .btn-qa { background: var(--pink-dark) !important; box-shadow: 0 4px 10px rgba(224,139,160,0.35) !important; }
+  .btn-qa:hover { background: #c96f85 !important; }
+
+  .overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(30, 50, 70, 0.85); display: none; justify-content: center; align-items: center; z-index: 2000; padding: 20px; }
+  .overlay.show { display: flex; }
+  .result-card { background: var(--card); padding: 40px; text-align: center; border-radius: 20px; max-width: 480px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.4); position: relative;}
+  .result-score { font-size: 60px; color: var(--accent-dark); margin-bottom: 12px; font-weight: 800; font-family: 'Baloo 2', sans-serif; }
+  .result-msg { font-size: 17px; margin-bottom: 26px; line-height: 1.5; }
+
+  .script-card { background: var(--card); padding: 30px 36px; border-radius: 20px; max-width: 850px; width: 100%; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 10px 40px rgba(0,0,0,0.5); position: relative;}
+  .script-card h2 { margin-top: 0; text-align: center; }
+  .btn-close-script { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--muted); }
+  .btn-close-script:hover { color: var(--bad-border); }
+  .script-modes { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+  .script-modes button { flex: 1; padding: 10px; font-size: 15px; font-family: 'Baloo 2', sans-serif; font-weight: 700; background: var(--bg); border: 2px solid var(--line); color: var(--muted); cursor: pointer; border-radius: 10px; }
+  .script-modes button.active { background: var(--accent); color: white; border-color: var(--accent); }
+  #script-text-container { flex: 1; overflow-y: auto; padding-right: 15px; font-size: 16px; line-height: 1.8; }
+  .script-para { margin-bottom: 18px; padding: 14px; background: #f6fafd; border-radius: 12px; border-left: 4px solid var(--line); animation: fadeIn 0.4s;}
+  .script-para.hidden-step { display: none; }
+  .btn-next-step { display: none; width: 100%; background: var(--accent-dark); color: white; border: none; padding: 12px; font-size: 15px; border-radius: 12px; cursor: pointer; margin-top: 10px; font-family: 'Baloo 2', sans-serif; font-weight: 700;}
+
+  #spam-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(210, 74, 74, 0.95); color: white; font-size: 36px; font-weight: 700; display: none; justify-content: center; align-items: center; flex-direction: column; z-index: 9999; text-align: center; padding: 20px; font-family: 'Baloo 2', sans-serif;}
+  #toast { visibility: hidden; min-width: 300px; max-width: 500px; background-color: var(--accent-deep); color: #fff; text-align: center; border-radius: 14px; padding: 16px 24px; position: fixed; z-index: 10000; left: 50%; bottom: 30px; transform: translateX(-50%); font-size: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); opacity: 0; transition: opacity 0.4s, bottom 0.4s; line-height: 1.5; }
+  #toast.show { visibility: visible; opacity: 1; bottom: 60px; }
+
+  .warning-modal-content { background: var(--card); padding: 36px; border-radius: 18px; max-width: 420px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+  .warning-modal-content h3 { margin-top: 0; font-size: 22px; font-family: 'Baloo 2', sans-serif; }
+
+  @media (max-width: 800px) { .split-layout { flex-direction: column; } .container { padding: 28px 20px; } }
+</style>
+</head>
+<body>
+
+<div id="toast"></div>
+
+<svg class="sky-deco moon" viewBox="0 0 60 60"><path d="M40 8 A22 22 0 1 0 40 52 A17 17 0 1 1 40 8 Z" fill="#eaf4fc" stroke="#3d6f9e" stroke-width="2.5" stroke-linejoin="round"/></svg>
+<svg class="sky-deco star1" viewBox="0 0 40 40"><path d="M20 2 L24 16 L38 20 L24 24 L20 38 L16 24 L2 20 L16 16 Z" fill="#a9c7e6" stroke="#3d6f9e" stroke-width="2" stroke-linejoin="round"/></svg>
+<svg class="sky-deco star2" viewBox="0 0 40 40"><path d="M20 2 L24 16 L38 20 L24 24 L20 38 L16 24 L2 20 L16 16 Z" fill="#a9c7e6" stroke="#3d6f9e" stroke-width="2" stroke-linejoin="round"/></svg>
+<svg class="sky-deco cloud-tl" viewBox="0 0 200 100"><path d="M30 70 Q10 70 10 52 Q10 34 30 36 Q32 16 56 16 Q80 16 84 36 Q108 34 110 54 Q112 70 90 70 Z" fill="#ffffff" stroke="#cfe4f3" stroke-width="2"/></svg>
+<svg class="sky-deco cloud-br" viewBox="0 0 220 110"><path d="M40 80 Q16 80 16 58 Q16 38 40 40 Q42 18 68 18 Q96 18 100 40 Q128 38 130 60 Q132 80 106 80 Z" fill="#ffffff" stroke="#cfe4f3" stroke-width="2"/></svg>
+
+<div class="btn-home" onclick="goHome()" title="Làm lại bài này">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>
+  </svg>
+</div>
+<div class="btn-logout" id="btn-logout" onclick="logout()">🚪 Đăng xuất</div>
+<div class="btn-script" id="btn-show-script" onclick="openScriptPopup()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+  Xem Script
+</div>
+
+<div id="spam-overlay">
+  <div>⚠️ SLOW DOWN!</div>
+  <div style="font-size: 20px; font-weight: 400; margin-top: 15px; line-height: 1.5; font-family:'Livvic',sans-serif;">Bạn đang thao tác quá nhanh, vui lòng suy nghĩ kỹ.<br>Hệ thống khoá trong <span id="spam-countdown" style="font-size: 42px; font-weight: bold; color: #ffe600; display: block; margin-top: 10px;">3</span> giây</div>
+</div>
+
+<div class="overlay" id="warning-modal">
+  <div class="warning-modal-content">
+    <h3 style="color: var(--bad-border);">⚠️ Cảnh báo</h3>
+    <p style="font-size:16px; line-height:1.5; margin-bottom:26px;" id="warning-modal-text"></p>
+    <button class="action-btn btn-secondary" onclick="document.getElementById('warning-modal').classList.remove('show')">Đã hiểu</button>
+  </div>
+</div>
+
+<div class="container" id="main-container">
+
+  <!-- ============ NOT FOUND VIEW ============ -->
+  <div id="view-notfound" class="view">
+    <div class="not-found-box">
+      <div class="emoji">🐋💨</div>
+      <h2 style="border:none;">Không tìm thấy bài tập này</h2>
+      <p style="color: var(--muted);">Đường link có thể sai hoặc bài tập đã bị xoá khỏi kho dữ liệu.<br>Vui lòng kiểm tra lại link, hoặc liên hệ giáo viên để lấy link mới.</p>
+    </div>
+  </div>
+
+  <!-- ============ LOGIN VIEW ============ -->
+  <div id="view-login" class="view">
+    <div class="whale-hero">
+      <img src="whale-mascot.png" alt="Cá Voi Bay" class="whale-hero-img" onerror="this.style.display='none'">
+      <h1 style="border:none; font-size: 24px; margin: 4px 0 2px;" id="login-ex-title">PET B1 Listening</h1>
+      <p style="color: var(--muted); margin-top:0;" id="login-ex-part">Cá Voi Bay 🐋 · Luyện nghe cùng thầy cô</p>
+    </div>
+
+    <form class="login-form" id="form-login" onsubmit="return doLogin(event)">
+      <label>Họ và tên</label>
+      <input type="text" id="login-name" placeholder="VD: Nguyễn Văn A" required autocomplete="off">
+      <label>Mã lớp</label>
+      <input type="text" id="login-code" placeholder="Nhập mã lớp" required autocomplete="off">
+      <div class="login-error" id="login-error"></div>
+      <button type="submit" class="action-btn btn-login">🐋 Bắt đầu luyện tập</button>
+    </form>
+  </div>
+
+  <!-- ============ PRACTICE VIEW (MCQ: image / text) ============ -->
+  <div id="view-mcq" class="view">
+    <span class="part-badge" id="mcq-part-badge">Part</span>
+    <h2 id="mcq-title">Tiêu đề bài</h2>
+    <p class="instruction" id="mcq-instruction"></p>
+    <audio id="audio-mcq" controls></audio>
+    <div class="split-layout" id="mcq-layout">
+      <div class="left-panel">
+        <div class="sheet-title">ANSWER SHEET</div>
+        <div id="mcq-answer-container"></div>
+        <div class="submit-area">
+          <button class="action-btn" id="btn-submit-mcq" onclick="submitMCQAnswers()">Nộp bài</button>
+          <button class="action-btn btn-secondary" id="btn-retry-mcq" style="display:none;" onclick="retryExercise()">Làm lại bài này</button>
+          <button class="action-btn btn-qa" id="btn-qa-autofill-mcq" style="display:none;" onclick="autoFillAnswersMCQ()">🔧 Tự động điền (QA)</button>
+        </div>
+      </div>
+      <div class="right-panel" id="mcq-question-container"></div>
+    </div>
+  </div>
+
+  <!-- ============ PRACTICE VIEW (GAP FILL) ============ -->
+  <div id="view-gapfill" class="view">
+    <span class="part-badge" id="gapfill-part-badge">Part</span>
+    <h2 id="gapfill-title">Tiêu đề bài</h2>
+    <p class="instruction" id="gapfill-instruction"></p>
+    <audio id="audio-gapfill" controls></audio>
+    <div id="gapfill-container"></div>
+    <div class="submit-area">
+      <button class="action-btn" id="btn-submit-gapfill" onclick="submitGapFillAnswers()">Nộp bài</button>
+      <button class="action-btn btn-secondary" id="btn-retry-gapfill" style="display:none;" onclick="retryExercise()">Làm lại bài này</button>
+      <button class="action-btn btn-qa" id="btn-qa-autofill-gapfill" style="display:none;" onclick="autoFillAnswersGapfill()">🔧 Tự động điền (QA)</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="result-card">
+    <h2 style="font-weight: 700; margin-top: 0; border:none;">Kết quả của bạn</h2>
+    <div class="result-score" id="scoreDisplay">0/0</div>
+    <p class="result-msg" id="scoreMsg"></p>
+    <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+      <button class="action-btn btn-secondary" onclick="closeOverlay()">Xem lại bài làm</button>
+      <button class="action-btn" id="btn-popup-retry" onclick="retryFromPopup()">Làm lại bài này</button>
+    </div>
+  </div>
+</div>
+
+<div class="overlay" id="script-modal">
+  <div class="script-card">
+    <button class="btn-close-script" onclick="closeScriptPopup()">✖</button>
+    <h2 id="script-modal-title">Audio & Script</h2>
+    <audio id="script-audio" controls style="width: 100%; margin-bottom: 20px;"></audio>
+    <div class="script-modes">
+      <button id="mode-all" class="active" onclick="setScriptMode('all')">Xem tất cả</button>
+      <button id="mode-step" onclick="setScriptMode('step')">Xem lần lượt</button>
+    </div>
+    <div id="script-text-container"></div>
+    <button id="btn-next-step" class="btn-next-step" onclick="showNextScriptLine()">Đoạn tiếp theo ⬇</button>
+  </div>
+</div>
+
+<!-- Cấu hình chung (mã đăng nhập, webhook) -->
+<script src="config.js"></script>
+
+<script>
+/* ============================================================
+   TẢI DANH SÁCH BÀI TẬP (mỗi bài 1 file JSON riêng trong exercises/)
+   ============================================================ */
+const urlParams = new URLSearchParams(window.location.search);
+const requestedId = urlParams.get('id');
+let currentExercise = null;
+
+async function loadExerciseById(id) {
+  try {
+    const manifestRes = await fetch('exercises-manifest.json');
+    const filenames = await manifestRes.json();
+    // Chỉ cần tải đúng 1 file có id trùng tên (id.json) để nhanh hơn;
+    // nếu tên file không khớp id, sẽ dò qua toàn bộ danh sách.
+    const guessFile = filenames.find(f => f === id + '.json');
+    const candidates = guessFile ? [guessFile] : filenames;
+
+    for (const fname of candidates) {
+      try {
+        const res = await fetch('exercises/' + fname);
+        if (!res.ok) continue;
+        const data = await res.json();
+        if (data && data.id === id) return data;
+      } catch (err) { console.warn('Không đọc được file bài tập:', fname, err); }
+    }
+    return null;
+  } catch (err) {
+    console.error('Không tải được exercises-manifest.json:', err);
+    return null;
+  }
+}
+
+let currentUser = null;
+let tabSwitchCount = 0;
+let appMode = '';
+let currentActiveAudioId = '';
+let currentAttempt = 1;
+let isSpamBlocked = false; let rapidClickCount = 0; let lastMCQClickTime = 0; let lastClickedMCQItem = null;
+let lastGapFillInputTime = 0; let lastGapFillInputEl = null;
+let isHalfListenCompleted = false; let lastAudioTime = 0;
+let isScriptUnlocked = false; let currentScriptMode = 'all'; let visibleStepIndex = 0;
+
+const mainContainer = document.getElementById('main-container');
+const toastEl = document.getElementById('toast');
+const btnShowScript = document.getElementById('btn-show-script');
+const scriptModal = document.getElementById('script-modal');
+const spamOverlay = document.getElementById('spam-overlay');
+const spamCountdown = document.getElementById('spam-countdown');
+
+function showToast(msg) { toastEl.innerHTML = msg; toastEl.classList.add('show'); setTimeout(() => { toastEl.classList.remove('show'); }, 4000); }
+function triggerSpamBlock(secs) {
+  isSpamBlocked = true; spamOverlay.style.display = 'flex'; let left = secs; spamCountdown.textContent = left;
+  const intv = setInterval(() => { left--; if (left <= 0) { clearInterval(intv); spamOverlay.style.display = 'none'; isSpamBlocked = false; } else { spamCountdown.textContent = left; } }, 1000);
+}
+function showWarning(text) { document.getElementById('warning-modal-text').textContent = text; document.getElementById('warning-modal').classList.add('show'); }
+
+/* ===== Chống spam-click bubble ===== */
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('bubble')) {
+    const mcqItem = e.target.closest('.mcq-item');
+    if (mcqItem && mcqItem.classList.contains('show-explanation')) return;
+    if (isSpamBlocked) return;
+    const now = Date.now();
+    if (now - lastMCQClickTime < 1500) {
+      if (lastClickedMCQItem !== mcqItem) {
+        rapidClickCount++; let penalty = 3; if (rapidClickCount === 3 || rapidClickCount === 4) penalty = 5; if (rapidClickCount >= 5) penalty = 7; triggerSpamBlock(penalty); return;
+      }
+    } else { if (now - lastMCQClickTime > 5000) rapidClickCount = 0; }
+    lastMCQClickTime = now; lastClickedMCQItem = mcqItem;
+    const row = e.target.closest('.bubble-row'); if (row) { row.querySelectorAll('.bubble').forEach(b => b.classList.remove('selected')); e.target.classList.add('selected'); }
+  }
+});
+
+/* ===== Chống gõ spam ở gap-fill ===== */
+document.addEventListener('input', function(e) {
+  if (e.target.classList.contains('answer-input')) {
+    if (isSpamBlocked) { e.target.value = ''; e.target.blur(); return; }
+    const now = Date.now();
+    if (lastGapFillInputEl !== null && lastGapFillInputEl !== e.target && (now - lastGapFillInputTime < 2000)) { e.target.value = ''; e.target.blur(); triggerSpamBlock(3); }
+    lastGapFillInputEl = e.target; lastGapFillInputTime = now;
+  }
+});
+
+/* ===== Đếm số lần rời tab khi đang làm bài ===== */
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden && appMode === 'practice') { tabSwitchCount++; }
+});
+
+/* ===== Khoá tua audio trước khi nghe hết 1/2 bài ===== */
+function attachAudioGuards(audio) {
+  audio.addEventListener('seeking', function() {
+    if (this.id !== currentActiveAudioId) return;
+    if (!isHalfListenCompleted) {
+      if (Math.abs(this.currentTime - lastAudioTime) > 1.0) {
+        this.currentTime = lastAudioTime;
+        showToast("⚠️ <b>Tính năng tua bị khoá trong 1/2 thời lượng đầu!</b><br>Chỉ có thể Phát/Dừng hoặc chỉnh Tốc độ.");
+      }
+    }
+  });
+  audio.addEventListener('timeupdate', function() {
+    if (this.id !== currentActiveAudioId) return;
+    if (Math.abs(this.currentTime - lastAudioTime) <= 1.0) lastAudioTime = this.currentTime;
+    if (appMode === 'practice' && !isHalfListenCompleted) {
+      if (!isNaN(this.duration) && this.currentTime >= (this.duration / 2)) {
+        isHalfListenCompleted = true;
+        showToast("✅ <b>Đã qua 1/2 thời lượng bài nghe.</b><br>Tính năng tua Audio đã được mở khoá!");
+      }
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('audio:not(#script-audio)').forEach(attachAudioGuards);
+});
+
+/* ============================================================
+   ĐĂNG NHẬP
+   ============================================================ */
+function doLogin(e) {
+  e.preventDefault();
+  const name = document.getElementById('login-name').value.trim();
+  const code = document.getElementById('login-code').value.trim();
+  const errEl = document.getElementById('login-error');
+  if (!name) { errEl.textContent = "Vui lòng nhập họ và tên."; return false; }
+
+  if (name === TEACHER_NAME_KEY && code === TEACHER_CODE_KEY) {
+    currentUser = { type: 'teacher', name: name };
+  } else if (code === STUDENT_CLASS_CODE) {
+    currentUser = { type: 'student', name: name };
+  } else {
+    errEl.textContent = "❌ Mã lớp không đúng, vui lòng kiểm tra lại.";
+    return false;
+  }
+  errEl.textContent = "";
+  finishLogin();
+  return false;
+}
+
+function finishLogin() {
+  setWatermark(currentUser.name + "  ·  " + new Date().toLocaleDateString('vi-VN'));
+  document.getElementById('btn-logout').style.display = 'flex';
+  showToast(`🐋 Chào mừng ${currentUser.name}!`);
+  loadExercise();
+}
+
+function logout() {
+  currentUser = null;
+  document.body.style.backgroundImage = '';
+  hideAllViews();
+  document.getElementById('view-login').classList.add('active');
+  document.getElementById('btn-logout').style.display = 'none';
+  document.getElementById('btn-show-script').style.display = 'none';
+  document.getElementById('login-name').value = '';
+  document.getElementById('login-code').value = '';
+  mainContainer.classList.remove('wide-container');
+}
+
+function setWatermark(text) {
+  const safe = text.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='340' height='170'><text x='10' y='90' font-size='15' fill='rgba(44,74,99,0.06)' font-family='sans-serif' transform='rotate(-25 170 85)'>${safe}</text></svg>`;
+  document.body.style.backgroundImage = `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+}
+
+function logToSheet(payload) {
+  try {
+    fetch(SHEET_WEBHOOK_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) }).catch(() => {});
+  } catch (err) {}
+}
+
+/* ============================================================
+   ĐIỀU HƯỚNG VIEW
+   ============================================================ */
+function hideAllViews() {
+  currentActiveAudioId = '';
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('audio').forEach(a => { a.pause(); a.currentTime = 0; });
+}
+function goHome() { if (currentUser && currentExercise) retryExercise(); }
+function unlockScript() { isScriptUnlocked = true; btnShowScript.style.color = '#fff'; btnShowScript.style.background = 'var(--ok-border)'; btnShowScript.style.borderColor = 'var(--ok-border)'; }
+function lockScript() { isScriptUnlocked = false; btnShowScript.style.color = 'var(--accent-dark)'; btnShowScript.style.background = 'var(--card)'; btnShowScript.style.borderColor = 'var(--accent)'; }
+
+/* ============================================================
+   NẠP BÀI TẬP THEO EXERCISE.type
+   ============================================================ */
+function loadExercise() {
+  appMode = 'practice'; currentAttempt = 1; rapidClickCount = 0; tabSwitchCount = 0;
+  isHalfListenCompleted = false; lastAudioTime = 0;
+  btnShowScript.style.display = 'flex'; lockScript();
+  hideAllViews();
+
+  if (currentExercise.type === 'gapfill') {
+    renderGapFill();
+    document.getElementById('view-gapfill').classList.add('active');
+    currentActiveAudioId = 'audio-gapfill';
+  } else {
+    renderMCQ();
+    document.getElementById('view-mcq').classList.add('active');
+    currentActiveAudioId = 'audio-mcq';
+  }
+  mainContainer.classList.add('wide-container');
+}
+
+/* ===== MCQ (Part 1 / 2 / 4) ===== */
+function renderMCQ() {
+  const ex = currentExercise;
+  document.getElementById('mcq-part-badge').textContent = ex.part;
+  document.getElementById('mcq-title').textContent = ex.title;
+  document.getElementById('mcq-instruction').textContent = ex.instruction || '';
+
+  const audio = document.getElementById('audio-mcq');
+  audio.src = ex.audio;
+
+  const ansContainer = document.getElementById('mcq-answer-container'); ansContainer.innerHTML = '';
+  ex.questions.forEach(q => {
+    ansContainer.innerHTML += `
+      <div class="mcq-item" data-answer="${q.answer}">
+        <div class="bubble-row">
+          <span class="q-number">${q.num}.</span>
+          <div class="bubble" data-val="A">A</div>
+          <div class="bubble" data-val="B">B</div>
+          <div class="bubble" data-val="C">C</div>
+        </div>
+        <div class="explanation"><span class="highlight">Script:</span> ${q.script || ''}</div>
+      </div>`;
+  });
+
+  const qContainer = document.getElementById('mcq-question-container');
+  qContainer.innerHTML = ''; qContainer.className = 'right-panel';
+
+  if (ex.rightPanelMode === 'text') {
+    ex.questions.forEach(q => {
+      const block = document.createElement('div'); block.className = 'text-q-block';
+      const opts = q.options || {};
+      block.innerHTML = `
+        <div class="text-q-prompt">${q.num}. ${q.prompt || ''}</div>
+        <div class="text-q-options">
+          <div><b>A.</b> ${opts.A || ''}</div>
+          <div><b>B.</b> ${opts.B || ''}</div>
+          <div><b>C.</b> ${opts.C || ''}</div>
+        </div>`;
+      qContainer.appendChild(block);
+    });
+  } else {
+    qContainer.classList.add('image-mode');
+    (ex.images || []).forEach(imgSrc => {
+      const imgEl = document.createElement('img'); imgEl.src = imgSrc; imgEl.alt = 'Đề thi';
+      imgEl.addEventListener('error', function() {
+        const ph = document.createElement('div'); ph.className = 'img-placeholder';
+        ph.innerHTML = `🖼️ Hình ảnh câu hỏi chưa có sẵn<br><small>${imgSrc}</small>`;
+        if (imgEl.parentNode) imgEl.parentNode.replaceChild(ph, imgEl);
+      });
+      qContainer.appendChild(imgEl);
+    });
+  }
+
+  document.getElementById('btn-submit-mcq').style.display = 'inline-block';
+  document.getElementById('btn-retry-mcq').style.display = 'none';
+  document.getElementById('btn-qa-autofill-mcq').style.display = (currentUser && currentUser.type === 'teacher') ? 'inline-block' : 'none';
+}
+
+function checkHalfListenAndAllAnswered(allAnswered) {
+  const audio = document.getElementById(currentActiveAudioId);
+  if (audio && !isNaN(audio.duration) && audio.currentTime < (audio.duration / 2)) {
+    showWarning("⏳ Bạn phải nghe ít nhất 1/2 thời lượng Audio trước khi được nộp bài!"); return false;
+  }
+  if (!allAnswered) { showWarning("⚠️ Vui lòng hoàn thành tất cả các câu hỏi trước khi nộp bài!"); return false; }
+  return true;
+}
+
+function submitMCQAnswers() {
+  const questions = document.getElementById('mcq-answer-container').querySelectorAll('.mcq-item');
+  let allAnswered = true;
+  questions.forEach(q => { if (!q.querySelector('.bubble.selected')) allAnswered = false; });
+  if (!checkHalfListenAndAllAnswered(allAnswered)) return;
+
+  let score = 0; const total = questions.length;
+  questions.forEach(q => { if (q.querySelector('.bubble.selected').getAttribute('data-val') === q.getAttribute('data-answer')) score++; });
+
+  const isPass = (score / total) >= 0.8;
+  const shouldRevealAll = isPass || currentAttempt >= 3;
+  if (shouldRevealAll) unlockScript();
+
+  questions.forEach(q => {
+    const correctAns = q.getAttribute('data-answer'); const selected = q.querySelector('.bubble.selected');
+    q.querySelectorAll('.bubble').forEach(b => { b.style.pointerEvents = 'none'; });
+    if (selected.getAttribute('data-val') === correctAns) { selected.classList.add('correct'); q.classList.add('show-explanation'); }
+    else { selected.classList.add('incorrect'); if (shouldRevealAll) { q.querySelector(`.bubble[data-val="${correctAns}"]`).classList.add('correct'); q.classList.add('show-explanation'); } }
+  });
+
+  document.getElementById('btn-submit-mcq').style.display = 'none';
+  document.getElementById('btn-retry-mcq').style.display = 'inline-block';
+
+  sendResultToSheet(score, total);
+  showPopup(score, total);
+}
+
+function autoFillAnswersMCQ() {
+  if (!currentUser || currentUser.type !== 'teacher') return;
+  document.querySelectorAll('#mcq-answer-container .mcq-item').forEach(item => {
+    const ans = item.getAttribute('data-answer');
+    item.querySelectorAll('.bubble').forEach(b => b.classList.remove('selected'));
+    const target = item.querySelector(`.bubble[data-val="${ans}"]`); if (target) target.classList.add('selected');
+  });
+  showToast('🔧 Đã tự động điền đáp án đúng (chế độ QA)');
+}
+
+/* ===== GAP FILL (Part 3) ===== */
+function renderGapFill() {
+  const ex = currentExercise;
+  document.getElementById('gapfill-part-badge').textContent = ex.part;
+  document.getElementById('gapfill-title').textContent = ex.title;
+  document.getElementById('gapfill-instruction').textContent = ex.instruction || '';
+  document.getElementById('audio-gapfill').src = ex.audio;
+
+  const container = document.getElementById('gapfill-container'); container.innerHTML = '';
+  ex.questions.forEach(q => {
+    const item = document.createElement('div'); item.className = 'gapfill-item';
+    item.setAttribute('data-accepted', JSON.stringify(q.acceptedAnswers || []));
+    item.innerHTML = `
+      <span class="q-number">${q.num}.</span>
+      <label>${q.label || ''}</label>
+      <input type="text" class="answer-input" autocomplete="off">
+      <div class="explanation" style="flex-basis:100%;"><span class="highlight">Script:</span> ${q.script || ''}</div>`;
+    container.appendChild(item);
+  });
+
+  document.getElementById('btn-submit-gapfill').style.display = 'inline-block';
+  document.getElementById('btn-retry-gapfill').style.display = 'none';
+  document.getElementById('btn-qa-autofill-gapfill').style.display = (currentUser && currentUser.type === 'teacher') ? 'inline-block' : 'none';
+}
+
+function submitGapFillAnswers() {
+  const items = document.getElementById('gapfill-container').querySelectorAll('.gapfill-item');
+  let allAnswered = true;
+  items.forEach(item => { if (!item.querySelector('.answer-input').value.trim()) allAnswered = false; });
+  if (!checkHalfListenAndAllAnswered(allAnswered)) return;
+
+  let score = 0; const total = items.length;
+  const isPass0 = false; // tính sau khi biết score
+  let results = [];
+  items.forEach(item => {
+    const input = item.querySelector('.answer-input');
+    const accepted = JSON.parse(item.getAttribute('data-accepted')).map(a => a.toLowerCase().trim());
+    const userVal = input.value.trim().toLowerCase();
+    const isCorrect = accepted.includes(userVal);
+    if (isCorrect) score++;
+    results.push({ item, input, isCorrect });
+  });
+
+  const isPass = (score / total) >= 0.8;
+  const shouldRevealAll = isPass || currentAttempt >= 3;
+  if (shouldRevealAll) unlockScript();
+
+  results.forEach(r => {
+    r.input.disabled = true;
+    r.input.classList.add(r.isCorrect ? 'correct' : 'incorrect');
+    if (r.isCorrect || shouldRevealAll) r.item.classList.add('show-explanation');
+  });
+
+  document.getElementById('btn-submit-gapfill').style.display = 'none';
+  document.getElementById('btn-retry-gapfill').style.display = 'inline-block';
+
+  sendResultToSheet(score, total);
+  showPopup(score, total);
+}
+
+function autoFillAnswersGapfill() {
+  if (!currentUser || currentUser.type !== 'teacher') return;
+  document.querySelectorAll('#gapfill-container .gapfill-item').forEach(item => {
+    const accepted = JSON.parse(item.getAttribute('data-accepted'));
+    const input = item.querySelector('.answer-input');
+    if (accepted && accepted.length > 0) input.value = accepted[0];
+  });
+  showToast('🔧 Đã tự động điền đáp án đúng (chế độ QA)');
+}
+
+/* ===== Gửi kết quả & Retry (dùng chung) ===== */
+function sendResultToSheet(score, total) {
+  const userLabel = (currentUser.type === 'teacher') ? ('[TEST] ' + currentUser.name) : currentUser.name;
+  logToSheet({
+    timestamp: new Date().toISOString(),
+    studentName: userLabel,
+    userType: currentUser.type,
+    exercise: 'PET B1 Listening',
+    exerciseId: currentExercise.id,
+    part: currentExercise.part,
+    title: currentExercise.title,
+    score: score, total: total,
+    percent: Math.round((score / total) * 100),
+    attempt: currentAttempt,
+    tabSwitchCount: tabSwitchCount
+  });
+}
+
+function retryExercise() {
+  currentAttempt++; lockScript(); tabSwitchCount = 0; isHalfListenCompleted = false; lastAudioTime = 0;
+  closeOverlay();
+  if (currentExercise.type === 'gapfill') {
+    const audio = document.getElementById('audio-gapfill'); audio.currentTime = 0; audio.pause();
+    document.querySelectorAll('#gapfill-container .gapfill-item').forEach(item => {
+      item.classList.remove('show-explanation');
+      const input = item.querySelector('.answer-input'); input.value = ''; input.disabled = false; input.classList.remove('correct', 'incorrect');
+    });
+    document.getElementById('btn-submit-gapfill').style.display = 'inline-block';
+    document.getElementById('btn-retry-gapfill').style.display = 'none';
+  } else {
+    const audio = document.getElementById('audio-mcq'); audio.currentTime = 0; audio.pause();
+    document.querySelectorAll('#mcq-answer-container .mcq-item').forEach(q => { q.classList.remove('show-explanation'); q.querySelectorAll('.bubble').forEach(b => { b.classList.remove('selected', 'correct', 'incorrect'); b.style.pointerEvents = 'auto'; }); });
+    document.getElementById('btn-submit-mcq').style.display = 'inline-block';
+    document.getElementById('btn-retry-mcq').style.display = 'none';
+  }
+}
+
+/* ============================================================
+   POPUP KẾT QUẢ
+   ============================================================ */
+const overlay = document.getElementById('overlay');
+function showPopup(score, total) {
+  document.getElementById('scoreDisplay').textContent = `${score}/${total}`;
+  document.getElementById('scoreMsg').textContent = (score === total) ? "Xuất sắc! Cá voi tự hào về bạn! 🐋" : "Tốt lắm! Bạn có thể xem lại đáp án hoặc bật 'Xem Script' (nếu đủ điều kiện) để hiểu rõ hơn.";
+  overlay.classList.add('show');
+}
+function closeOverlay() { overlay.classList.remove('show'); }
+function retryFromPopup() { closeOverlay(); retryExercise(); }
+
+/* ============================================================
+   SCRIPT POPUP
+   ============================================================ */
+function openScriptPopup() {
+  if (!isScriptUnlocked) { showToast("🔒 <b>Tính năng đang bị khoá!</b><br>Chỉ mở khi bạn đạt 80% hoặc đã làm bài từ lần thứ 3 trở lên."); return; }
+  const mainAudio = document.getElementById(currentActiveAudioId); if (mainAudio) mainAudio.pause();
+
+  document.getElementById('script-modal-title').textContent = currentExercise.title + " - Script";
+  const audioEl = document.getElementById('script-audio'); audioEl.src = currentExercise.audio; audioEl.currentTime = 0;
+  audioEl.onplay = function() { const m = document.getElementById(currentActiveAudioId); if (m) m.pause(); };
+
+  const scriptTextContainer = document.getElementById('script-text-container'); scriptTextContainer.innerHTML = '';
+  if (currentExercise.fullScript && currentExercise.fullScript.length > 0) {
+    currentExercise.fullScript.forEach((paraText) => { const para = document.createElement('div'); para.className = 'script-para'; para.innerHTML = paraText; scriptTextContainer.appendChild(para); });
+  } else { scriptTextContainer.innerHTML = '<p style="text-align:center; color: var(--muted);">Chưa có dữ liệu Full Script.</p>'; }
+
+  scriptModal.classList.add('show'); setScriptMode('all');
+}
+function closeScriptPopup() { document.getElementById('script-audio').pause(); scriptModal.classList.remove('show'); }
+function setScriptMode(mode) {
+  currentScriptMode = mode;
+  document.getElementById('mode-all').classList.remove('active'); document.getElementById('mode-step').classList.remove('active'); document.getElementById(`mode-${mode}`).classList.add('active');
+  const paras = document.querySelectorAll('.script-para');
+  if (mode === 'all') { paras.forEach(p => p.classList.remove('hidden-step')); document.getElementById('btn-next-step').style.display = 'none'; }
+  else {
+    visibleStepIndex = 0;
+    paras.forEach((p, index) => { if (index === 0) p.classList.remove('hidden-step'); else p.classList.add('hidden-step'); });
+    document.getElementById('btn-next-step').style.display = (paras.length > 1) ? 'block' : 'none';
+  }
+  document.getElementById('script-text-container').scrollTop = 0;
+}
+function showNextScriptLine() {
+  const paras = document.querySelectorAll('.script-para'); visibleStepIndex++;
+  if (visibleStepIndex < paras.length) { paras[visibleStepIndex].classList.remove('hidden-step'); paras[visibleStepIndex].scrollIntoView({ behavior: 'smooth', block: 'end' }); }
+  if (visibleStepIndex >= paras.length - 1) { document.getElementById('btn-next-step').style.display = 'none'; }
+}
+
+/* ============================================================
+   KHỞI ĐỘNG
+   ============================================================ */
+window.addEventListener('load', async () => {
+  hideAllViews();
+  showToast('🐋 Đang tải bài tập...');
+
+  currentExercise = await loadExerciseById(requestedId);
+
+  if (!currentExercise) {
+    hideAllViews();
+    document.getElementById('view-notfound').classList.add('active');
+    return;
+  }
+  document.getElementById('login-ex-title').textContent = currentExercise.title;
+  document.getElementById('login-ex-part').textContent = currentExercise.part + " · Cá Voi Bay 🐋";
+  hideAllViews();
+  document.getElementById('view-login').classList.add('active');
+});
+</script>
+</body>
+</html>

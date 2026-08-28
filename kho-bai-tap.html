@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kho Bài Tập – Cá Voi Bay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Livvic:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #eaf4fc; --card: #ffffff; --ink: #2c4a63;
+    --accent: #6fa3d1; --accent-dark: #3d6f9e; --accent-deep: #2c5680;
+    --line: #cfe4f3; --muted: #6f8aa1; --pink: #f3b8c6; --pink-dark: #e08ba0;
+    --ok-border: #2e9b5f;
+    --shadow: 0 18px 45px rgba(44, 74, 99, 0.14);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: 'Livvic', sans-serif; color: var(--ink);
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(circle at 8% 8%, rgba(255,255,255,0.9) 0, rgba(255,255,255,0) 40%),
+      radial-gradient(circle at 92% 90%, rgba(255,255,255,0.7) 0, rgba(255,255,255,0) 45%);
+    min-height: 100vh; padding: 50px 16px 80px;
+  }
+  h1, h2, h3, button, .part-title { font-family: 'Baloo 2', sans-serif; }
+
+  .page-wrap { max-width: 980px; margin: 0 auto; }
+  .hero { text-align: center; margin-bottom: 40px; }
+  .hero img { width: 170px; height: auto; }
+  .hero h1 { color: var(--accent-deep); font-size: 30px; margin: 6px 0 2px; }
+  .hero p { color: var(--muted); margin-top: 0; font-size: 16px; }
+
+  .search-box { max-width: 420px; margin: 0 auto 36px; }
+  .search-box input { width: 100%; padding: 13px 18px; border-radius: 30px; border: 2px solid var(--line); font-family: inherit; font-size: 16px; outline: none; background: #fff; box-shadow: 0 4px 14px rgba(44,74,99,0.08); transition: border-color 0.2s; }
+  .search-box input:focus { border-color: var(--accent); }
+
+  .part-section { margin-bottom: 40px; }
+  .part-title { font-size: 21px; color: var(--accent-deep); display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .part-title .count { background: var(--accent); color: #fff; font-size: 13px; padding: 3px 12px; border-radius: 20px; font-weight: 700; }
+  .part-title .line { flex: 1; height: 2px; background: var(--line); border-radius: 2px; }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+  .ex-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; box-shadow: 0 8px 20px rgba(44,74,99,0.08); display: flex; flex-direction: column; transition: transform 0.25s, box-shadow 0.25s; }
+  .ex-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px rgba(44,74,99,0.16); }
+  .ex-type-badge { align-self: flex-start; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 14px; margin-bottom: 12px; }
+  .ex-type-badge.mcq-image { background: #e3f0fc; color: var(--accent-dark); }
+  .ex-type-badge.mcq-text { background: #fdeee0; color: #b5661a; }
+  .ex-type-badge.gapfill { background: #eee3fc; color: #7548b5; }
+  .ex-card h3 { margin: 0 0 6px; font-size: 18px; color: var(--ink); line-height: 1.4; }
+  .ex-card .ex-id { color: var(--muted); font-size: 13px; font-family: monospace; margin-bottom: 16px; word-break: break-all; }
+  .ex-card-actions { margin-top: auto; display: flex; gap: 8px; }
+  .ex-btn { flex: 1; border: none; border-radius: 12px; padding: 10px 12px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s; }
+  .ex-btn-open { background: var(--accent); color: #fff; text-decoration: none; }
+  .ex-btn-open:hover { background: var(--accent-dark); }
+  .ex-btn-copy { background: #f0f6fb; color: var(--accent-dark); border: 2px solid var(--line); }
+  .ex-btn-copy:hover { border-color: var(--accent); }
+  .ex-btn-copy.copied { background: var(--ok-border); color: #fff; border-color: var(--ok-border); }
+
+  .empty-state { text-align: center; padding: 60px 20px; color: var(--muted); }
+  .empty-state .emoji { font-size: 46px; margin-bottom: 12px; }
+
+  #toast { visibility: hidden; min-width: 260px; background-color: var(--accent-deep); color: #fff; text-align: center; border-radius: 14px; padding: 14px 22px; position: fixed; z-index: 999; left: 50%; bottom: 30px; transform: translateX(-50%); font-size: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); opacity: 0; transition: opacity 0.3s, bottom 0.3s; }
+  #toast.show { visibility: visible; opacity: 1; bottom: 50px; }
+</style>
+</head>
+<body>
+
+<div id="toast"></div>
+
+<div class="page-wrap">
+  <div class="hero">
+    <img src="whale-mascot.png" alt="Cá Voi Bay" onerror="this.style.display='none'">
+    <h1>Kho Bài Tập Listening</h1>
+    <p>Cá Voi Bay 🐋 · Copy link gửi cho học sinh</p>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search-input" placeholder="🔍 Tìm theo tên bài hoặc Part...">
+  </div>
+
+  <div id="content"></div>
+</div>
+
+<!-- Cấu hình chung -->
+<script src="config.js"></script>
+<script>
+  const contentEl = document.getElementById('content');
+  const toastEl = document.getElementById('toast');
+  function showToast(msg) { toastEl.textContent = msg; toastEl.classList.add('show'); setTimeout(() => toastEl.classList.remove('show'), 2500); }
+
+  let EXERCISES = [];
+
+  async function loadAllExercises() {
+    try {
+      const manifestRes = await fetch('exercises-manifest.json');
+      const filenames = await manifestRes.json();
+      const results = await Promise.all(filenames.map(async (fname) => {
+        try {
+          const res = await fetch('exercises/' + fname);
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return await res.json();
+        } catch (err) {
+          console.warn('⚠️ Bỏ qua file lỗi:', fname, err);
+          return null;
+        }
+      }));
+      return results.filter(Boolean);
+    } catch (err) {
+      console.error('Không tải được exercises-manifest.json:', err);
+      return [];
+    }
+  }
+
+  function badgeInfo(ex) {
+    if (ex.type === 'gapfill') return { cls: 'gapfill', label: '✏️ Điền từ' };
+    if (ex.rightPanelMode === 'text') return { cls: 'mcq-text', label: '📝 Trắc nghiệm (chữ)' };
+    return { cls: 'mcq-image', label: '🖼️ Trắc nghiệm (ảnh)' };
+  }
+
+  function buildExerciseUrl(id) {
+    const base = window.location.href.replace(/kho-bai-tap\.html.*$/, '');
+    return base + 'bai-tap.html?id=' + encodeURIComponent(id);
+  }
+
+  function copyLink(id, btn) {
+    const url = buildExerciseUrl(id);
+    navigator.clipboard.writeText(url).then(() => {
+      const oldText = btn.innerHTML;
+      btn.innerHTML = '✅ Đã copy!';
+      btn.classList.add('copied');
+      showToast('🔗 Đã copy link bài tập!');
+      setTimeout(() => { btn.innerHTML = oldText; btn.classList.remove('copied'); }, 1800);
+    }).catch(() => {
+      showToast('⚠️ Không thể copy tự động, vui lòng copy thủ công: ' + url);
+    });
+  }
+
+  function renderCards(list) {
+    contentEl.innerHTML = '';
+    const query = document.getElementById('search-input').value.trim().toLowerCase();
+
+    const filtered = list.filter(ex =>
+      ex.title.toLowerCase().includes(query) ||
+      ex.part.toLowerCase().includes(query) ||
+      ex.id.toLowerCase().includes(query)
+    );
+
+    if (filtered.length === 0) {
+      contentEl.innerHTML = `<div class="empty-state"><div class="emoji">🐋💭</div>${list.length === 0 ? 'Kho dữ liệu đang trống. Hãy thêm file bài tập vào thư mục <b>exercises/</b> và khai báo trong <b>exercises-manifest.json</b>.' : 'Không tìm thấy bài tập phù hợp.'}</div>`;
+      return;
+    }
+
+    // Nhóm theo Part
+    const groups = {};
+    filtered.forEach(ex => { (groups[ex.part] = groups[ex.part] || []).push(ex); });
+
+    Object.keys(groups).sort().forEach(partName => {
+      const section = document.createElement('div'); section.className = 'part-section';
+      const title = document.createElement('div'); title.className = 'part-title';
+      title.innerHTML = `🐋 ${partName} <span class="count">${groups[partName].length} bài</span><span class="line"></span>`;
+      section.appendChild(title);
+
+      const grid = document.createElement('div'); grid.className = 'card-grid';
+      groups[partName].forEach(ex => {
+        const badge = badgeInfo(ex);
+        const card = document.createElement('div'); card.className = 'ex-card';
+        card.innerHTML = `
+          <span class="ex-type-badge ${badge.cls}">${badge.label}</span>
+          <h3>${ex.title}</h3>
+          <div class="ex-id">id: ${ex.id}</div>
+          <div class="ex-card-actions">
+            <a class="ex-btn ex-btn-open" href="bai-tap.html?id=${encodeURIComponent(ex.id)}" target="_blank">▶️ Mở bài</a>
+            <button class="ex-btn ex-btn-copy" onclick="copyLink('${ex.id}', this)">🔗 Copy link</button>
+          </div>`;
+        grid.appendChild(card);
+      });
+      section.appendChild(grid);
+      contentEl.appendChild(section);
+    });
+  }
+
+  (async function init() {
+    contentEl.innerHTML = `<div class="empty-state"><div class="emoji">🐋💭</div>Đang tải danh sách bài tập...</div>`;
+    EXERCISES = await loadAllExercises();
+    document.getElementById('search-input').addEventListener('input', () => renderCards(EXERCISES));
+    renderCards(EXERCISES);
+  })();
+</script>
+</body>
+</html>
