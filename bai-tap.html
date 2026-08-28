@@ -141,7 +141,22 @@
   .warning-modal-content { background: var(--card); padding: 36px; border-radius: 18px; max-width: 420px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
   .warning-modal-content h3 { margin-top: 0; font-size: 22px; font-family: 'Baloo 2', sans-serif; }
 
+  /* ===== QA Debug Panel (chỉ hiện với giáo viên) ===== */
+  #qa-panel { position: fixed; bottom: 20px; right: 20px; width: 300px; background: var(--card); border: 2px solid var(--pink-dark); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); z-index: 980; display: none; font-family: 'Livvic', sans-serif; overflow: hidden; }
+  #qa-panel.show { display: block; }
+  #qa-panel-header { background: var(--pink-dark); color: #fff; padding: 10px 16px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  #qa-panel-body { padding: 14px 16px; max-height: 60vh; overflow-y: auto; }
+  #qa-panel-body.collapsed { display: none; }
+  .qa-stat-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; border-bottom: 1px dashed var(--line); color: var(--ink); }
+  .qa-stat-row span:last-child { font-weight: 700; color: var(--accent-dark); font-family: monospace; }
+  .qa-btn { display: block; width: 100%; text-align: left; background: #fbeef1; border: 1px solid #f3c9d4; color: #8a3350; border-radius: 10px; padding: 8px 12px; font-size: 13px; margin-top: 8px; cursor: pointer; transition: all 0.15s; }
+  .qa-btn:hover { background: var(--pink); }
+
   @media (max-width: 800px) { .split-layout { flex-direction: column; } .container { padding: 28px 20px; } }
+
+  /* Chặn copy nội dung câu hỏi / script (không áp dụng cho ô học sinh tự gõ) */
+  .no-copy { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+  body.is-teacher .no-copy { user-select: text; -webkit-user-select: text; -moz-user-select: text; -ms-user-select: text; }
 </style>
 </head>
 <body>
@@ -178,6 +193,27 @@
   </div>
 </div>
 
+<div id="qa-panel">
+  <div id="qa-panel-header" onclick="document.getElementById('qa-panel-body').classList.toggle('collapsed')">
+    <span>🔧 QA Debug Panel</span>
+    <span style="font-size:12px; opacity:0.85;">bấm để thu gọn</span>
+  </div>
+  <div id="qa-panel-body">
+    <div class="qa-stat-row"><span>Lần thử hiện tại</span><span id="qa-stat-attempt">-</span></div>
+    <div class="qa-stat-row"><span>Số lần rời tab</span><span id="qa-stat-tabswitch">-</span></div>
+    <div class="qa-stat-row"><span>Đã nghe qua 1/2 audio</span><span id="qa-stat-halflisten">-</span></div>
+    <div class="qa-stat-row"><span>Script đã mở khoá</span><span id="qa-stat-script">-</span></div>
+    <div class="qa-stat-row"><span>Bài đang mở</span><span id="qa-stat-exid">-</span></div>
+
+    <button class="qa-btn" onclick="qaTestSpamBlock()">🧪 Test khoá spam-click (3 giây)</button>
+    <button class="qa-btn" onclick="qaTestHalfListenUnlock()">🧪 Test mở khoá audio (giả lập nghe hết 1/2)</button>
+    <button class="qa-btn" onclick="qaTestHalfListenWarning()">🧪 Test cảnh báo "chưa nghe đủ"</button>
+    <button class="qa-btn" onclick="qaSimulateTabSwitch()">🧪 Giả lập rời tab (+1)</button>
+    <button class="qa-btn" onclick="qaTestSheetWebhook()">🧪 Gửi thử dữ liệu lên Google Sheet</button>
+    <button class="qa-btn" onclick="qaResetAttempt()">🧪 Reset lần thử về 1</button>
+  </div>
+</div>
+
 <div class="container" id="main-container">
 
   <!-- ============ NOT FOUND VIEW ============ -->
@@ -211,7 +247,7 @@
   <div id="view-mcq" class="view">
     <span class="part-badge" id="mcq-part-badge">Part</span>
     <h2 id="mcq-title">Tiêu đề bài</h2>
-    <p class="instruction" id="mcq-instruction"></p>
+    <p class="instruction no-copy" id="mcq-instruction"></p>
     <audio id="audio-mcq" controls></audio>
     <div class="split-layout" id="mcq-layout">
       <div class="left-panel">
@@ -223,7 +259,7 @@
           <button class="action-btn btn-qa" id="btn-qa-autofill-mcq" style="display:none;" onclick="autoFillAnswersMCQ()">🔧 Tự động điền (QA)</button>
         </div>
       </div>
-      <div class="right-panel" id="mcq-question-container"></div>
+      <div class="right-panel no-copy" id="mcq-question-container"></div>
     </div>
   </div>
 
@@ -231,9 +267,9 @@
   <div id="view-gapfill" class="view">
     <span class="part-badge" id="gapfill-part-badge">Part</span>
     <h2 id="gapfill-title">Tiêu đề bài</h2>
-    <p class="instruction" id="gapfill-instruction"></p>
+    <p class="instruction no-copy" id="gapfill-instruction"></p>
     <audio id="audio-gapfill" controls></audio>
-    <div id="gapfill-container"></div>
+    <div class="no-copy" id="gapfill-container"></div>
     <div class="submit-area">
       <button class="action-btn" id="btn-submit-gapfill" onclick="submitGapFillAnswers()">Nộp bài</button>
       <button class="action-btn btn-secondary" id="btn-retry-gapfill" style="display:none;" onclick="retryExercise()">Làm lại bài này</button>
@@ -264,7 +300,7 @@
       <button id="mode-all" class="active" onclick="setScriptMode('all')">Xem tất cả</button>
       <button id="mode-step" onclick="setScriptMode('step')">Xem lần lượt</button>
     </div>
-    <div id="script-text-container"></div>
+    <div class="no-copy" id="script-text-container"></div>
     <button id="btn-next-step" class="btn-next-step" onclick="showNextScriptLine()">Đoạn tiếp theo ⬇</button>
   </div>
 </div>
@@ -322,36 +358,62 @@ const spamOverlay = document.getElementById('spam-overlay');
 const spamCountdown = document.getElementById('spam-countdown');
 
 function showToast(msg) { toastEl.innerHTML = msg; toastEl.classList.add('show'); setTimeout(() => { toastEl.classList.remove('show'); }, 4000); }
+function isTeacher() { return !!(currentUser && currentUser.type === 'teacher'); }
 function triggerSpamBlock(secs) {
   isSpamBlocked = true; spamOverlay.style.display = 'flex'; let left = secs; spamCountdown.textContent = left;
   const intv = setInterval(() => { left--; if (left <= 0) { clearInterval(intv); spamOverlay.style.display = 'none'; isSpamBlocked = false; } else { spamCountdown.textContent = left; } }, 1000);
 }
 function showWarning(text) { document.getElementById('warning-modal-text').textContent = text; document.getElementById('warning-modal').classList.add('show'); }
 
-/* ===== Chống spam-click bubble ===== */
+/* ===== Chặn copy nội dung câu hỏi / script (vùng có class .no-copy) - bỏ qua nếu là giáo viên ===== */
+document.addEventListener('copy', function(e) {
+  if (isTeacher()) return;
+  if (e.target.closest && e.target.closest('.no-copy')) {
+    e.preventDefault();
+    showToast('🔒 Nội dung câu hỏi không thể sao chép.');
+  }
+});
+document.addEventListener('contextmenu', function(e) {
+  if (isTeacher()) return;
+  if (e.target.closest && e.target.closest('.no-copy')) {
+    e.preventDefault();
+  }
+});
+document.addEventListener('dragstart', function(e) {
+  if (isTeacher()) return;
+  if (e.target.tagName === 'IMG' && e.target.closest('.no-copy')) {
+    e.preventDefault();
+  }
+});
+
+/* ===== Chống spam-click bubble (bỏ qua nếu là giáo viên - chế độ QA) ===== */
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('bubble')) {
     const mcqItem = e.target.closest('.mcq-item');
     if (mcqItem && mcqItem.classList.contains('show-explanation')) return;
     if (isSpamBlocked) return;
-    const now = Date.now();
-    if (now - lastMCQClickTime < 1500) {
-      if (lastClickedMCQItem !== mcqItem) {
-        rapidClickCount++; let penalty = 3; if (rapidClickCount === 3 || rapidClickCount === 4) penalty = 5; if (rapidClickCount >= 5) penalty = 7; triggerSpamBlock(penalty); return;
-      }
-    } else { if (now - lastMCQClickTime > 5000) rapidClickCount = 0; }
-    lastMCQClickTime = now; lastClickedMCQItem = mcqItem;
+    if (!isTeacher()) {
+      const now = Date.now();
+      if (now - lastMCQClickTime < 1500) {
+        if (lastClickedMCQItem !== mcqItem) {
+          rapidClickCount++; let penalty = 3; if (rapidClickCount === 3 || rapidClickCount === 4) penalty = 5; if (rapidClickCount >= 5) penalty = 7; triggerSpamBlock(penalty); return;
+        }
+      } else { if (now - lastMCQClickTime > 5000) rapidClickCount = 0; }
+      lastMCQClickTime = now; lastClickedMCQItem = mcqItem;
+    }
     const row = e.target.closest('.bubble-row'); if (row) { row.querySelectorAll('.bubble').forEach(b => b.classList.remove('selected')); e.target.classList.add('selected'); }
   }
 });
 
-/* ===== Chống gõ spam ở gap-fill ===== */
+/* ===== Chống gõ spam ở gap-fill (bỏ qua nếu là giáo viên) ===== */
 document.addEventListener('input', function(e) {
   if (e.target.classList.contains('answer-input')) {
     if (isSpamBlocked) { e.target.value = ''; e.target.blur(); return; }
-    const now = Date.now();
-    if (lastGapFillInputEl !== null && lastGapFillInputEl !== e.target && (now - lastGapFillInputTime < 2000)) { e.target.value = ''; e.target.blur(); triggerSpamBlock(3); }
-    lastGapFillInputEl = e.target; lastGapFillInputTime = now;
+    if (!isTeacher()) {
+      const now = Date.now();
+      if (lastGapFillInputEl !== null && lastGapFillInputEl !== e.target && (now - lastGapFillInputTime < 2000)) { e.target.value = ''; e.target.blur(); triggerSpamBlock(3); }
+      lastGapFillInputEl = e.target; lastGapFillInputTime = now;
+    }
   }
 });
 
@@ -360,11 +422,11 @@ document.addEventListener('visibilitychange', function() {
   if (document.hidden && appMode === 'practice') { tabSwitchCount++; }
 });
 
-/* ===== Khoá tua audio trước khi nghe hết 1/2 bài ===== */
+/* ===== Khoá tua audio trước khi nghe hết 1/2 bài (bỏ qua nếu là giáo viên) ===== */
 function attachAudioGuards(audio) {
   audio.addEventListener('seeking', function() {
     if (this.id !== currentActiveAudioId) return;
-    if (!isHalfListenCompleted) {
+    if (!isHalfListenCompleted && !isTeacher()) {
       if (Math.abs(this.currentTime - lastAudioTime) > 1.0) {
         this.currentTime = lastAudioTime;
         showToast("⚠️ <b>Tính năng tua bị khoá trong 1/2 thời lượng đầu!</b><br>Chỉ có thể Phát/Dừng hoặc chỉnh Tốc độ.");
@@ -411,14 +473,18 @@ function doLogin(e) {
 
 function finishLogin() {
   setWatermark(currentUser.name + "  ·  " + new Date().toLocaleDateString('vi-VN'));
+  document.body.classList.toggle('is-teacher', isTeacher());
   document.getElementById('btn-logout').style.display = 'flex';
   showToast(`🐋 Chào mừng ${currentUser.name}!`);
+  if (isTeacher()) qaShowPanel(); else qaHidePanel();
   loadExercise();
 }
 
 function logout() {
   currentUser = null;
   document.body.style.backgroundImage = '';
+  document.body.classList.remove('is-teacher');
+  qaHidePanel();
   hideAllViews();
   document.getElementById('view-login').classList.add('active');
   document.getElementById('btn-logout').style.display = 'none';
@@ -533,7 +599,7 @@ function renderMCQ() {
 
 function checkHalfListenAndAllAnswered(allAnswered) {
   const audio = document.getElementById(currentActiveAudioId);
-  if (audio && !isNaN(audio.duration) && audio.currentTime < (audio.duration / 2)) {
+  if (!isTeacher() && audio && !isNaN(audio.duration) && audio.currentTime < (audio.duration / 2)) {
     showWarning("⏳ Bạn phải nghe ít nhất 1/2 thời lượng Audio trước khi được nộp bài!"); return false;
   }
   if (!allAnswered) { showWarning("⚠️ Vui lòng hoàn thành tất cả các câu hỏi trước khi nộp bài!"); return false; }
@@ -731,6 +797,71 @@ function showNextScriptLine() {
   const paras = document.querySelectorAll('.script-para'); visibleStepIndex++;
   if (visibleStepIndex < paras.length) { paras[visibleStepIndex].classList.remove('hidden-step'); paras[visibleStepIndex].scrollIntoView({ behavior: 'smooth', block: 'end' }); }
   if (visibleStepIndex >= paras.length - 1) { document.getElementById('btn-next-step').style.display = 'none'; }
+}
+
+/* ============================================================
+   QA DEBUG PANEL (chỉ dành cho giáo viên)
+   ============================================================ */
+let qaStatsInterval = null;
+
+function qaUpdateStats() {
+  const panel = document.getElementById('qa-panel');
+  if (!panel.classList.contains('show')) return;
+  document.getElementById('qa-stat-attempt').textContent = currentAttempt;
+  document.getElementById('qa-stat-tabswitch').textContent = tabSwitchCount;
+  document.getElementById('qa-stat-halflisten').textContent = isHalfListenCompleted ? '✅ Có' : '❌ Chưa';
+  document.getElementById('qa-stat-script').textContent = isScriptUnlocked ? '✅ Mở' : '🔒 Khoá';
+  document.getElementById('qa-stat-exid').textContent = currentExercise ? currentExercise.id : '-';
+}
+
+function qaShowPanel() {
+  document.getElementById('qa-panel').classList.add('show');
+  qaUpdateStats();
+  if (qaStatsInterval) clearInterval(qaStatsInterval);
+  qaStatsInterval = setInterval(qaUpdateStats, 500);
+}
+function qaHidePanel() {
+  document.getElementById('qa-panel').classList.remove('show');
+  if (qaStatsInterval) { clearInterval(qaStatsInterval); qaStatsInterval = null; }
+}
+
+function qaTestSpamBlock() {
+  triggerSpamBlock(3);
+  showToast('🧪 Đã kích hoạt thử màn khoá spam-click (tự mở lại sau 3 giây).');
+}
+function qaTestHalfListenUnlock() {
+  isHalfListenCompleted = true;
+  showToast("✅ <b>Đã qua 1/2 thời lượng bài nghe.</b><br>Tính năng tua Audio đã được mở khoá! <i>(giả lập QA)</i>");
+}
+function qaTestHalfListenWarning() {
+  showWarning("⏳ Bạn phải nghe ít nhất 1/2 thời lượng Audio trước khi được nộp bài! (đây là bản xem trước nội dung cảnh báo, không phải cảnh báo thật)");
+}
+function qaSimulateTabSwitch() {
+  tabSwitchCount++;
+  qaUpdateStats();
+  showToast(`🧪 Đã giả lập +1 lần rời tab. Tổng hiện tại: ${tabSwitchCount}`);
+}
+function qaResetAttempt() {
+  currentAttempt = 1;
+  qaUpdateStats();
+  showToast('🧪 Đã reset lần thử về 1.');
+}
+function qaTestSheetWebhook() {
+  if (!currentExercise) { showToast('⚠️ Chưa có bài nào đang mở để test.'); return; }
+  logToSheet({
+    timestamp: new Date().toISOString(),
+    studentName: '[QA-TEST] ' + (currentUser ? currentUser.name : 'unknown'),
+    userType: 'teacher',
+    exercise: 'PET B1 Listening',
+    exerciseId: currentExercise.id,
+    part: currentExercise.part,
+    title: currentExercise.title,
+    score: 0, total: 0, percent: 0,
+    attempt: 0,
+    tabSwitchCount: 0,
+    note: 'Đây là dữ liệu TEST gửi thủ công từ QA Debug Panel, không phải bài làm thật.'
+  });
+  showToast('🧪 Đã gửi 1 dòng dữ liệu thử lên Google Sheet (tag [QA-TEST]). Mở Sheet để kiểm tra dòng mới xuất hiện.');
 }
 
 /* ============================================================
