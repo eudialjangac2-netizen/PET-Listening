@@ -72,12 +72,15 @@
   .not-found-box { text-align: center; padding: 30px 10px; }
   .not-found-box .emoji { font-size: 50px; margin-bottom: 10px; }
 
-  .split-layout { display: flex; gap: 26px; }
-  .left-panel, .right-panel { border: 1px solid var(--line); border-radius: 16px; padding: 20px; background: #fff; }
-  .left-panel { flex: 1; display: flex; flex-direction: column; position: relative; }
-  .right-panel { flex: 1.5; background: #f6fafd; }
-  .right-panel.image-mode { text-align: center; }
-  .right-panel img { max-width: 100%; height: auto; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(44,74,99,0.12); }
+  .split-layout { display: flex; gap: 26px; align-items: flex-start; }
+  .panel-question, .panel-answer { border: 1px solid var(--line); border-radius: 16px; padding: 20px; background: #fff; max-height: 68vh; overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--accent) #f0f6fb; }
+  .panel-question::-webkit-scrollbar, .panel-answer::-webkit-scrollbar { width: 8px; }
+  .panel-question::-webkit-scrollbar-thumb, .panel-answer::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 8px; }
+  .panel-question::-webkit-scrollbar-track, .panel-answer::-webkit-scrollbar-track { background: #f0f6fb; border-radius: 8px; }
+  .panel-question { flex: 1.5; background: #f6fafd; }
+  .panel-question.image-mode { text-align: center; }
+  .panel-question img { max-width: 100%; height: auto; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(44,74,99,0.12); }
+  .panel-answer { flex: 1; display: flex; flex-direction: column; position: relative; }
   .img-placeholder { border: 2px dashed var(--line); border-radius: 12px; padding: 40px 20px; color: var(--muted); font-size: 15px; margin-bottom: 15px; background: #fbfdff; }
 
   .sheet-title { text-align: center; font-weight: 700; font-size: 19px; color: var(--accent-deep); margin-bottom: 20px; border-bottom: 2px dashed var(--line); padding-bottom: 10px; }
@@ -152,7 +155,7 @@
   .qa-btn { display: block; width: 100%; text-align: left; background: #fbeef1; border: 1px solid #f3c9d4; color: #8a3350; border-radius: 10px; padding: 8px 12px; font-size: 13px; margin-top: 8px; cursor: pointer; transition: all 0.15s; }
   .qa-btn:hover { background: var(--pink); }
 
-  @media (max-width: 800px) { .split-layout { flex-direction: column; } .container { padding: 28px 20px; } }
+  @media (max-width: 800px) { .split-layout { flex-direction: column; } .container { padding: 28px 20px; } .panel-question, .panel-answer { max-height: 48vh; } }
 
   /* Chặn copy nội dung câu hỏi / script (không áp dụng cho ô học sinh tự gõ) */
   .no-copy { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
@@ -250,7 +253,8 @@
     <p class="instruction no-copy" id="mcq-instruction"></p>
     <audio id="audio-mcq" controls></audio>
     <div class="split-layout" id="mcq-layout">
-      <div class="left-panel">
+      <div class="panel-question no-copy" id="mcq-question-container"></div>
+      <div class="panel-answer">
         <div class="sheet-title">ANSWER SHEET</div>
         <div id="mcq-answer-container"></div>
         <div class="submit-area">
@@ -259,7 +263,6 @@
           <button class="action-btn btn-qa" id="btn-qa-autofill-mcq" style="display:none;" onclick="autoFillAnswersMCQ()">🔧 Tự động điền (QA)</button>
         </div>
       </div>
-      <div class="right-panel no-copy" id="mcq-question-container"></div>
     </div>
   </div>
 
@@ -582,7 +585,7 @@ function renderMCQ() {
   });
 
   const qContainer = document.getElementById('mcq-question-container');
-  qContainer.innerHTML = ''; qContainer.className = 'right-panel';
+  qContainer.innerHTML = ''; qContainer.className = 'panel-question no-copy';
 
   if (ex.rightPanelMode === 'text') {
     ex.questions.forEach(q => {
