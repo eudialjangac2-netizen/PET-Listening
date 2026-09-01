@@ -145,10 +145,10 @@
   .warning-modal-content h3 { margin-top: 0; font-size: 22px; font-family: 'Baloo 2', sans-serif; }
 
   /* ===== QA Debug Panel (chỉ hiện với giáo viên) ===== */
-  #qa-panel { position: fixed; bottom: 20px; right: 20px; width: 300px; background: var(--card); border: 2px solid var(--pink-dark); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); z-index: 980; display: none; font-family: 'Livvic', sans-serif; overflow: hidden; }
-  #qa-panel.show { display: block; }
-  #qa-panel-header { background: var(--pink-dark); color: #fff; padding: 10px 16px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-  #qa-panel-body { padding: 14px 16px; max-height: 60vh; overflow-y: auto; }
+  #qa-panel { position: fixed; top: 90px; right: 20px; width: 280px; background: var(--card); border: 2px solid var(--pink-dark); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); z-index: 980; display: none; font-family: 'Livvic', sans-serif; overflow: hidden; max-height: calc(100vh - 110px); }
+  #qa-panel.show { display: flex; flex-direction: column; }
+  #qa-panel-header { background: var(--pink-dark); color: #fff; padding: 10px 16px; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+  #qa-panel-body { padding: 14px 16px; overflow-y: auto; flex: 1; min-height: 0; }
   #qa-panel-body.collapsed { display: none; }
   .qa-stat-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; border-bottom: 1px dashed var(--line); color: var(--ink); }
   .qa-stat-row span:last-child { font-weight: 700; color: var(--accent-dark); font-family: monospace; }
@@ -917,6 +917,13 @@ function qaTestSheetWebhook() {
 /* ============================================================
    KHỞI ĐỘNG
    ============================================================ */
+function getDisplayLabel(exercise) {
+  // Tự tách "Test N - Part M" từ id dạng "testN-partM" (không lộ tên sách/đề gốc)
+  const match = exercise.id.match(/^test(\d+)-part(\d+)$/i);
+  if (match) return `Test ${match[1]} - Part ${match[2]}`;
+  return exercise.part; // fallback nếu id không theo đúng định dạng testN-partM
+}
+
 window.addEventListener('load', async () => {
   hideAllViews();
   showToast('🐋 Đang tải bài tập...');
@@ -928,8 +935,7 @@ window.addEventListener('load', async () => {
     document.getElementById('view-notfound').classList.add('active');
     return;
   }
-  document.getElementById('login-ex-title').textContent = currentExercise.title;
-  document.getElementById('login-ex-part').textContent = currentExercise.part + " · Cá Voi Bay 🐋";
+  document.getElementById('login-ex-part').textContent = getDisplayLabel(currentExercise) + " · Cá Voi Bay 🐋";
   hideAllViews();
   document.getElementById('view-login').classList.add('active');
 });
