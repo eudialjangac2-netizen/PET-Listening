@@ -1,0 +1,85 @@
+{
+  "id": "test1-part4",
+  "part": "Part 4",
+  "title": "Simply B1 PET Test 1 - Part 4 (Interview)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe một cuộc phỏng vấn. Chọn đáp án đúng A, B hoặc C cho mỗi câu.",
+  "audio": "audio/test1-part4.mp3",
+  "fullScript": [
+    "<b>Questions 20-25. Interview with Darren, a young writer.</b><br>Woman: Hi Darren. You are very successful for such a young writer. Can you tell us what got you into writing stories?<br>Boy: Funnily enough I was never much of a reader and I certainly didn't read novels. I quite liked comics. <span class='highlight'>When I was thirteen I got quite ill and spent a long time in hospital. When I was allowed home, I had several months in bed when I couldn't really do much. I was very bored and just started to write.</span> To this day I don't know why I did it.",
+    "Woman: And what effect did this have on you at the time?<br>Boy: Well, I was missing seeing my friends and having fun and generally I wasn't the happiest of teenagers. I guess writing the book took me to another place in my head where I wasn't worried about being sick and I felt free in a way. <span class='highlight'>I never dreamed that the book would become something that helped me and my family earn money.</span>",
+    "Woman: So when did you realise that your book was good enough to send to a publisher and how did you go about doing that?<br>Boy: I didn't. <span class='highlight'>I never for a second thought the book was any good. I didn't even think anyone would ever read it.</span> It was just for me a kind of therapy to give myself something to do. I had no plans whatsoever to be a writer.",
+    "Woman: So what happened?<br>Boy: Well, I didn't know it at the time <span class='highlight'>but my family had been reading what I was writing. I think they were very worried about me and thought I was writing a diary about my feelings.</span> My parents showed my elder sister and she sent a copy off to several publishers. The first thing I knew about it was when I got an email from a publishing house saying they wanted to meet me to discuss my story.",
+    "Woman: Wow, you must have been so excited.<br>Boy: <span class='highlight'>No, I wasn't because I just thought it was a friend being silly and having some fun.</span> Then, the letter came from the publisher offering me a large amount of money and I realised it was real.",
+    "Woman: And now three years later, how is your life? What are your plans?<br>Boy: <span class='highlight'>Actually, I'm about to have a bit of a break in order to concentrate on my final exams. I want to study literature after school.</span> Then I might write another book or several books. Who knows? I may have a great career as a writer when I become an adult, or I may do a completely different job.<br>Woman: Darren I wish you luck in the future."
+  ],
+  "questions": [
+    {
+      "num": 20,
+      "prompt": "When did Darren first start to write stories?",
+      "options": {
+        "A": "after reading a lot while he was a child",
+        "B": "when he was recovering from an illness",
+        "C": "while he was in hospital"
+      },
+      "answer": "B",
+      "script": "Boy: <span class='highlight'>When I was thirteen I got quite ill and spent a long time in hospital. When I was allowed home... I was very bored and just started to write.</span>"
+    },
+    {
+      "num": 21,
+      "prompt": "Writing helped Darren to",
+      "options": {
+        "A": "help his family financially.",
+        "B": "talk more to his friends and family.",
+        "C": "become one of the happiest teenagers."
+      },
+      "answer": "A",
+      "script": "Boy: <span class='highlight'>I never dreamed that the book would become something that helped me and my family earn money.</span>"
+    },
+    {
+      "num": 22,
+      "prompt": "Why didn't Darren send his book to a publisher?",
+      "options": {
+        "A": "He wanted to write a second book first.",
+        "B": "He wanted to finish his therapy first.",
+        "C": "He didn't think it was good enough."
+      },
+      "answer": "C",
+      "script": "Boy: <span class='highlight'>I never for a second thought the book was any good. I didn't even think anyone would ever read it.</span>"
+    },
+    {
+      "num": 23,
+      "prompt": "Darren's family read his book because",
+      "options": {
+        "A": "they were anxious about his feelings.",
+        "B": "they always liked the stories he writes in his diary.",
+        "C": "they wanted his sister to make a copy of it."
+      },
+      "answer": "A",
+      "script": "Boy: <span class='highlight'>my family had been reading what I was writing. I think they were very worried about me and thought I was writing a diary about my feelings.</span>"
+    },
+    {
+      "num": 24,
+      "prompt": "How did Darren feel when the publisher emailed him?",
+      "options": {
+        "A": "He was excited about the opportunity he was offered.",
+        "B": "He thought it was a joke.",
+        "C": "He was angry at his parents for going behind his back."
+      },
+      "answer": "B",
+      "script": "Boy: <span class='highlight'>No, I wasn't because I just thought it was a friend being silly and having some fun.</span>"
+    },
+    {
+      "num": 25,
+      "prompt": "What does Darren plan to do next?",
+      "options": {
+        "A": "write another book immediately",
+        "B": "get a proper job",
+        "C": "go to university"
+      },
+      "answer": "C",
+      "script": "Boy: <span class='highlight'>Actually, I'm about to have a bit of a break in order to concentrate on my final exams. I want to study literature after school.</span>"
+    }
+  ]
+}

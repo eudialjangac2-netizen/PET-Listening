@@ -1,0 +1,68 @@
+{
+  "id": "test1-part3",
+  "part": "Part 3",
+  "title": "Simply B1 PET Test 1 - Part 3 (Gap Fill)",
+  "type": "gapfill",
+  "instruction": "Nghe và điền một hoặc hai từ, một số, một ngày hoặc một giờ vào mỗi chỗ trống.",
+  "audio": "audio/test1-part3.mp3",
+  "fullScript": [
+    "<b>Questions 14-19.</b><br>Girl: Hi everyone. <span class='highlight'>I have chosen to tell you about my father's job for the project we had for today. I chose the first project which focuses on jobs.</span> I found the other topic on the environment a bit difficult.",
+    "My father is a pilot for an international airline company. He's been flying people around the world for the last sixteen years and he loves his job. After he graduated from university, <span class='highlight'>he became a teacher. He taught in a primary school</span> and he really enjoyed it. However, he'd always had a dream that one day he would fly, so he decided to go for an important career change and train as a pilot.",
+    "<span class='highlight'>He will never forget his first flight when he was responsible for a plane with 80 happy holiday-makers on their way to Italy.</span> Six more people were working on the plane. He was very nervous. Everything went well though and he was so pleased when his first flight was behind him.",
+    "He often gets nervous people asking him questions about how dangerous flying really is. He tells them that it is the safest way to travel. <span class='highlight'>However, sometimes unexpected things happen during a flight, such as bad weather or difficult passengers</span>, but he says that the most important thing a pilot can do is to always stay calm.",
+    "<span class='highlight'>My father believes that what nervous passengers have in common is that they need to be in control of their life</span> and when they get on a plane they have to give up that control.",
+    "He always does his best to make passengers feel relaxed on the flight. <span class='highlight'>Once he has taken off and he is cruising in the sky, he always has a coffee</span> to make him feel extra awake and ready for anything."
+  ],
+  "questions": [
+    {
+      "num": 14,
+      "label": "Andreana's project is about ___.",
+      "acceptedAnswers": [
+        "jobs",
+        "job"
+      ],
+      "script": "Girl: ...<span class='highlight'>I chose the first project which focuses on jobs.</span>"
+    },
+    {
+      "num": 15,
+      "label": "After university, her father worked as a teacher in a ___.",
+      "acceptedAnswers": [
+        "primary school"
+      ],
+      "script": "...he became a teacher. <span class='highlight'>He taught in a primary school</span>..."
+    },
+    {
+      "num": 16,
+      "label": "On his first flight ___ passengers were travelling to Italy on his plane.",
+      "acceptedAnswers": [
+        "80",
+        "eighty"
+      ],
+      "script": "<span class='highlight'>...a plane with 80 happy holiday-makers on their way to Italy.</span>"
+    },
+    {
+      "num": 17,
+      "label": "Difficult passengers and bad ___ are problems that a pilot has to deal with.",
+      "acceptedAnswers": [
+        "weather"
+      ],
+      "script": "<span class='highlight'>...unexpected things happen during a flight, such as bad weather or difficult passengers</span>..."
+    },
+    {
+      "num": 18,
+      "label": "Andreana's father says that some plane travellers feel that they lose ___ of their life when flying.",
+      "acceptedAnswers": [
+        "control"
+      ],
+      "script": "<span class='highlight'>...they need to be in control of their life</span> and when they get on a plane they have to give up that control."
+    },
+    {
+      "num": 19,
+      "label": "She says that he drinks a cup of ___ just after his plane has taken off.",
+      "acceptedAnswers": [
+        "coffee"
+      ],
+      "script": "<span class='highlight'>...he always has a coffee</span> to make him feel extra awake..."
+    }
+  ]
+}
