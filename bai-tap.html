@@ -99,9 +99,18 @@
   .text-q-options div { margin-bottom: 4px; color: var(--ink); }
   .text-q-options b { color: var(--accent-dark); margin-right: 6px; }
 
-  .gapfill-item { margin-bottom: 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .gapfill-item .q-number { width: auto; }
-  .gapfill-item label { font-weight: 600; }
+  /* Khung "đề" dạng ghi chú cho Part 3 (Gap Fill) */
+  .note-box { background: #fff; border: 2px solid var(--accent); border-radius: 14px; padding: 22px 26px; }
+  .note-title { text-align: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--accent-deep); margin: 0 0 18px; padding-bottom: 12px; border-bottom: 2px dashed var(--line); }
+  .note-line { font-size: 16px; line-height: 1.9; color: var(--ink); margin-bottom: 16px; }
+  .gap-num { display: inline-block; background: var(--accent); color: #fff; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 12px; border-radius: 50%; width: 22px; height: 22px; line-height: 22px; text-align: center; margin: 0 4px; }
+  .gap-blank { display: inline-block; min-width: 90px; border-bottom: 2px solid var(--accent-dark); text-align: center; font-weight: 700; color: var(--accent-dark); }
+
+  .gapfill-answer-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .gapfill-answer-row .q-number { width: auto; }
+  .gapfill-answer-row .answer-input { flex: 1; }
+
+  .gapfill-item { margin-bottom: 4px; }
   .answer-input { flex: 1; min-width: 160px; padding: 10px 14px; border-radius: 10px; border: 2px solid var(--line); font-size: 16px; font-family: inherit; outline: none; }
   .answer-input:focus { border-color: var(--accent); }
   .answer-input.correct { border-color: var(--ok-border); background: var(--ok); }
@@ -272,11 +281,17 @@
     <h2 id="gapfill-title">Tiêu đề bài</h2>
     <p class="instruction no-copy" id="gapfill-instruction"></p>
     <audio id="audio-gapfill" controls></audio>
-    <div class="no-copy" id="gapfill-container"></div>
-    <div class="submit-area">
-      <button class="action-btn" id="btn-submit-gapfill" onclick="submitGapFillAnswers()">Nộp bài</button>
-      <button class="action-btn btn-secondary" id="btn-retry-gapfill" style="display:none;" onclick="retryExercise()">Làm lại bài này</button>
-      <button class="action-btn btn-qa" id="btn-qa-autofill-gapfill" style="display:none;" onclick="autoFillAnswersGapfill()">🔧 Tự động điền (QA)</button>
+    <div class="split-layout" id="gapfill-layout">
+      <div class="panel-question no-copy" id="gapfill-question-container"></div>
+      <div class="panel-answer">
+        <div class="sheet-title">ANSWER SHEET</div>
+        <div id="gapfill-answer-container"></div>
+        <div class="submit-area">
+          <button class="action-btn" id="btn-submit-gapfill" onclick="submitGapFillAnswers()">Nộp bài</button>
+          <button class="action-btn btn-secondary" id="btn-retry-gapfill" style="display:none;" onclick="retryExercise()">Làm lại bài này</button>
+          <button class="action-btn btn-qa" id="btn-qa-autofill-gapfill" style="display:none;" onclick="autoFillAnswersGapfill()">🔧 Tự động điền (QA)</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -564,7 +579,7 @@ function loadExercise() {
 function renderMCQ() {
   const ex = currentExercise;
   document.getElementById('mcq-part-badge').textContent = ex.part;
-  document.getElementById('mcq-title').textContent = ex.title;
+  document.getElementById('mcq-title').textContent = getDisplayLabel(ex);
   document.getElementById('mcq-instruction').textContent = ex.instruction || '';
 
   const audio = document.getElementById('audio-mcq');
@@ -668,20 +683,41 @@ function autoFillAnswersMCQ() {
 function renderGapFill() {
   const ex = currentExercise;
   document.getElementById('gapfill-part-badge').textContent = ex.part;
-  document.getElementById('gapfill-title').textContent = ex.title;
+  document.getElementById('gapfill-title').textContent = getDisplayLabel(ex);
   document.getElementById('gapfill-instruction').textContent = ex.instruction || '';
   document.getElementById('audio-gapfill').src = ex.audio;
 
-  const container = document.getElementById('gapfill-container'); container.innerHTML = '';
+  // ---- Khung TRÁI: đề trình bày dạng ghi chú (note), có số thứ tự đánh dấu chỗ trống ----
+  const qContainer = document.getElementById('gapfill-question-container');
+  qContainer.innerHTML = '';
+  const noteBox = document.createElement('div'); noteBox.className = 'note-box';
+  if (ex.noteTitle) {
+    const titleEl = document.createElement('div'); titleEl.className = 'note-title'; titleEl.textContent = ex.noteTitle;
+    noteBox.appendChild(titleEl);
+  }
   ex.questions.forEach(q => {
-    const item = document.createElement('div'); item.className = 'gapfill-item';
-    item.setAttribute('data-accepted', JSON.stringify(q.acceptedAnswers || []));
-    item.innerHTML = `
+    const lineEl = document.createElement('div'); lineEl.className = 'note-line';
+    const labelText = q.label || '';
+    const filled = labelText.replace(/_+/, `<span class="gap-num">${q.num}</span><span class="gap-blank">&nbsp;</span>`);
+    lineEl.innerHTML = filled.includes('gap-blank') ? filled : `<span class="gap-num">${q.num}</span> ${labelText} <span class="gap-blank">&nbsp;</span>`;
+    noteBox.appendChild(lineEl);
+  });
+  qContainer.appendChild(noteBox);
+
+  // ---- Khung PHẢI: answer sheet - chỉ số thứ tự + ô nhập ----
+  const ansContainer = document.getElementById('gapfill-answer-container'); ansContainer.innerHTML = '';
+  ex.questions.forEach(q => {
+    const row = document.createElement('div'); row.className = 'gapfill-answer-row';
+    row.setAttribute('data-accepted', JSON.stringify(q.acceptedAnswers || []));
+    row.innerHTML = `
       <span class="q-number">${q.num}.</span>
-      <label>${q.label || ''}</label>
-      <input type="text" class="answer-input" autocomplete="off">
-      <div class="explanation" style="flex-basis:100%;"><span class="highlight">Script:</span> ${q.script || ''}</div>`;
-    container.appendChild(item);
+      <input type="text" class="answer-input" autocomplete="off" placeholder="Câu trả lời...">`;
+    const explanation = document.createElement('div');
+    explanation.className = 'explanation'; explanation.style.flexBasis = '100%';
+    explanation.innerHTML = `<span class="highlight">Script:</span> ${q.script || ''}`;
+    const wrapper = document.createElement('div'); wrapper.className = 'gapfill-item';
+    wrapper.appendChild(row); wrapper.appendChild(explanation);
+    ansContainer.appendChild(wrapper);
   });
 
   document.getElementById('btn-submit-gapfill').style.display = 'inline-block';
@@ -690,21 +726,20 @@ function renderGapFill() {
 }
 
 function submitGapFillAnswers() {
-  const items = document.getElementById('gapfill-container').querySelectorAll('.gapfill-item');
+  const rows = document.getElementById('gapfill-answer-container').querySelectorAll('.gapfill-answer-row');
   let allAnswered = true;
-  items.forEach(item => { if (!item.querySelector('.answer-input').value.trim()) allAnswered = false; });
+  rows.forEach(row => { if (!row.querySelector('.answer-input').value.trim()) allAnswered = false; });
   if (!checkHalfListenAndAllAnswered(allAnswered)) return;
 
-  let score = 0; const total = items.length;
-  const isPass0 = false; // tính sau khi biết score
+  let score = 0; const total = rows.length;
   let results = [];
-  items.forEach(item => {
-    const input = item.querySelector('.answer-input');
-    const accepted = JSON.parse(item.getAttribute('data-accepted')).map(a => a.toLowerCase().trim());
+  rows.forEach(row => {
+    const input = row.querySelector('.answer-input');
+    const accepted = JSON.parse(row.getAttribute('data-accepted')).map(a => a.toLowerCase().trim());
     const userVal = input.value.trim().toLowerCase();
     const isCorrect = accepted.includes(userVal);
     if (isCorrect) score++;
-    results.push({ item, input, isCorrect });
+    results.push({ row, input, isCorrect });
   });
 
   const isPass = (score / total) >= 0.8;
@@ -714,7 +749,8 @@ function submitGapFillAnswers() {
   results.forEach(r => {
     r.input.disabled = true;
     r.input.classList.add(r.isCorrect ? 'correct' : 'incorrect');
-    if (r.isCorrect || shouldRevealAll) r.item.classList.add('show-explanation');
+    const item = r.row.closest('.gapfill-item');
+    if (r.isCorrect || shouldRevealAll) item.classList.add('show-explanation');
   });
 
   document.getElementById('btn-submit-gapfill').style.display = 'none';
@@ -726,9 +762,9 @@ function submitGapFillAnswers() {
 
 function autoFillAnswersGapfill() {
   if (!currentUser || currentUser.type !== 'teacher') return;
-  document.querySelectorAll('#gapfill-container .gapfill-item').forEach(item => {
-    const accepted = JSON.parse(item.getAttribute('data-accepted'));
-    const input = item.querySelector('.answer-input');
+  document.querySelectorAll('#gapfill-answer-container .gapfill-answer-row').forEach(row => {
+    const accepted = JSON.parse(row.getAttribute('data-accepted'));
+    const input = row.querySelector('.answer-input');
     if (accepted && accepted.length > 0) input.value = accepted[0];
   });
   showToast('🔧 Đã tự động điền đáp án đúng (chế độ QA)');
@@ -780,7 +816,7 @@ function retryExercise() {
   closeOverlay();
   if (currentExercise.type === 'gapfill') {
     const audio = document.getElementById('audio-gapfill'); audio.currentTime = 0; audio.pause();
-    document.querySelectorAll('#gapfill-container .gapfill-item').forEach(item => {
+    document.querySelectorAll('#gapfill-answer-container .gapfill-item').forEach(item => {
       item.classList.remove('show-explanation');
       const input = item.querySelector('.answer-input'); input.value = ''; input.disabled = false; input.classList.remove('correct', 'incorrect');
     });
@@ -920,8 +956,11 @@ function qaTestSheetWebhook() {
 function getDisplayLabel(exercise) {
   // Tự tách "Test N - Part M" từ id dạng "testN-partM" (không lộ tên sách/đề gốc)
   const match = exercise.id.match(/^test(\d+)-part(\d+)$/i);
-  if (match) return `Test ${match[1]} - Part ${match[2]}`;
-  return exercise.part; // fallback nếu id không theo đúng định dạng testN-partM
+  let base = match ? `Test ${match[1]} - Part ${match[2]}` : exercise.part;
+  // Giữ lại phần mô tả trong ngoặc ở cuối title gốc, VD "(Gap Fill)", "(Multiple Choice Pictures)"
+  const suffixMatch = (exercise.title || '').match(/\(([^)]+)\)\s*$/);
+  if (suffixMatch) base += ` (${suffixMatch[1]})`;
+  return base;
 }
 
 window.addEventListener('load', async () => {
