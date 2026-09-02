@@ -1,0 +1,59 @@
+{
+  "id": "simply-for-pet-test1-part1",
+  "part": "Part 1",
+  "title": "Simply for PET - Test 1 - Part 1 (Multiple Choice Pictures)",
+  "type": "mcq",
+  "rightPanelMode": "image",
+  "instruction": "Bạn sẽ nghe 7 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/simply-for-pet-test1-part1.mp3",
+  "images": [
+    "images/simply-for-pet-test1-part1-trang1.jpg",
+    "images/simply-for-pet-test1-part1-trang2.jpg"
+  ],
+  "fullScript": [
+    "<b>Question 1. How much will the girl pay to buy a new T-shirt?</b><br>Man: Hello. How can I help you?<br>Girl: Hello. I would like to buy this red T-shirt. How much does it cost?<br>Man: Well, it's on special offer today, so it's reduced by 5 pounds; from sixteen pounds eighty-nine to eleven pounds eighty-nine.<br>Girl: But I saw it on the internet for less than that - it was ten pounds fifty.<br>Man: I know but most things on the internet are cheaper. Do you want to buy it online then?<br>Girl: No. I need it for my best friend's birthday party tomorrow and there's no way it would arrive in time.",
+    "<b>Question 2. What food will the boy have?</b><br>Girl: Hi John. What time does the film start?<br>Boy: It starts at eight o'clock.<br>Girl: Why don't we go and get something to eat before the film? We can go to the food hall in the shopping centre. There is a lot of choice. We can have a pizza, burgers with chips or fried chicken.<br>Boy: I think I will have some fried chicken.<br>Girl: I'm going to have a pizza.<br>Boy: Actually, why don't we share one, now that I think about it.<br>Girl: Good choice.",
+    "<b>Question 3. How will they get to the park?</b><br>Boy: Isn't it a lovely day today?<br>Girl: It's very hot and sunny. It's a perfect day to have a picnic.<br>Boy: Let's do it! Can your dad drive us to the park?<br>Girl: No, he's at work now. But don't worry we can go by bike.<br>Boy: But my bike is broken. Why don't we take the bus? Students' tickets are very cheap.<br>Girl: It'll be better to go by bike. You can borrow my brother's bike. He doesn't need it today because he has a lot of homework to do.<br>Boy: That sounds great!",
+    "<b>Question 4. Where did the boy go on holiday last summer?</b><br>Boy: Last year we had a big problem organising our summer holiday. My parents booked our tickets to fly to the mountains and we were ready to leave. Then my dad got a phone call saying that all flights to the mountain region where we were going to were cancelled. The airline offered us tickets to go to a city destination instead, but we really wanted somewhere to relax. About an hour later the phone rang again and we were offered a package holiday at a lovely beach resort. It was great! I guess we were lucky after all.",
+    "<b>Question 5. What did the girl collect from the shop today?</b><br>Boy: Hi Angela. I haven't seen you for a long time. What are you doing here?<br>Girl: Hi Peter. My parents have given me some money to buy some things for my computer at home but I'm having trouble finding what I need other than a new mouse. That was easy to get. I need a new printer but the printer I want is not available until next week. I also wanted to buy a keyboard which has lights in it so I can see the keys in the dark. They only had one and it was broken. I placed an order and they will let me know when they have them in store so I'll go and collect them.",
+    "<b>Question 6. What will the weather be like on Saturday evening?</b><br>Woman: Hello and welcome to the weather forecast for your area. Today is going to be very sunny with cold temperatures. Unfortunately, this nice weather will change overnight and will bring strong cold winds on Saturday morning. In the evening there will be a strong chance of snow which will create problems on the road. On Sunday the clouds will go away, and the sun will come out.",
+    "<b>Question 7. What sport will the girl learn?</b><br>Boy: Hi Lidia. What are you doing?<br>Girl: Hi Paul. I'm looking at the different courses for sports online. The local sports centre is offering weekend courses. I was thinking of football, but I don't want to be outside when it's raining.<br>Boy: So, hockey won't be an option either.<br>Girl: No. That's outside as well. Basketball looks interesting. I'm also the right height. All I need to do is to ask my parents if they will pay for the course."
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "answer": "A",
+      "script": "Man: Well, it's on special offer today, <span class='highlight'>so it's reduced by 5 pounds; from sixteen pounds eighty-nine to eleven pounds eighty-nine.</span>"
+    },
+    {
+      "num": 2,
+      "answer": "B",
+      "script": "Girl: I'm going to have a pizza.<br>Boy: <span class='highlight'>Actually, why don't we share one, now that I think about it.</span>"
+    },
+    {
+      "num": 3,
+      "answer": "A",
+      "script": "Girl: <span class='highlight'>It'll be better to go by bike. You can borrow my brother's bike. He doesn't need it today because he has a lot of homework to do.</span><br>Boy: That sounds great!"
+    },
+    {
+      "num": 4,
+      "answer": "B",
+      "script": "Boy: About an hour later the phone rang again and <span class='highlight'>we were offered a package holiday at a lovely beach resort.</span> It was great!"
+    },
+    {
+      "num": 5,
+      "answer": "C",
+      "script": "Girl: My parents have given me some money to buy some things for my computer at home but I'm having trouble finding what I need other than <span class='highlight'>a new mouse. That was easy to get.</span>"
+    },
+    {
+      "num": 6,
+      "answer": "A",
+      "script": "Woman: <span class='highlight'>In the evening there will be a strong chance of snow which will create problems on the road.</span>"
+    },
+    {
+      "num": 7,
+      "answer": "B",
+      "script": "Girl: No. That's outside as well. <span class='highlight'>Basketball looks interesting. I'm also the right height. All I need to do is to ask my parents if they will pay for the course.</span>"
+    }
+  ]
+}
