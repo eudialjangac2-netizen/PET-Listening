@@ -1,0 +1,59 @@
+{
+  "id": "test3-part1",
+  "part": "Part 1",
+  "title": "Simply for PET - Test 3 - Part 1 (Multiple Choice Pictures)",
+  "type": "mcq",
+  "rightPanelMode": "image",
+  "instruction": "Bạn sẽ nghe 7 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test3-part1.mp3",
+  "images": [
+    "images/test3-part1-trang1.jpg",
+    "images/test3-part1-trang2.jpg"
+  ],
+  "fullScript": [
+    "<b>Question 1. Which programme will they watch first?</b><br>Boy: What time is the environmental programme on that we were watching last night? I don’t want to miss it as it has a very interesting subject today about recycling.<br>Girl: It starts at nine but I really want to watch my favourite cookery programme first. They have a big competition tonight and the winner gets to cook with a famous chef.<br>Boy: Well, luckily the football match is very late because it’s being played on the other side of the world. In fact, I’m not even sure that mum will let me stay awake for it.",
+    "<b>Question 2. Why did the boy go to bed late?</b><br>Woman: You look tired Christopher. Did you watch TV until late last night?<br>Boy: No, mum. We had a difficult project on maths and it took a lot of time to finish it. I needed some help but nobody, not even George, could help me. And he is the best student in class and always helps me. He had to paint a nice picture for the art lesson.",
+    "<b>Question 3. What did the girl see at the Science museum?</b><br>Girl: My visit to the Science Museum was really interesting yesterday. Although the special exhibition I’d gone there to see with my aunt about cars was closed. There was a problem with the lights, I think. But there are so many other things to see there. I’ve never noticed how different and huge old computers were before. My aunt also told me that this is also true about mobile phones but I didn’t get to that part of the museum this time because I met my friend Tina and we spent some time in the museum cafe.",
+    "<b>Question 4. How much was the restaurant bill?</b><br>Girl: Yesterday I went with my parents to the new Chinese restaurant in town. My father paid £95.<br>Boy: Did you enjoy your meal last night?<br>Girl: Actually we didn’t. My chicken was quite cold and my dad’s vegetables were extremely overcooked.<br>Boy: Did they offer you a free dessert then?<br>Girl: We had to go, as my father had an important meeting after the meal, so we didn’t have time for dessert. But they took £20 off our bill.<br>Boy: So your father paid £75, then?<br>Girl: No, the amount of money I told you before was after that discount.<br>Boy: Oh that’s too expensive for a three-person meal.",
+    "<b>Question 5. Which book will the girl borrow from her friend?</b><br>Girl: Have you got a good book I can borrow, Erik?<br>Boy: I’m afraid I don’t have any romantic girls’ books.<br>Girl: Who said I like those sorts of books? I usually read travel books but this time I want something with more action.<br>Boy: In that case I have just the thing. I finished this book last week. It’s a bit frightening but it has a great story about difficult situations a police officer has to deal with every day.<br>Girl: It sounds perfect, thanks.",
+    "<b>Question 6. What did the girl cook?</b><br>Boy: Hi Lin, how was your birthday party?<br>Girl: It was amazing. I wasn’t sure what to cook for everyone because I’ve never organised a birthday party before on my own. I was just going to make pizza but I didn’t think that would be nice enough. Then I decided to bake a lovely cake. Also Jade brought some of her mother’s special chicken soup which was really nice of her.",
+    "<b>Question 7. Which animal did the boy enjoy seeing best?</b><br>Boy: I really enjoyed the school trip yesterday to the farm. There were so many different animals to see. My favourite animals are the cows. I laugh so much when they walk around the field. They look so funny and heavy. But the birds in the trees were the most attractive animals for me this time. These birds had beautiful colours and they were singing all the time. However, seeing the baby rabbits eating carrots came second."
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "answer": "B",
+      "script": "Girl: <span class='highlight'>It starts at nine but I really want to watch my favourite cookery programme first.</span> They have a big competition tonight and the winner gets to cook with a famous chef."
+    },
+    {
+      "num": 2,
+      "answer": "B",
+      "script": "Boy: <span class='highlight'>We had a difficult project on maths and it took a lot of time to finish it.</span>"
+    },
+    {
+      "num": 3,
+      "answer": "A",
+      "script": "Girl: But there are so many other things to see there. <span class='highlight'>I’ve never noticed how different and huge old computers were before.</span>"
+    },
+    {
+      "num": 4,
+      "answer": "C",
+      "script": "Girl: <span class='highlight'>Yesterday I went with my parents to the new Chinese restaurant in town. My father paid £95.</span><br>Girl: <span class='highlight'>No, the amount of money I told you before was after that discount.</span>"
+    },
+    {
+      "num": 5,
+      "answer": "C",
+      "script": "Boy: <span class='highlight'>It’s a bit frightening but it has a great story about difficult situations a police officer has to deal with every day.</span>"
+    },
+    {
+      "num": 6,
+      "answer": "A",
+      "script": "Girl: I was just going to make pizza but I didn’t think that would be nice enough. <span class='highlight'>Then I decided to bake a lovely cake.</span>"
+    },
+    {
+      "num": 7,
+      "answer": "C",
+      "script": "Boy: My favourite animals are the cows. <span class='highlight'>But the birds in the trees were the most attractive animals for me this time.</span>"
+    }
+  ]
+}
