@@ -169,6 +169,7 @@
   /* Chặn copy nội dung câu hỏi / script (không áp dụng cho ô học sinh tự gõ) */
   .no-copy { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
   body.is-teacher .no-copy { user-select: text; -webkit-user-select: text; -moz-user-select: text; -ms-user-select: text; }
+  @media (min-width: 1000px) { body.is-teacher { padding-right: 300px; } }
 </style>
 </head>
 <body>
@@ -525,6 +526,14 @@ function logToSheet(payload) {
   } catch (err) {}
 }
 
+/* Định dạng giờ Việt Nam (UTC+7) kiểu dd/mm/yyyy hh:mm:ss, dễ đọc trực tiếp trên Google Sheet */
+function formatVNTime(date) {
+  const opts = { timeZone: 'Asia/Ho_Chi_Minh', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+  const parts = new Intl.DateTimeFormat('en-GB', opts).formatToParts(date);
+  const get = (type) => parts.find(p => p.type === type).value;
+  return `${get('day')}/${get('month')}/${get('year')} ${get('hour')}:${get('minute')}:${get('second')}`;
+}
+
 /* ============================================================
    ĐIỀU HƯỚNG VIEW
    ============================================================ */
@@ -561,7 +570,8 @@ function loadExercise() {
   // Ghi 1 dòng "đã bắt đầu" ngay khi mở bài — để phát hiện trường hợp bỏ dở không nộp bài
   if (!isTeacher()) {
     logToSheet({
-      timestamp: sessionStartTime.toISOString(),
+      timestamp: formatVNTime(sessionStartTime),
+      startTime: formatVNTime(sessionStartTime),
       studentName: currentUser.name,
       userType: currentUser.type,
       exercise: 'PET B1 Listening',
@@ -579,7 +589,7 @@ function loadExercise() {
 function renderMCQ() {
   const ex = currentExercise;
   document.getElementById('mcq-part-badge').textContent = ex.part;
-  document.getElementById('mcq-title').textContent = getDisplayLabel(ex);
+  document.getElementById('mcq-title').textContent = ex.title;
   document.getElementById('mcq-instruction').textContent = ex.instruction || '';
 
   const audio = document.getElementById('audio-mcq');
@@ -683,7 +693,7 @@ function autoFillAnswersMCQ() {
 function renderGapFill() {
   const ex = currentExercise;
   document.getElementById('gapfill-part-badge').textContent = ex.part;
-  document.getElementById('gapfill-title').textContent = getDisplayLabel(ex);
+  document.getElementById('gapfill-title').textContent = ex.title;
   document.getElementById('gapfill-instruction').textContent = ex.instruction || '';
   document.getElementById('audio-gapfill').src = ex.audio;
 
@@ -776,9 +786,9 @@ function sendResultToSheet(score, total) {
   const endTime = new Date();
   const durationSeconds = sessionStartTime ? Math.round((endTime - sessionStartTime) / 1000) : null;
   logToSheet({
-    timestamp: endTime.toISOString(),
-    startTime: sessionStartTime ? sessionStartTime.toISOString() : null,
-    endTime: endTime.toISOString(),
+    timestamp: formatVNTime(endTime),
+    startTime: sessionStartTime ? formatVNTime(sessionStartTime) : null,
+    endTime: formatVNTime(endTime),
     durationSeconds: durationSeconds,
     studentName: userLabel,
     userType: currentUser.type,
@@ -801,7 +811,8 @@ function retryExercise() {
   sessionStartTime = new Date();
   if (!isTeacher()) {
     logToSheet({
-      timestamp: sessionStartTime.toISOString(),
+      timestamp: formatVNTime(sessionStartTime),
+      startTime: formatVNTime(sessionStartTime),
       studentName: currentUser.name,
       userType: currentUser.type,
       exercise: 'PET B1 Listening',
@@ -930,9 +941,9 @@ function qaTestSheetWebhook() {
   if (!currentExercise) { showToast('⚠️ Chưa có bài nào đang mở để test.'); return; }
   const now = new Date();
   logToSheet({
-    timestamp: now.toISOString(),
-    startTime: now.toISOString(),
-    endTime: now.toISOString(),
+    timestamp: formatVNTime(now),
+    startTime: formatVNTime(now),
+    endTime: formatVNTime(now),
     durationSeconds: 0,
     studentName: '[QA-TEST] ' + (currentUser ? currentUser.name : 'unknown'),
     userType: 'teacher',
@@ -956,11 +967,8 @@ function qaTestSheetWebhook() {
 function getDisplayLabel(exercise) {
   // Tự tách "Test N - Part M" từ id dạng "testN-partM" (không lộ tên sách/đề gốc)
   const match = exercise.id.match(/^test(\d+)-part(\d+)$/i);
-  let base = match ? `Test ${match[1]} - Part ${match[2]}` : exercise.part;
-  // Giữ lại phần mô tả trong ngoặc ở cuối title gốc, VD "(Gap Fill)", "(Multiple Choice Pictures)"
-  const suffixMatch = (exercise.title || '').match(/\(([^)]+)\)\s*$/);
-  if (suffixMatch) base += ` (${suffixMatch[1]})`;
-  return base;
+  if (match) return `Test ${match[1]} - Part ${match[2]}`;
+  return exercise.part; // fallback nếu id không theo đúng định dạng testN-partM
 }
 
 window.addEventListener('load', async () => {
