@@ -1,0 +1,85 @@
+{
+  "id": "test2-part2",
+  "part": "Part 2",
+  "title": "Simply for PET Test 2 - Part 2 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 6 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test2-part2.mp3",
+  "fullScript": [
+    "<b>Question 8. You will hear two friends talking about their trip to the museum.</b><br>Boy: That museum was very interesting.<br>Girl: Yes, I enjoyed it. I really enjoyed the section showing how life was in England nine hundred years ago.<br>Boy: I preferred the section about dinosaurs.<br>Girl: I find this section a bit boring.<br>Boy: Why didn't you say that to Mr Johnson? Some students that didn't like that section went to the museum's shop. They bought a glass of fresh orange juice and then they took a free piece of cake.<br>Girl: I didn't know that. Anyway I'd love a piece of cake now. Let's go to the supermarket next door.",
+    "<b>Question 9. You will hear a boy telling a friend about his meeting with the headteacher.</b><br>Boy: When I arrived at school this morning, the headteacher asked me to go to his office.<br>Girl: What happened?<br>Boy: I knocked on his door and he told me to come in. He was not alone.<br>Girl: Who was with him?<br>Boy: He had my history teacher with him. I was scared. I didn't know why they wanted to see me. But the news was great! They said they were very happy with my project in history lesson and that it got the highest mark in class. They also want me to present my project in front of the whole school.",
+    "<b>Question 10. You will hear two friends talking about what they did in the snow.</b><br>Girl: What a wonderful day! I'm glad you came.<br>Boy: Indeed! When I woke up, I looked out of the window and saw all the snow. I immediately thought of you. It's great that we live near the big hill.<br>Girl: Yes. It was very difficult climbing to the top, but it was fun sliding down very fast.<br>Boy: I laughed a lot when you nearly hit those two children. That dog also ran away quickly.<br>Girl: I was screaming at them to move but I ended up going into the bush.",
+    "<b>Question 11. You will hear two friends talking about a swimming competition.</b><br>Boy: Are you going to enter the swimming competition?<br>Girl: I don't know if I am good enough. I'll think about it. When is the competition?<br>Boy: It's next month on the first Saturday.<br>Girl: I will need to practise a lot. Will you help me?<br>Boy: Of course, if you share the prize money with me.<br>Girl: Whatever happens I will buy you dinner for helping me but forget about the prize money.<br>Boy: Great. We can go to the swimming pool tomorrow for your first practice session.",
+    "<b>Question 12. You will hear two friends talking about their day at the zoo.</b><br>Boy: I didn't realise the zoo had so many different animals.<br>Girl: Which one did you like the most?<br>Boy: The monkeys were very funny because they were playing with their toys. What about you?<br>Girl: I thought the elephants were amazing. I liked how they took the water and threw it at the zookeeper.<br>Boy: Yes, that was very funny.<br>Girl: Those tigers were scary. I was frightened when they showed their teeth.<br>Boy: We were behind a big glass wall, they couldn't get to us.<br>Girl: I know but I was still frightened.",
+    "<b>Question 13. You will hear two friends talking about the film they saw at the cinema last night.</b><br>Girl: What a wonderful film!<br>Boy: If you're into that kind of thing. I have never seen something as bad as that.<br>Girl: Oh. That's a pity. I didn't know that you don't like horror movies.<br>Boy: I usually do, but this film was not scary at all. The main characters were played by two well-known actors, but I think that these roles don't suit them. Also it was a very long film as well. I nearly fell asleep."
+  ],
+  "questions": [
+    {
+      "num": 8,
+      "prompt": "The girl isn't interested in",
+      "options": {
+        "A": "the way people lived a long time ago.",
+        "B": "the dinosaurs section.",
+        "C": "having anything to eat or drink."
+      },
+      "answer": "B",
+      "script": "Boy: I preferred the section about dinosaurs.<br>Girl: <span class='highlight'>I find this section a bit boring.</span>"
+    },
+    {
+      "num": 9,
+      "prompt": "The headteacher and the history teacher",
+      "options": {
+        "A": "were disappointed by the boy's project.",
+        "B": "disagreed about the mark on the boy's project.",
+        "C": "were excited with the boy's project."
+      },
+      "answer": "C",
+      "script": "Boy: He had my history teacher with him. I was scared. I didn't know why they wanted to see me. But the news was great! <span class='highlight'>They said they were very happy with my project in history lesson and that it got the highest mark in class.</span> They also want me to present my project in front of the whole school."
+    },
+    {
+      "num": 10,
+      "prompt": "What did the girl crash into at the bottom of the hill?",
+      "options": {
+        "A": "two children",
+        "B": "a bush",
+        "C": "a dog"
+      },
+      "answer": "B",
+      "script": "Boy: I laughed a lot when you nearly hit those two children. That dog also ran away quickly.<br>Girl: <span class='highlight'>I was screaming at them to move but I ended up going into the bush.</span>"
+    },
+    {
+      "num": 11,
+      "prompt": "What will the girl do for the boy after the competition?",
+      "options": {
+        "A": "take him out to eat somewhere",
+        "B": "share the prize with him",
+        "C": "take him to the swimming pool"
+      },
+      "answer": "A",
+      "script": "Boy: Of course, if you share the prize money with me.<br>Girl: <span class='highlight'>Whatever happens I will buy you dinner for helping me</span> but forget about the prize money."
+    },
+    {
+      "num": 12,
+      "prompt": "What was the girl scared by?",
+      "options": {
+        "A": "the monkeys' toys",
+        "B": "the water from the elephants",
+        "C": "the tigers' teeth"
+      },
+      "answer": "C",
+      "script": "Girl: <span class='highlight'>Those tigers were scary. I was frightened when they showed their teeth.</span><br>Boy: We were behind a big glass wall, they couldn't get to us.<br>Girl: I know but I was still frightened."
+    },
+    {
+      "num": 13,
+      "prompt": "Why didn't the boy enjoy the film?",
+      "options": {
+        "A": "It was very frightening.",
+        "B": "The acting was terrible.",
+        "C": "It was too short."
+      },
+      "answer": "B",
+      "script": "Boy: I usually do, but this film was not scary at all. <span class='highlight'>The main characters were played by two well-known actors, but I think that these roles don't suit them.</span> Also it was a very long film as well. I nearly fell asleep."
+    }
+  ]
+}
