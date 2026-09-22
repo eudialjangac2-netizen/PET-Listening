@@ -133,6 +133,10 @@
   .result-card { background: var(--card); padding: 40px; text-align: center; border-radius: 20px; max-width: 480px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.4); position: relative;}
   .result-score { font-size: 60px; color: var(--accent-dark); margin-bottom: 12px; font-weight: 800; font-family: 'Baloo 2', sans-serif; }
   .result-msg { font-size: 17px; margin-bottom: 26px; line-height: 1.5; }
+  .result-stats { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; background: #f6fafd; border: 1px solid var(--line); border-radius: 14px; padding: 16px; margin-bottom: 22px; }
+  .result-stat { flex: 1; min-width: 100px; text-align: left; }
+  .result-stat-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; white-space: nowrap; }
+  .result-stat-value { font-size: 15px; font-weight: 700; color: var(--ink); word-break: break-word; }
 
   .script-card { background: var(--card); padding: 30px 36px; border-radius: 20px; max-width: 850px; width: 100%; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 10px 40px rgba(0,0,0,0.5); position: relative;}
   .script-card h2 { margin-top: 0; text-align: center; }
@@ -303,6 +307,20 @@
     <h2 style="font-weight: 700; margin-top: 0; border:none;">Kết quả của bạn</h2>
     <div class="result-score" id="scoreDisplay">0/0</div>
     <p class="result-msg" id="scoreMsg"></p>
+    <div class="result-stats">
+      <div class="result-stat">
+        <div class="result-stat-label">👤 Học sinh</div>
+        <div class="result-stat-value" id="result-student-name">-</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-stat-label">📅 Ngày làm bài</div>
+        <div class="result-stat-value" id="result-date">-</div>
+      </div>
+      <div class="result-stat">
+        <div class="result-stat-label">⏱️ Thời gian làm bài</div>
+        <div class="result-stat-value" id="result-duration">-</div>
+      </div>
+    </div>
     <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
       <button class="action-btn btn-secondary" onclick="closeOverlay()">Xem lại bài làm</button>
       <button class="action-btn" id="btn-popup-retry" onclick="retryFromPopup()">Làm lại bài này</button>
@@ -492,7 +510,7 @@ function doLogin(e) {
 }
 
 function finishLogin() {
-  setWatermark(currentUser.name + "  ·  " + new Date().toLocaleDateString('vi-VN'));
+  setWatermark(currentUser.name + " - " + currentExercise.id + " - " + formatVNDateShort(new Date()));
   document.body.classList.toggle('is-teacher', isTeacher());
   document.getElementById('btn-logout').style.display = 'flex';
   showToast(`🐋 Chào mừng ${currentUser.name}!`);
@@ -503,6 +521,7 @@ function finishLogin() {
 function logout() {
   currentUser = null;
   document.body.style.backgroundImage = '';
+  currentWatermarkUrl = '';
   document.body.classList.remove('is-teacher');
   qaHidePanel();
   hideAllViews();
@@ -514,16 +533,33 @@ function logout() {
   mainContainer.classList.remove('wide-container');
 }
 
+let currentWatermarkUrl = '';
 function setWatermark(text) {
   const safe = text.replace(/&/g,'&amp;').replace(/</g,'&lt;');
   const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='340' height='170'><text x='10' y='90' font-size='15' fill='rgba(44,74,99,0.06)' font-family='sans-serif' transform='rotate(-25 170 85)'>${safe}</text></svg>`;
-  document.body.style.backgroundImage = `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+  currentWatermarkUrl = `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
+  document.body.style.backgroundImage = currentWatermarkUrl;
 }
 
 function logToSheet(payload) {
   try {
     fetch(SHEET_WEBHOOK_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) }).catch(() => {});
   } catch (err) {}
+}
+
+/* Ngày ngắn gọn kiểu dd/mm/yy theo giờ Việt Nam — dùng cho watermark */
+function formatVNDateShort(date) {
+  return date.toLocaleDateString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', day: '2-digit', month: '2-digit', year: '2-digit' });
+}
+
+/* Thời lượng làm bài dạng dễ đọc: "45 giây" hoặc "2 phút 15 giây" */
+function formatDurationVN(totalSeconds) {
+  const s = Math.max(0, Math.round(totalSeconds || 0));
+  const m = Math.floor(s / 60);
+  const rem = s % 60;
+  if (m === 0) return `${rem} giây`;
+  if (rem === 0) return `${m} phút`;
+  return `${m} phút ${rem} giây`;
 }
 
 /* Định dạng giờ Việt Nam (UTC+7) kiểu dd/mm/yyyy hh:mm:ss, dễ đọc trực tiếp trên Google Sheet */
@@ -675,8 +711,10 @@ function submitMCQAnswers() {
   document.getElementById('btn-submit-mcq').style.display = 'none';
   document.getElementById('btn-retry-mcq').style.display = 'inline-block';
 
-  sendResultToSheet(score, total);
-  showPopup(score, total);
+  const endTime = new Date();
+  const durationSeconds = sessionStartTime ? Math.round((endTime - sessionStartTime) / 1000) : 0;
+  sendResultToSheet(score, total, endTime, durationSeconds);
+  showPopup(score, total, endTime, durationSeconds);
 }
 
 function autoFillAnswersMCQ() {
@@ -766,8 +804,10 @@ function submitGapFillAnswers() {
   document.getElementById('btn-submit-gapfill').style.display = 'none';
   document.getElementById('btn-retry-gapfill').style.display = 'inline-block';
 
-  sendResultToSheet(score, total);
-  showPopup(score, total);
+  const endTime = new Date();
+  const durationSeconds = sessionStartTime ? Math.round((endTime - sessionStartTime) / 1000) : 0;
+  sendResultToSheet(score, total, endTime, durationSeconds);
+  showPopup(score, total, endTime, durationSeconds);
 }
 
 function autoFillAnswersGapfill() {
@@ -781,10 +821,8 @@ function autoFillAnswersGapfill() {
 }
 
 /* ===== Gửi kết quả & Retry (dùng chung) ===== */
-function sendResultToSheet(score, total) {
+function sendResultToSheet(score, total, endTime, durationSeconds) {
   const userLabel = (currentUser.type === 'teacher') ? ('[TEST] ' + currentUser.name) : currentUser.name;
-  const endTime = new Date();
-  const durationSeconds = sessionStartTime ? Math.round((endTime - sessionStartTime) / 1000) : null;
   logToSheet({
     timestamp: formatVNTime(endTime),
     startTime: sessionStartTime ? formatVNTime(sessionStartTime) : null,
@@ -845,9 +883,21 @@ function retryExercise() {
    POPUP KẾT QUẢ
    ============================================================ */
 const overlay = document.getElementById('overlay');
-function showPopup(score, total) {
+function showPopup(score, total, endTime, durationSeconds) {
   document.getElementById('scoreDisplay').textContent = `${score}/${total}`;
   document.getElementById('scoreMsg').textContent = (score === total) ? "Xuất sắc! Cá voi tự hào về bạn! 🐋" : "Tốt lắm! Bạn có thể xem lại đáp án hoặc bật 'Xem Script' (nếu đủ điều kiện) để hiểu rõ hơn.";
+
+  document.getElementById('result-student-name').textContent = isTeacher() ? 'Giáo viên (QA)' : currentUser.name;
+  document.getElementById('result-date').textContent = endTime.toLocaleDateString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
+  document.getElementById('result-duration').textContent = formatDurationVN(durationSeconds);
+
+  // Khung kết quả nền trắng riêng, áp watermark trực tiếp lên đây để không bị lớp phủ tối che mất
+  const resultCard = document.querySelector('.result-card');
+  if (resultCard && currentWatermarkUrl) {
+    resultCard.style.backgroundImage = currentWatermarkUrl;
+    resultCard.style.backgroundRepeat = 'repeat';
+  }
+
   overlay.classList.add('show');
 }
 function closeOverlay() { overlay.classList.remove('show'); }
