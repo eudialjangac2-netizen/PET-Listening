@@ -1,0 +1,50 @@
+{
+  "id": "test2-part3",
+  "part": "Part 3",
+  "title": "Simply for PET - Test 2 - Part 3 (Gap Fill)",
+  "type": "gapfill",
+  "instruction": "Nghe và điền một hoặc hai từ, một số, một ngày hoặc một giờ vào mỗi chỗ trống.",
+  "audio": "audio/test2-part3.mp3",
+  "noteTitle": "School Trip to the Castle",
+  "fullScript": [
+    "<b>Questions 14-19.</b><br>Man: Good morning everyone. I want to tell you about the school trip to the castle next week.<br><br><b>Question 14.</b><br>The coach will be leaving the school at 9.10 so you all need to be there at <span class='highlight'>8.40</span> and no later. If anyone is late we will not wait for you.<br><br><b>Question 15.</b><br>We will be doing all sorts of activities during the day but don't forget that you will be doing a project on the castle so you need to bring a book, I mean a <span class='highlight'>notebook</span> with you. Don't worry about bringing a camera as on the last trip two people lost their cameras. You can always use your phones if you want to take pictures.<br><br><b>Question 16.</b><br>We should arrive at the castle by 9.45. We won't be going on a guided tour because I know how bored you all get, so, instead, we will go to the gardens where we will have a special <span class='highlight'>painting class</span>; the gardens are very beautiful. All your paintings will be exhibited in the school hall next week.<br><br><b>Question 17.</b><br>After lunch you can have a look around the castle for an hour which will be followed by a special treat. No that doesn't mean you will go and eat cake, we will be going on a <span class='highlight'>boat</span> down the river. I know that this is a trip that you will really enjoy.<br><br><b>Question 18.</b><br>Now those projects I mentioned earlier will be marked by Friday afternoon so they all need to be handed in by <span class='highlight'>Tuesday afternoon</span>. Not Wednesday morning! Us poor teachers have lots to do so you must hand your projects in on time.<br><br><b>Question 19.</b><br>If you want more information to help you write your projects, you can look on the castle website which is www dot <span class='highlight'>arundel</span> dot castle dot com. I'll spell that for you, that's A-R-U-N-D-E-L.<br>OK, you can go to your lessons now."
+  ],
+  "questions": [
+    {
+      "num": 14,
+      "label": "Time to meet at school gate: (14) ___.",
+      "acceptedAnswers": ["8.40", "8:40"],
+      "script": "The coach will be leaving the school at 9.10 so you all need to be there at <span class='highlight'>8.40</span> and no later."
+    },
+    {
+      "num": 15,
+      "label": "Need to bring: a (15) ___.",
+      "acceptedAnswers": ["notebook"],
+      "script": "You need to bring a book, I mean a <span class='highlight'>notebook</span> with you."
+    },
+    {
+      "num": 16,
+      "label": "Morning activity: (16) ___ in the garden.",
+      "acceptedAnswers": ["painting class"],
+      "script": "We will go to the gardens where we will have a special <span class='highlight'>painting class</span>."
+    },
+    {
+      "num": 17,
+      "label": "Afternoon activity: trip on a (17) ___.",
+      "acceptedAnswers": ["boat"],
+      "script": "We will be going on a <span class='highlight'>boat</span> down the river."
+    },
+    {
+      "num": 18,
+      "label": "Hand in projects by: (18) ___.",
+      "acceptedAnswers": ["Tuesday afternoon"],
+      "script": "Those projects I mentioned earlier will be marked by Friday afternoon so they all need to be handed in by <span class='highlight'>Tuesday afternoon</span>. Not Wednesday morning!"
+    },
+    {
+      "num": 19,
+      "label": "Castle website: (19) www.___.castle.com",
+      "acceptedAnswers": ["arundel"],
+      "script": "You can look on the castle website which is www dot <span class='highlight'>arundel</span> dot castle dot com. I'll spell that for you, that's A-R-U-N-D-E-L."
+    }
+  ]
+}

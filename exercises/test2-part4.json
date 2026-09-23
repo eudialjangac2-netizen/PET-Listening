@@ -1,0 +1,80 @@
+{
+  "id": "test2-part4",
+  "part": "Part 4",
+  "title": "Simply for PET - Test 2 - Part 4 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 1 đoạn hội thoại chung cho 6 câu từ 20 đến 25. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test2-part4.mp3",
+  "fullScript": [
+    "<b>Questions 20-25.</b><br><br><b>Woman:</b> Today I have with me Omar who is already an airline pilot and has just returned from a flight around the world. Omar, when did you first want to fly a plane?<br><br><b>Omar:</b> I first went on a plane when I was two and I had a lot of toy planes. Then, when I was ten years old, we moved to just outside London and our house was underneath the flight path for planes going into London Heathrow airport. Every day I would watch the planes. It was then that I decided to become an airline pilot.<br><br><b>Woman:</b> It must have been very noisy living there. How did your family feel about that?<br><br><b>Omar:</b> My mother hated it. After five years, we moved to a nice cottage in a small village. I missed my city life, but we were near a small town.<br><br><b>Woman:</b> When did you learn to fly?<br><br><b>Omar:</b> On my eighteenth birthday, my father bought me some flying lessons. Then while I was at university studying literature I got a part-time job in a pizza restaurant. I used the money I earned to pay for more flying lessons. By the time I finished university I’d got my pilot’s licence.<br><br><b>Woman:</b> How did you start your career?<br><br><b>Omar:</b> I started flying private helicopters for businessmen. After that I started work at a big airline where I flew their small passenger planes. Three years later I was flying large jet planes around the world.<br><br><b>Woman:</b> So why did you decide to fly around the world on your own?<br><br><b>Omar:</b> I wanted to see the world on my own, without having friends or my family with me. When I flew around the world, I flew in a small plane which meant that I could land at small airports far from the big cities. I was able to learn new things, to meet the local people and enjoy their culture. I was able to see a lot of places in North America, Europe, Africa and Asia but I didn't manage to visit Australia.<br><br><b>Woman:</b> What was the worst moment you had?<br><br><b>Omar:</b> I was crossing Africa and there was a big storm and I couldn’t fly, as the rain was too heavy, so I had to make an emergency landing at a small airport. The next day the storm had gone. I asked for some fuel for the plane, but they told me they didn’t have any. I had to wait two weeks before the fuel arrived. I didn’t mind, the locals were lovely, and I had a great time with them despite the weather was too cloudy.<br><br><b>Woman:</b> Thanks Omar."
+  ],
+  "questions": [
+    {
+      "num": 20,
+      "prompt": "Omar first became interested in flying planes when",
+      "options": {
+        "A": "he first went on an aeroplane.",
+        "B": "he moved to a house near an airport.",
+        "C": "he played with his toy aeroplanes."
+      },
+      "answer": "B",
+      "script": "I first went on a plane when I was two and I had a lot of toy planes. <span class='highlight'>Then, when I was ten years old, we moved to just outside London and our house was underneath the flight path for planes going into London Heathrow airport. Every day I would watch the planes. It was then that I decided to become an airline pilot.</span>"
+    },
+    {
+      "num": 21,
+      "prompt": "Where did Omar’s family move to after living next to the airport?",
+      "options": {
+        "A": "to a town",
+        "B": "to a city",
+        "C": "to a village"
+      },
+      "answer": "C",
+      "script": "My mother hated it. <span class='highlight'>After five years, we moved to a nice cottage in a small village.</span> I missed my city life, but we were near a small town."
+    },
+    {
+      "num": 22,
+      "prompt": "How did Omar learn to fly?",
+      "options": {
+        "A": "His father taught him.",
+        "B": "He took flying lessons.",
+        "C": "He took a university course."
+      },
+      "answer": "B",
+      "script": "<span class='highlight'>On my eighteenth birthday, my father bought me some flying lessons.</span> Then while I was at university studying literature I got a part-time job in a pizza restaurant. <span class='highlight'>I used the money I earned to pay for more flying lessons.</span> By the time I finished university I’d got my pilot’s licence."
+    },
+    {
+      "num": 23,
+      "prompt": "Omar started his career as a pilot flying",
+      "options": {
+        "A": "a helicopter.",
+        "B": "a small plane.",
+        "C": "a large jet."
+      },
+      "answer": "A",
+      "script": "<span class='highlight'>I started flying private helicopters for businessmen.</span> After that I started work at a big airline where I flew their small passenger planes. Three years later I was flying large jet planes around the world."
+    },
+    {
+      "num": 24,
+      "prompt": "Omar wanted to fly around the world on his own because",
+      "options": {
+        "A": "he didn’t have any friends.",
+        "B": "he wanted to meet new people.",
+        "C": "there wasn’t enough space in the plane."
+      },
+      "answer": "B",
+      "script": "I wanted to see the world on my own, without having friends or my family with me. When I flew around the world, I flew in a small plane which meant that I could land at small airports far from the big cities. <span class='highlight'>I was able to learn new things, to meet the local people and enjoy their culture.</span>"
+    },
+    {
+      "num": 25,
+      "prompt": "Why did Omar have to make an emergency landing?",
+      "options": {
+        "A": "It was raining a lot.",
+        "B": "He didn’t have any more fuel.",
+        "C": "It was very cloudy."
+      },
+      "answer": "A",
+      "script": "<span class='highlight'>I was crossing Africa and there was a big storm and I couldn’t fly, as the rain was too heavy, so I had to make an emergency landing at a small airport.</span> The next day the storm had gone. I asked for some fuel for the plane, but they told me they didn’t have any."
+    }
+  ]
+}
