@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PET Listening – Full Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Livvic:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #eaf4fc; --card: #ffffff; --ink: #2c4a63;
+    --accent: #6fa3d1; --accent-dark: #3d6f9e; --accent-deep: #2c5680;
+    --line: #cfe4f3; --ok: #e1f7ea; --ok-border: #2e9b5f;
+    --bad: #fde2e2; --bad-border: #d24a4a; --muted: #6f8aa1;
+    --pink: #f3b8c6; --pink-dark: #e08ba0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Livvic', sans-serif; color: var(--ink); background: var(--bg); min-height: 100vh; user-select: text; }
+  h1, h2, h3, button, .ft-btn, .sheet-title { font-family: 'Baloo 2', sans-serif; }
+
+  /* ---- Watermark ---- */
+  #watermark {
+    position: fixed; inset: 0; z-index: 30; pointer-events: none;
+    display: flex; flex-wrap: wrap; align-content: flex-start; overflow: hidden;
+    opacity: 0.06; transform: rotate(-22deg) scale(1.3);
+  }
+  #watermark span { font-size: 0.72rem; font-weight: 700; white-space: nowrap; padding: 26px 34px; color: #000; }
+
+  /* ---- Teacher bar ---- */
+  #ftTeacherBar {
+    display: none; background: #2c4a63; color: white; padding: 10px 20px; align-items: center;
+    justify-content: center; gap: 10px; font-size: 13.5px; font-weight: 700; flex-wrap: wrap;
+    position: sticky; top: 0; z-index: 1000;
+  }
+  #ftTeacherBar button { background: var(--pink-dark); border: none; color: white; padding: 6px 14px; border-radius: 20px; cursor: pointer; font-weight: 700; font-family: inherit; }
+
+  /* ---- Login ---- */
+  #ftLoginScreen {
+    display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px;
+    background: radial-gradient(circle at center, #ffffff 0%, var(--bg) 100%);
+  }
+  .ft-login-card {
+    background: white; border-radius: 28px; padding: 32px 28px; max-width: 460px; width: 100%;
+    box-shadow: 0 12px 32px rgba(44,74,99,0.15); border: 3px solid var(--line); text-align: center;
+  }
+  .ft-login-card img { width: 130px; height: auto; margin-bottom: 10px; }
+  .ft-login-card h2 { color: var(--accent-deep); font-size: 24px; margin-bottom: 6px; }
+  .ft-login-card p { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+  .ft-badge-info {
+    background: #fff8e7; border: 2px dashed #f0b23d; border-radius: 14px; padding: 10px 14px;
+    font-size: 13px; color: #975a16; margin-bottom: 18px; text-align: left;
+  }
+  .form-group { text-align: left; margin-bottom: 16px; }
+  .form-group label { display: block; font-weight: 700; font-size: 14px; color: var(--accent-deep); margin-bottom: 6px; }
+  .form-group input {
+    width: 100%; padding: 12px 16px; border: 2px solid var(--line); border-radius: 16px;
+    font-size: 15px; outline: none; background: #fbfdff; font-family: inherit;
+  }
+  .field-err { color: var(--bad-border); font-size: 12.5px; font-weight: 700; min-height: 16px; margin-top: 5px; }
+  .btn-start {
+    width: 100%; padding: 15px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+    color: #fff; border: none; border-radius: 20px; font-size: 16px; font-weight: 700;
+    cursor: pointer; box-shadow: 0 6px 16px rgba(44,74,99,0.2); margin-top: 10px; font-family: inherit;
+  }
+
+  /* ---- App shell ---- */
+  #ftApp { display: none; flex-direction: column; height: 100vh; }
+  .ft-topbar {
+    position: sticky; top: 0; z-index: 100; background: white; border-bottom: 2px solid var(--line);
+    padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+  }
+  .ft-topbar h1 { font-size: 17px; color: var(--accent-deep); }
+  .ft-topbar-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  #ftTimer { font-weight: 700; font-size: 16px; padding: 7px 16px; border-radius: 20px; background: #fff3e1; color: #9a6a1c; }
+  #ftTimer.low { background: #fff0f0; color: var(--bad-border); }
+  #ftTabBadge { font-size: 12.5px; font-weight: 700; padding: 6px 12px; border-radius: 16px; background: rgba(44,74,99,0.06); color: var(--accent-deep); }
+  .ft-btn { border: none; border-radius: 20px; padding: 9px 18px; font-weight: 700; font-size: 13.5px; cursor: pointer; }
+  .ft-btn-primary { background: var(--accent); color: white; }
+  .ft-btn-primary:hover { background: var(--accent-dark); }
+  .ft-btn-outline { background: white; color: var(--accent-deep); border: 2px solid var(--accent); }
+
+  .ft-body { display: flex; flex-direction: column; flex: 1; min-height: 0; }
+  .ft-tabbar { display: flex; gap: 8px; padding: 10px 20px; background: #f6fafd; border-bottom: 2px solid var(--line); overflow-x: auto; flex-wrap: nowrap; }
+  .ft-tab { flex-shrink: 0; border: 2px solid var(--line); border-radius: 20px; padding: 7px 16px; font-size: 13px; font-weight: 700; color: var(--muted); background: white; cursor: pointer; white-space: nowrap; }
+  .ft-tab.active { color: white; background: var(--accent-deep); border-color: var(--accent-deep); }
+
+  .ft-part-view { display: none; padding: 20px; }
+  .ft-part-view.active { display: block; overflow-y: auto; flex: 1; min-height: 0; }
+  .ft-audio-box { max-width: 900px; margin: 0 auto 20px; }
+  .ft-audio-box audio { width: 100%; outline: none; border-radius: 30px; }
+  .ft-question { scroll-margin-top: 14px; }
+
+  /* Tái sử dụng đúng class layout từ bai-tap.html */
+  .split-layout { display: flex; gap: 26px; align-items: flex-start; max-width: 1100px; margin: 0 auto; }
+  .panel-question, .panel-answer { border: 1px solid var(--line); border-radius: 16px; padding: 20px; background: #fff; }
+  .panel-question { flex: 1.5; background: #f6fafd; }
+  .panel-question.image-mode { text-align: center; }
+  .panel-question img { max-width: 100%; height: auto; margin-bottom: 15px; border-radius: 10px; box-shadow: 0 2px 8px rgba(44,74,99,0.12); }
+  .panel-answer { flex: 1; display: flex; flex-direction: column; position: relative; }
+  .img-placeholder { border: 2px dashed var(--line); border-radius: 12px; padding: 40px 20px; color: var(--muted); font-size: 15px; margin-bottom: 15px; background: #fbfdff; }
+
+  .sheet-title { text-align: center; font-weight: 700; font-size: 19px; color: var(--accent-deep); margin-bottom: 20px; border-bottom: 2px dashed var(--line); padding-bottom: 10px; }
+  .mcq-item { margin-bottom: 24px; }
+  .bubble-row { display: flex; align-items: center; justify-content: center; gap: 18px; }
+  .q-number { font-size: 18px; font-weight: 700; width: 30px; text-align: right; margin-right: 6px; }
+  .bubble { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--muted); display: flex; justify-content: center; align-items: center; cursor: pointer; font-weight: 700; font-size: 17px; color: var(--muted); transition: all 0.2s; }
+  .bubble:hover { border-color: var(--accent); color: var(--accent-dark); background: #eef7ff; }
+  .bubble.selected { background-color: var(--accent); border-color: var(--accent); color: #fff; }
+  .bubble.ft-review-correct { background-color: var(--ok-border) !important; border-color: var(--ok-border) !important; color: #fff !important; }
+  .bubble.ft-review-wrong { background-color: var(--bad-border) !important; border-color: var(--bad-border) !important; color: #fff !important; }
+
+  .text-q-block { margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px dashed var(--line); }
+  .text-q-block:last-child { border-bottom: none; }
+  .text-q-prompt { font-weight: 700; margin-bottom: 10px; }
+  .text-q-options div { margin-bottom: 4px; color: var(--ink); }
+  .text-q-options b { color: var(--accent-dark); margin-right: 6px; }
+
+  .note-box { background: #fff; border: 2px solid var(--accent); border-radius: 14px; padding: 22px 26px; }
+  .note-title { text-align: center; font-weight: 800; font-size: 20px; color: var(--accent-deep); margin: 0 0 18px; padding-bottom: 12px; border-bottom: 2px dashed var(--line); }
+  .note-line { font-size: 16px; line-height: 1.9; color: var(--ink); margin-bottom: 16px; }
+  .gap-num { display: inline-block; background: var(--accent); color: #fff; font-weight: 700; font-size: 12px; border-radius: 50%; width: 22px; height: 22px; line-height: 22px; text-align: center; margin: 0 4px; }
+  .gap-blank { display: inline-block; min-width: 90px; border-bottom: 2px solid var(--accent-dark); text-align: center; font-weight: 700; color: var(--accent-dark); }
+
+  .gapfill-answer-row { display: flex; align-items: center; gap: 12px; }
+  .gapfill-item { margin-bottom: 16px; }
+  .answer-input { flex: 1; min-width: 160px; padding: 10px 14px; border-radius: 10px; border: 2px solid var(--line); font-size: 16px; font-family: inherit; outline: none; }
+  .answer-input:focus { border-color: var(--accent); }
+  .answer-input.ft-review-correct { border-color: var(--ok-border); background: var(--ok); }
+  .answer-input.ft-review-wrong { border-color: var(--bad-border); background: var(--bad); }
+
+  /* ---- Palette drawer ---- */
+  #ftPaletteToggle {
+    position: fixed; right: 16px; bottom: 16px; z-index: 150; background: var(--accent-deep); color: white;
+    border: none; border-radius: 50%; width: 56px; height: 56px; font-size: 20px; cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25); display: none;
+  }
+  #ftPaletteDrawer {
+    position: fixed; top: 0; right: -320px; width: 300px; height: 100vh; background: white; z-index: 400;
+    box-shadow: -6px 0 20px rgba(0,0,0,0.15); transition: right 0.25s; padding: 20px; overflow-y: auto;
+  }
+  #ftPaletteDrawer.open { right: 0; }
+  #ftPaletteDrawer h3 { color: var(--accent-deep); font-size: 16px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+  #ftPaletteCloseBtn { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--muted); }
+  .ft-palette-legend { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .ft-palette-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .ft-legend-dot { width: 12px; height: 12px; border-radius: 4px; display: inline-block; }
+  .ft-palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  .ft-pal-box {
+    aspect-ratio: 1; border-radius: 8px; border: 2px solid var(--line); background: var(--bad); color: var(--bad-border);
+    font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative;
+  }
+  .ft-pal-box.answered { background: var(--ok); color: var(--ok-border); border-color: #b7efc5; }
+  .ft-pal-box.marked::after { content: "🚩"; position: absolute; top: -6px; right: -6px; font-size: 11px; }
+  .ft-pal-box.review-correct { background: var(--ok); color: var(--ok-border); border-color: #b7efc5; }
+  .ft-pal-box.review-wrong { background: var(--bad); color: var(--bad-border); border-color: #f2b8b8; }
+  .ft-pal-box.review-missing { background: #fff3e1; color: #9a6a1c; border-color: #f6ad55; }
+
+  #ftContextMenu { display: none; position: fixed; z-index: 500; background: white; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.2); overflow: hidden; font-size: 13px; }
+  #ftContextMenu div { padding: 10px 16px; cursor: pointer; }
+  #ftContextMenu div:hover { background: #eef7ff; }
+
+  /* ---- Rotate notice (mobile) ---- */
+  #ftRotateNotice { display: none; }
+  body.ft-rotate-dismissed #ftRotateNotice { display: none !important; }
+  @media (max-width: 700px) and (orientation: portrait) {
+    #ftRotateNotice { display: flex; position: fixed; inset: 0; z-index: 250; background: rgba(44,74,99,0.95); color: white; align-items: center; justify-content: center; text-align: center; padding: 30px; flex-direction: column; gap: 14px; }
+    #ftRotateNotice .icon { font-size: 48px; }
+    #ftRotateNotice button { margin-top: 10px; background: var(--accent); color: white; border: none; border-radius: 20px; padding: 10px 22px; font-weight: 700; cursor: pointer; font-family: inherit; }
+  }
+
+  /* ---- Confirm submit modal ---- */
+  #ftConfirmSubmitModal { display: none; position: fixed; inset: 0; z-index: 600; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; padding: 20px; }
+  #ftConfirmSubmitModal.show { display: flex; }
+  .ft-confirm-box { background: white; border-radius: 22px; padding: 26px; max-width: 460px; width: 100%; }
+  .ft-confirm-box h3 { color: var(--accent-deep); margin-bottom: 14px; }
+  .ft-confirm-box p { font-size: 14px; line-height: 1.5; }
+  .ft-confirm-chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .ft-confirm-chip { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; font-weight: 700; font-size: 12.5px; cursor: pointer; }
+  .ft-confirm-chip-unanswered { background: var(--bad); color: var(--bad-border); border: 2px solid #f2b8b8; }
+  .ft-confirm-chip-marked { background: #fff3e1; color: #9a6a1c; border: 2px solid #f6ad55; }
+  .ft-confirm-actions { display: flex; gap: 10px; margin-top: 20px; }
+  .ft-confirm-actions button { flex: 1; font-family: inherit; }
+
+  /* ---- Result screen ---- */
+  #ftResultScreen { display: none; max-width: 720px; margin: 40px auto; padding: 0 20px 60px; }
+  .ft-result-card { background: white; border-radius: 24px; padding: 32px; box-shadow: 0 8px 24px rgba(44,74,99,0.12); }
+  .ft-result-summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin: 18px 0; padding: 14px 16px; background: #f6fafd; border-radius: 16px; }
+  .ft-result-summary-grid .label { display: block; font-size: 12px; color: var(--muted); font-weight: 700; margin-bottom: 3px; }
+  .ft-result-summary-grid .value { display: block; font-size: 15px; color: var(--accent-deep); font-weight: 700; }
+  .ft-band-box { background: #eef7ff; border-radius: 16px; padding: 16px; text-align: center; margin: 18px 0; }
+  .ft-band-box .band { font-size: 26px; font-weight: 700; color: var(--accent-deep); }
+  .ft-band-disclaimer { font-size: 11.5px; color: var(--muted); margin-top: 6px; }
+  .ft-improve-list { list-style: none; padding: 0; }
+  .ft-improve-list li { background: #fff8e7; border-left: 4px solid #f6ad55; border-radius: 10px; padding: 12px 16px; margin-bottom: 10px; font-size: 14px; }
+  .ft-detail-list { list-style: none; padding: 0; max-height: 420px; overflow-y: auto; }
+  .ft-detail-item { border-radius: 10px; padding: 10px 14px; margin-bottom: 8px; font-size: 13.5px; }
+  .ft-detail-correct { background: #eefaf0; border-left: 4px solid var(--ok-border); }
+  .ft-detail-wrong { background: #fdeeee; border-left: 4px solid var(--bad-border); }
+  .ft-detail-missing { background: #fff8e7; border-left: 4px solid #f6ad55; }
+  .ft-detail-head { font-weight: 700; margin-bottom: 4px; }
+  .ft-detail-reason { color: var(--muted); line-height: 1.5; }
+  .ft-retry-btn { width: 100%; margin-top: 22px; padding: 14px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%); color: white; border: none; border-radius: 20px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: inherit; }
+
+  /* ---- Spam / toast (giống bai-tap.html) ---- */
+  #spam-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(210, 74, 74, 0.95); color: white; font-size: 36px; font-weight: 700; display: none; justify-content: center; align-items: center; flex-direction: column; z-index: 9999; text-align: center; padding: 20px; }
+  #toast { visibility: hidden; min-width: 300px; max-width: 500px; background-color: var(--accent-deep); color: #fff; text-align: center; border-radius: 14px; padding: 16px 24px; position: fixed; z-index: 10000; left: 50%; bottom: 30px; transform: translateX(-50%); font-size: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); opacity: 0; transition: opacity 0.4s, bottom 0.4s; line-height: 1.5; }
+  #toast.show { visibility: visible; opacity: 1; bottom: 60px; }
+
+  .no-copy { user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
+  body.ft-teacher .no-copy { user-select: text; -webkit-user-select: text; -moz-user-select: text; -ms-user-select: text; }
+
+  @media (max-width: 800px) { .split-layout { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<div id="ftRotateNotice">
+  <div class="icon">📱↻</div>
+  <div><b>Xoay ngang màn hình để làm bài thuận tiện hơn</b><br>Bật chế độ xoay màn hình tự động (auto-rotate) trên điện thoại.</div>
+  <button id="ftRotateDismissBtn">Đã hiểu, tiếp tục</button>
+</div>
+
+<div id="watermark"></div>
+<div id="toast"></div>
+<div id="spam-overlay">
+  <div>⚠️ SLOW DOWN!</div>
+  <div style="font-size: 20px; font-weight: 400; margin-top: 15px; line-height: 1.5; font-family:'Livvic',sans-serif;">Bạn đang thao tác quá nhanh, vui lòng suy nghĩ kỹ.<br>Hệ thống khoá trong <span id="spam-countdown" style="font-size: 42px; font-weight: bold; color: #ffe600; display: block; margin-top: 10px;">3</span> giây</div>
+</div>
+
+<div id="ftTeacherBar">
+  <span>🧪 Chế độ Giáo viên - Full Test</span>
+  <button id="ftAutoFillCorrect">Auto-Fill Đúng hết</button>
+  <button id="ftAutoFillMixed">Auto-Fill Sai 1 nửa</button>
+  <button id="ftForceTimeout">⏰ Test hết giờ</button>
+  <button id="ftTestSendSheet">📤 Test gửi Sheet</button>
+  <button id="ftTestRedoLookup">🧪 Test tra cứu Redo</button>
+</div>
+
+<!-- ================= LOGIN ================= -->
+<div id="ftLoginScreen">
+  <div class="ft-login-card">
+    <img src="whale-mascot.png" alt="Cá Voi Bay" onerror="this.style.display='none'">
+    <h2>🧩 PET Listening – Full Test</h2>
+    <p>Bài thi thử tổng hợp nhiều Part, có tính giờ</p>
+    <div class="ft-badge-info" id="ftInfoBadge">Đang tải thông tin bài thi...</div>
+
+    <div class="form-group">
+      <label for="ftStudentCode">Mã học sinh *</label>
+      <input type="text" id="ftStudentCode" autocomplete="off" placeholder="Vd: 72001ND">
+      <div class="field-err" id="ftLoginErr"></div>
+    </div>
+    <div class="form-group">
+      <label for="ftAccessCode">Mã xác nhận bài tập *</label>
+      <input type="text" id="ftAccessCode" autocomplete="off">
+    </div>
+    <button class="btn-start" id="ftStartBtn">Bắt Đầu Làm Bài</button>
+  </div>
+</div>
+
+<!-- ================= APP ================= -->
+<div id="ftApp">
+  <div class="ft-topbar">
+    <h1 id="ftTestTitle">🐋 Full Test</h1>
+    <div class="ft-topbar-right">
+      <span id="ftReviewModeBadge" style="display:none; background:var(--accent-deep); color:white; padding:6px 14px; border-radius:16px; font-size:12.5px; font-weight:700;">👁️ Chế độ xem lại — không thể sửa đáp án</span>
+      <span id="ftTabBadge">Chuyển tab: 0 lần</span>
+      <span id="ftTimer">45:00</span>
+      <button class="ft-btn ft-btn-primary" id="ftSubmitBtn">Nộp Bài</button>
+      <button class="ft-btn ft-btn-outline" id="ftBackToResultBtn" style="display:none;">⬅️ Quay lại kết quả</button>
+    </div>
+  </div>
+  <div class="ft-body">
+    <div class="ft-tabbar" id="ftTabbar"></div>
+    <div id="ftMainContent" style="flex:1; min-height:0; overflow-y:auto;"></div>
+  </div>
+</div>
+
+<button id="ftPaletteToggle">📋</button>
+<div id="ftPaletteDrawer">
+  <h3>Danh sách câu hỏi <button id="ftPaletteCloseBtn">✕</button></h3>
+  <div class="ft-palette-legend">
+    <span><span class="ft-legend-dot" style="background:var(--ok);border:2px solid #b7efc5;"></span> Đã làm</span>
+    <span><span class="ft-legend-dot" style="background:var(--bad);border:2px solid var(--line);"></span> Chưa làm</span>
+    <span>🚩 Đã đánh dấu xem lại (chuột phải vào ô số)</span>
+  </div>
+  <div class="ft-palette-grid" id="ftPaletteGrid"></div>
+</div>
+<div id="ftContextMenu"></div>
+
+<div id="ftConfirmSubmitModal">
+  <div class="ft-confirm-box">
+    <h3>📝 Xác nhận nộp bài</h3>
+    <div id="ftConfirmSubmitBody"></div>
+    <div class="ft-confirm-actions">
+      <button class="ft-btn ft-btn-outline" id="ftConfirmCancelBtn">Huỷ, quay lại làm bài</button>
+      <button class="ft-btn ft-btn-primary" id="ftConfirmOkBtn">Xác nhận nộp bài</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= RESULT ================= -->
+<div id="ftResultScreen">
+  <div class="ft-result-card">
+    <div style="text-align:center;">
+      <div style="font-size:56px;" id="ftResultEmoji">🎉</div>
+      <h2 style="color:var(--accent-deep);" id="ftResultHeading">Đã hoàn thành Full Test!</h2>
+    </div>
+    <div class="ft-result-summary-grid" id="ftResultSummary"></div>
+    <div class="ft-band-box" id="ftBandBox"></div>
+    <h3 style="color:var(--accent-deep); margin-bottom:10px;">📌 3 điểm cần cải thiện</h3>
+    <ul class="ft-improve-list" id="ftImproveList"></ul>
+
+    <h3 style="color:var(--accent-deep); margin-bottom:10px;">📋 Chi tiết từng câu (câu đúng có giải thích, câu sai không hiện đáp án)</h3>
+    <ul class="ft-detail-list" id="ftDetailList"></ul>
+
+    <button class="ft-retry-btn" id="ftRetryBtn">🔄 Làm lại Full Test này</button>
+    <button class="ft-retry-btn" id="ftReviewBtn" style="background:var(--accent-deep); margin-top:10px;">👁️ Xem lại bài làm</button>
+  </div>
+</div>
+
+<script src="full-test-listening-render.js"></script>
+<script src="full-test-listening-engine.js"></script>
+</body>
+</html>
