@@ -1,0 +1,85 @@
+{
+  "id": "test3-part2",
+  "part": "Part 2",
+  "title": "Simply for PET Test 3 - Part 2 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 6 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test3-part2.mp3",
+  "fullScript": [
+    "<b>Question 8. You will hear a boy talking to a friend about his grandma's house.</b><br>Girl: How's your grandma's house?<br>Boy: I like it. Although it is small she has a very big bedroom but the colours aren't what I've ever chosen. However that's not a problem.<br>Girl: Is it near your house?<br>Boy: Yes. I can walk there in ten minutes, which means I visit her very often. My grandma's house is next to my school, so sometimes I sleep there when I want to stay a bit longer in bed in the morning. That's really great.",
+    "<b>Question 9. You will hear two friends talking about a birthday present for their friend, Mary.</b><br>Boy: I've been trying hard to pick out a cool gift for Mary's birthday.<br>Girl: That's been challenging for me too. Would you like to go in with me and choose something together?<br>Boy: Yes, two heads are better than one.<br>Girl: What does she like to do? That might help us pick something out.<br>Boy: She seems to really enjoy music and going to the cinema every weekend.<br>Girl: Maybe we could get her some concert tickets, then. Do you know who might know what concert she might like to go to?<br>Boy: I think that her brother, Jack, could give us some suggestions.<br>Girl: Jack definitely could help us. He knows Mary very well. I am going to see Jack this afternoon after class and ask him what he thinks.<br>Boy: That will work out well.",
+    "<b>Question 10. You will hear two friends talking about a concert.</b><br>Boy: Wow, that was fantastic. I can't hear well now, though.<br>Girl: It wasn't too loud. That's just how a live concert should be.<br>Boy: It was too loud for me. I also think they sold more tickets than they should have done.<br>Girl: I was thinking the same thing. When you go to a concert, you should be able to watch it in comfort.<br>Boy: I don't mind paying for expensive tickets so long as you can move when you are in there. I couldn't get to the other side to meet some of my friends.",
+    "<b>Question 11. You will hear two friends talking about a party they went to.</b><br>Girl: Have you seen Peter since his party on Saturday?<br>Boy: No, perhaps his parents haven't let him go out since then because they are so angry with him.<br>Girl: It could have been worse. At least the house wasn't very dirty because we had the party in the garden.<br>Boy: Exactly and there were only ten of us. Jackie had over 30 people at her party last month.<br>Girl: It's just that they had actually told Peter not to have a party while they were away.<br>Boy: I know. I will never forget the look on his face when they came home a day early.",
+    "<b>Question 12. You will hear two friends talking about a competition.</b><br>Girl: You'll be so proud of me. I've won first prize in that science competition I took part in.<br>Boy: Wow! Well done! So what was the prize?<br>Girl: A week in London with free entrance to the Science Museum there.<br>Boy: That's amazing!<br>Girl: Yes, I'm so excited. There's only one problem. I have to go with my parents, so I can't take you...<br>Boy: Don't worry... I understand!<br>Girl: I know but it's so sad for you to miss out on such a great opportunity.<br>Boy: At least I know you would take me with you if you could.<br>Girl: I'm glad you understand.",
+    "<b>Question 13. You hear two friends talking about a new student.</b><br>Girl: So what do you think about the new student at school? She seems to be a bit unfriendly. When I tried to talk to her she didn't say much.<br>Boy: Really? I had a chat with her and she was really interesting. She's just moved here from America.<br>Girl: That's very strange. Why didn't she talk to me then?<br>Boy: To be honest Anna, you can be a bit scary if people don't know you. You are a bit loud.<br>Girl: Oh, thanks.<br>Boy: Don't be upset. People love you when they know you but the new girl is probably finding it a bit difficult getting to know so many new people as she seems to be a little bit quiet. I'm sure you'll be friends with her soon."
+  ],
+  "questions": [
+    {
+      "num": 8,
+      "prompt": "What does the boy like most about it?",
+      "options": {
+        "A": "its decoration",
+        "B": "its location",
+        "C": "its size"
+      },
+      "answer": "B",
+      "script": "Boy: Yes. I can walk there in ten minutes, which means I visit her very often. <span class='highlight'>My grandma's house is next to my school, so sometimes I sleep there when I want to stay a bit longer in bed in the morning. That's really great.</span>"
+    },
+    {
+      "num": 9,
+      "prompt": "What do they decide to do?",
+      "options": {
+        "A": "buy her cinema tickets for the weekend",
+        "B": "ask her brother what music she likes",
+        "C": "tell Mary to choose her birthday present herself"
+      },
+      "answer": "B",
+      "script": "Girl: Maybe we could get her some concert tickets, then. Do you know who might know what concert she might like to go to?<br>Boy: <span class='highlight'>I think that her brother, Jack, could give us some suggestions.</span><br>Girl: <span class='highlight'>Jack definitely could help us. He knows Mary very well. I am going to see Jack this afternoon after class and ask him what he thinks.</span>"
+    },
+    {
+      "num": 10,
+      "prompt": "What do they agree on?",
+      "options": {
+        "A": "It was too crowded.",
+        "B": "It was too noisy.",
+        "C": "It was much too expensive."
+      },
+      "answer": "A",
+      "script": "Boy: It was too loud for me. <span class='highlight'>I also think they sold more tickets than they should have done.</span><br>Girl: <span class='highlight'>I was thinking the same thing. When you go to a concert, you should be able to watch it in comfort.</span>"
+    },
+    {
+      "num": 11,
+      "prompt": "What happened?",
+      "options": {
+        "A": "Too many people came to the party.",
+        "B": "The house was in a mess after the party.",
+        "C": "Someone returned home early."
+      },
+      "answer": "C",
+      "script": "Girl: It's just that they had actually told Peter not to have a party while they were away.<br>Boy: <span class='highlight'>I know. I will never forget the look on his face when they came home a day early.</span>"
+    },
+    {
+      "num": 12,
+      "prompt": "The girl feels",
+      "options": {
+        "A": "sad that she can't share the prize with the person she really wants to.",
+        "B": "disappointed that her friend didn't win a prize as well.",
+        "C": "proud of herself but unhappy that her parents can't travel with her."
+      },
+      "answer": "A",
+      "script": "Girl: Yes, I'm so excited. There's only one problem. I have to go with my parents, so I can't take you...<br>Boy: Don't worry... I understand!<br>Girl: <span class='highlight'>I know but it's so sad for you to miss out on such a great opportunity.</span>"
+    },
+    {
+      "num": 13,
+      "prompt": "What does the boy say about the student?",
+      "options": {
+        "A": "She is unfriendly.",
+        "B": "She is shy.",
+        "C": "She is boring."
+      },
+      "answer": "B",
+      "script": "Boy: Don't be upset. People love you when they know you but <span class='highlight'>the new girl is probably finding it a bit difficult getting to know so many new people as she seems to be a little bit quiet.</span> I'm sure you'll be friends with her soon."
+    }
+  ]
+}
