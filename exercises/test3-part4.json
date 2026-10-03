@@ -1,0 +1,80 @@
+{
+  "id": "test3-part4",
+  "part": "Part 4",
+  "title": "Simply for PET - Test 3 - Part 4 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 1 đoạn hội thoại chung cho 6 câu từ 20 đến 25. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test3-part4.mp3",
+  "fullScript": [
+    "<b>Questions 20-25.</b><br><br><b>Man:</b> Hi Isabella, welcome to the show. Can you tell us what made you start playing basketball?<br><br><b>Isabella:</b> I grew up in the centre of the city. We didn’t have any parks near to where we lived but there was one small basketball court. My parents used to work many hours every day so I had to find something to do. And guess... I started playing basketball.<br><br><b>Man:</b> And why do you think you became so good at basketball? I mean you are a player at an international youth team now, aren’t you?<br><br><b>Isabella:</b> Yes, I’ve done really well in my sport. I think that’s because my parents were not at home during the day and I also hate watching TV, I stayed outside and I played and played and naturally I became really talented.<br><br><b>Man:</b> What was it that made you realise that you could play basketball as a job? You’re very young. You’re still a student.<br><br><b>Isabella:</b> I started to play for the school team and my teachers noticed how good I was. That’s when I started to get some proper training. One of my teachers told my parents that I could do really well in my sport and then persuaded them to support me.<br><br><b>Man:</b> So what has been the best part of your career so far? I’m sure it must have been winning the gold medal in the World Youth Championship.<br><br><b>Isabella:</b> Winning a medal at a World Championship was really great but the best time of all for me was before it started. I got to hold the flag to lead our team around the stadium in the opening ceremony. That was actually the proudest moment.<br><br><b>Man:</b> What about the future? Do you think you will be winning the gold medal at the Olympic games?<br><br><b>Isabella:</b> To tell you the truth, I’m not sure if that is what I want to work for next. I honestly don’t think being a basketball player was what I really wanted to do. Actually I wanted to be a doctor. I want to study hard and enter university.<br><br><b>Man:</b> How can you imagine your life 10 years from now?<br><br><b>Isabella:</b> The way I see myself ten years ahead of now is not something I often think about. One thing I’m certain of, is that I want to make the most of my years and put all my effort to become a successful, happy woman either as a doctor or as a basketball player. What I would say is that I’m the sort of person who sees good in everyone and everything so I know whatever life holds in store for me is going to be good.<br><br><b>Man:</b> Isabella, I wish you luck in whatever you decide to do."
+  ],
+  "questions": [
+    {
+      "num": 20,
+      "prompt": "Why did Isabella start to play basketball?",
+      "options": {
+        "A": "She didn't have someone at home to play with.",
+        "B": "Her parents who worked at a court encouraged her.",
+        "C": "There were many basketball courts near her house."
+      },
+      "answer": "A",
+      "script": "I grew up in the centre of the city. We didn’t have any parks near to where we lived but there was one small basketball court. <span class='highlight'>My parents used to work many hours every day so I had to find something to do. And guess... I started playing basketball.</span>"
+    },
+    {
+      "num": 21,
+      "prompt": "Why does Isabella think she is such a good basketball player?",
+      "options": {
+        "A": "She is naturally talented.",
+        "B": "She practises a lot.",
+        "C": "She watches basketball on TV."
+      },
+      "answer": "B",
+      "script": "Yes, I’ve done really well in my sport. I think that’s because my parents were not at home during the day and I also hate watching TV, <span class='highlight'>I stayed outside and I played and played and naturally I became really talented.</span>"
+    },
+    {
+      "num": 22,
+      "prompt": "Who was the first to tell Isabella that she could play basketball as a professional?",
+      "options": {
+        "A": "her teachers at school",
+        "B": "her mum and dad",
+        "C": "the students in her class"
+      },
+      "answer": "A",
+      "script": "I started to play for the school team and <span class='highlight'>my teachers noticed how good I was. That’s when I started to get some proper training. One of my teachers told my parents that I could do really well in my sport and then persuaded them to support me.</span>"
+    },
+    {
+      "num": 23,
+      "prompt": "What was Isabella most proud of?",
+      "options": {
+        "A": "winning a medal",
+        "B": "participating at an international event",
+        "C": "carrying her country’s flag"
+      },
+      "answer": "C",
+      "script": "Winning a medal at a World Championship was really great but the best time of all for me was before it started. <span class='highlight'>I got to hold the flag to lead our team around the stadium in the opening ceremony. That was actually the proudest moment.</span>"
+    },
+    {
+      "num": 24,
+      "prompt": "What are Isabella’s plans for the future?",
+      "options": {
+        "A": "to concentrate on her studies",
+        "B": "to take part in the Olympics",
+        "C": "to win more gold medals"
+      },
+      "answer": "A",
+      "script": "To tell you the truth, I’m not sure if that is what I want to work for next. I honestly don’t think being a basketball player was what I really wanted to do. Actually I wanted to be a doctor. <span class='highlight'>I want to study hard and enter university.</span>"
+    },
+    {
+      "num": 25,
+      "prompt": "In ten years from now Isabella will definitely want to be",
+      "options": {
+        "A": "an incredible doctor.",
+        "B": "a basketball player.",
+        "C": "a successful woman."
+      },
+      "answer": "C",
+      "script": "The way I see myself ten years ahead of now is not something I often think about. One thing I’m certain of, is that <span class='highlight'>I want to make the most of my years and put all my effort to become a successful, happy woman either as a doctor or as a basketball player.</span>"
+    }
+  ]
+}
