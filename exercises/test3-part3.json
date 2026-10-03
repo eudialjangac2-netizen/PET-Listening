@@ -1,0 +1,50 @@
+{
+  "id": "test3-part3",
+  "part": "Part 3",
+  "title": "Simply for PET - Test 3 - Part 3 (Gap Fill)",
+  "type": "gapfill",
+  "instruction": "Nghe và điền một hoặc hai từ, một số, một ngày hoặc một giờ vào mỗi chỗ trống.",
+  "audio": "audio/test3-part3.mp3",
+  "noteTitle": "Julie's trip to Venice",
+  "fullScript": [
+    "<b>Questions 14-19.</b><br>Girl: Hi everyone. I'm going to tell you all about my wonderful trip to Venice last week. I went with my family. We arrived on Saturday morning at about 10 a.m. It's very easy to get from the airport to Venice as you can <span class='highlight'>either go by train</span> or bus from the airport or you can do it the more romantic way which is by boat.<br><br>The boats are called vaporetti and they are very long and narrow so that they can sail down the canals easily. The wonderful thing about going by boat is that you can see a lot of the city before you've even checked in to your hotel. We stayed in an area of Venice called Arsenale. We were on the boat for over an hour before we got to our stop. <span class='highlight'>We set off at 10:15</span> and we arrived there at 11:30. On the way we cruised past most of the outside of the city.<br><br>The cheapest way of travelling around Venice is of course on foot but after a while you will probably get very tired. You can buy a three-day ticket to use on the vaporetti which only costs 20 pounds. <span class='highlight'>We also bought a Museum Card for 30 pounds</span> which we could use to go into the museums, art galleries and churches. That saved us a lot of money.<br><br>Apart from its fantastic buildings and squares, Venice is most famous for its canals. <span class='highlight'>The thing I enjoyed most was walking over the many beautiful bridges</span> and watching the boats beneath us.<br><br>Now I'd like to mention the food in Venice. There are plenty of restaurants all over the city. As you would expect there are plenty of pizza and pasta restaurants, <span class='highlight'>but the nicest thing to eat in Venice is fish</span>.<br><br>On the last day we sat and drank fresh juice on the Grand Canal. I took many photos for my friends and bought lots of Italian sweets. <span class='highlight'>My parents bought some toy boats</span> for our cousins. It was the perfect city holiday."
+  ],
+  "questions": [
+    {
+      "num": 14,
+      "label": "You can use bus, (14) ___ or boat to go to Venice from the airport.",
+      "acceptedAnswers": ["train"],
+      "script": "It's very easy to get from the airport to Venice as you can <span class='highlight'>either go by train</span> or bus from the airport or you can do it the more romantic way which is by boat."
+    },
+    {
+      "num": 15,
+      "label": "Julie and her parents started their journey to Arsenale at (15) ___.",
+      "acceptedAnswers": ["10:15", "10.15"],
+      "script": "We stayed in an area of Venice called Arsenale. We were on the boat for over an hour before we got to our stop. <span class='highlight'>We set off at 10:15</span> and we arrived there at 11:30."
+    },
+    {
+      "num": 16,
+      "label": "The museum card costs (16) £___.",
+      "acceptedAnswers": ["30"],
+      "script": "We also bought a <span class='highlight'>Museum Card for 30 pounds</span> which we could use to go into the museums, art galleries and churches."
+    },
+    {
+      "num": 17,
+      "label": "Julie's favourite place to walk was over (17) ___.",
+      "acceptedAnswers": ["bridges", "beautiful bridges"],
+      "script": "Apart from its fantastic buildings and squares, Venice is most famous for its canals. <span class='highlight'>The thing I enjoyed most was walking over the many beautiful bridges</span> and watching the boats beneath us."
+    },
+    {
+      "num": 18,
+      "label": "The best food to eat in Venice is (18) ___.",
+      "acceptedAnswers": ["fish"],
+      "script": "There are plenty of restaurants all over the city. As you would expect there are plenty of pizza and pasta restaurants, <span class='highlight'>but the nicest thing to eat in Venice is fish</span>."
+    },
+    {
+      "num": 19,
+      "label": "Julie's parents bought some (19) ___ for her relatives.",
+      "acceptedAnswers": ["toy boats"],
+      "script": "I took many photos for my friends and bought lots of Italian sweets. <span class='highlight'>My parents bought some toy boats</span> for our cousins."
+    }
+  ]
+}
