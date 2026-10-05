@@ -1,0 +1,59 @@
+{
+  "id": "test9-part1",
+  "part": "Part 1",
+  "title": "Ready for B1 - Test 5 - Part 1 (Multiple Choice Pictures)",
+  "type": "mcq",
+  "rightPanelMode": "image",
+  "instruction": "Bạn sẽ nghe 7 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test9-part1.mp3",
+  "images": [
+    "images/test9-part1-trang1.jpg",
+    "images/test9-part1-trang2.jpg"
+  ],
+  "fullScript": [
+    "<b>Question 1. What is she wearing?</b><br>Dad: Oh, you've got changed. Are you going somewhere?<br>Daughter: Yes, dad. It's the school party tonight, and I'm thinking of wearing this. What do you think?<br>Dad: Well, the jacket's very nice and the skirt is all right. But don't you think that belt's rather thick and heavy?<br>Daughter: Yes, I see what you mean. It doesn't go with this light skirt. Perhaps a thin one would be better.<br>Dad: Well, why don't you go and try?<br>Daughter: Yes, good idea.",
+    "<b>Question 2. Where is the clock?</b><br>Person 1: Oh no, it looks like Aunt Meg has moved all the sitting room furniture again.<br>Person 2: Oh yes. Wasn't the clock between the shelves and the mirror before?<br>Person 1: No, there's no space for a clock there. I think it used to be above the mirror.<br>Person 2: Oh yes, you're right. Now it's up there above the shelves.<br>Person 1: She probably put it there so we can look at it while eating.<br>Person 2: Yes, probably.",
+    "<b>Question 3. What arrived in the post today?</b><br>Person 1: Well, well, it's your lucky day.<br>Person 2: Really? Why's that?<br>Person 1: The posters come. There's a postcard for you and a parcel.<br>Person 2: Isn't there anything else? I'm expecting a letter from Sandra. Is that it?<br>Person 1: No, sorry. There's just the postcard, parcel. Oh, and a couple of letters.<br>Person 2: For me? They don't look very interesting.<br>Person 1: No, they're for me, and they're probably just a couple of bills.",
+    "<b>Question 4. Which picture do they like?</b><br>Friend 1: This gallery isn't very good. I don't like many of the pictures.<br>Friend 2: Yeah. You see that one with the castle in it? It's awful.<br>Friend 1: Yes. And look at the countryside in the background. It's terrible. I could paint better than that. What do you think of the flowers in the vase?<br>Friend 2: Well, they're not bad at all. Better than the painting of the old woman.<br>Friend 1: Yes, you're right.",
+    "<b>Question 5. What does she want for her birthday?</b><br>Parent: Well, it's not long until the big day, Alice. What would you like to get this year?<br>Alice: I really hope I don't get the same as last year.<br>Parent: Why? What did you get then?<br>Alice: Some books, but they weren't very interesting. I'd be pleased with some jewellery.<br>Parent: Didn't you get some clothes last year too?<br>Alice: Oh yes, I forgot, but I want something different this year.<br>Parent: Well, you'll see on your birthday.",
+    "<b>Question 6. What hobby will he try next?</b><br>Friend: So, are you going to join another club this annual?<br>Boy: Well, I'm always looking for something new to do in my spare time.<br>Friend: You're good at art. Have you thought about painting?<br>Boy: Yes, I've considered it, but I think I'd like to do something that helps me keep fit. I've thought about skiing, but that's probably too expensive to be honest. I think I'll take up swimming though.<br>Friend: That makes sense. Then maybe you can do some painting next year.",
+    "<b>Question 7. Which one is Uncle Jake?</b><br>Person 1: Look, have you seen these old photographs? They're amazing.<br>Person 2: Yes, look at that one. Dad with his long hair and beard, I think he looked terrible.<br>Person 1: I know. He looks funny. At least his hair was still dark then.<br>Person 2: Let's be honest. Uncle Jake wasn't much better. He had long hair too.<br>Person 1: And a moustache.<br>Person 2: And then there's Fred. I wonder why his hair wasn't long too. Long hair was the fashion.<br>Person 1: Maybe, but he was the only tidy one."
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "answer": "C",
+      "script": "Dad: Well, the jacket's very nice and the skirt is all right. But don't you think that belt's rather thick and heavy?<br>Daughter: <span class='highlight'>Yes, I see what you mean. It doesn't go with this light skirt. Perhaps a thin one would be better.</span>"
+    },
+    {
+      "num": 2,
+      "answer": "A",
+      "script": "Person 2: <span class='highlight'>Now it's up there above the shelves.</span>"
+    },
+    {
+      "num": 3,
+      "answer": "C",
+      "script": "Person 1: <span class='highlight'>There's a postcard for you and a parcel.</span><br>Person 1: <span class='highlight'>Oh, and a couple of letters.</span>"
+    },
+    {
+      "num": 4,
+      "answer": "A",
+      "script": "Friend 1: What do you think of the flowers in the vase?<br>Friend 2: <span class='highlight'>Well, they're not bad at all. Better than the painting of the old woman.</span>"
+    },
+    {
+      "num": 5,
+      "answer": "C",
+      "script": "Alice: <span class='highlight'>I'd be pleased with some jewellery.</span>"
+    },
+    {
+      "num": 6,
+      "answer": "B",
+      "script": "Boy: Yes, I've considered it, but I think I'd like to do something that helps me keep fit. I've thought about skiing, but that's probably too expensive to be honest. <span class='highlight'>I think I'll take up swimming though.</span>"
+    },
+    {
+      "num": 7,
+      "answer": "B",
+      "script": "Person 2: <span class='highlight'>Uncle Jake wasn't much better. He had long hair too.</span><br>Person 1: <span class='highlight'>And a moustache.</span>"
+    }
+  ]
+}
