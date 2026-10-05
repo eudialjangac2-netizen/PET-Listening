@@ -1,0 +1,85 @@
+{
+  "id": "test9-part2",
+  "part": "Part 2",
+  "title": "Ready for B1 - Test 5 - Part 2 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 6 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test9-part2.mp3",
+  "fullScript": [
+    "<b>Question 8. You will hear a boy talking to his doctor.</b><br>Doctor: Hello Sam, what seems to be the trouble?<br>Sam: Well, I've got a really bad cold and a headache.<br>Doctor: I see. And how long have you been feeling like this?<br>Sam: Well, the headache only started yesterday, but I've had a cold for a week. I didn't go to school for the last two days and my mom made me stay in bed, but I still don't feel any better.<br>Doctor: Okay, let's have a look at you.",
+    "<b>Question 9. You will hear two friends talking about a film.</b><br>Lizzie: So, did you have a good weekend, Dan?<br>Dan: It was okay. I went to the cinema with my friends on Sunday afternoon.<br>Lizzie: Really? What did you see?<br>Dan: The new Shadow Hunters film. I thought it was pretty cool.<br>Lizzie: That's funny. I saw that on Sunday too, but I didn't see you at the cinema. Was it the 3:00 showing?<br>Dan: Yes, but we got there a bit late and sat at the back of the cinema.<br>Lizzie: Well, I was at the back of the Odeon too. How strange?<br>Dan: Ah, that explains it, Lizzie. I saw it at the Plaza. That's why we didn't see each other.",
+    "<b>Question 10. You will hear a girl talking about a holiday.</b><br>Friend: How was your holiday at the water sports centre? Did you go windsurfing?<br>Julia: Yes, I did. I found that the windsurfing course I did last year was a big help, because I could go straight out on the water. I tried sailing too, but I didn't really like it.<br>Friend: Why not? I love sailing.<br>Julia: Well, I expected it to be more exciting, but you spend most of your time just sitting in a boat.<br>Friend: Hm, I don't think that's quite true, Julia. Anyway, did you do any other water sports?<br>Julia: Well, lots of people were having lessons in water skiing, but I didn't have enough time for that. I preferred to spend the week just windsurfing in the end, to be honest.",
+    "<b>Question 11. You will hear a conversation in a shoe shop.</b><br>Girl: Look at these shoes, Ben. Do you like them? Are the heels too high?<br>Ben: I think the heels are okay, but I don't really like the color. They're a bit boring, too much like school shoes. What about these silver ones?<br>Girl: Ben, are you crazy? I can't go to the party in silver shoes. But you're right about the color of the others.<br>Girl: Oh dear, this is really annoying. Mum says that if I don't find something today, I'll have to wear the shoes I had at my sister's wedding.<br>Ben: Well, what about those blue ones over there?<br>Girl: Wow, I totally love those ones. You're brilliant, Ben.",
+    "<b>Question 12. You will hear a boy talking about his new dog Zorro.</b><br>Friend: Is that a photo of your new dog, Zorro? He's so sweet.<br>Boy: Yeah, this is Zorro. He's a bit crazy.<br>Friend: Actually, I think he looks a lot like your old dog.<br>Boy: Hm, maybe he looks similar in this photo, but Zorro's a lot bigger than Jasper was, and he's much friendlier. But I miss Jasper, of course. He wasn't very friendly, and he was much lazier than Zorro, but for me, he was the best dog ever.",
+    "<b>Question 13. You will hear two friends talking about their future.</b><br>Harry: So, have you thought about what you'll do when you leave school yet, Jessie?<br>Jessie: No, not really. I suppose I'll go to university, but I don't know what to study, and I really don't know what job I'll end up doing. I'd quite like to work with animals, but I really hate biology, so I can't be a vet like my dad. What about you, Harry? What will you do?<br>Harry: Well, I want to do a gap year before university. Then I'm going to study medicine. Both of my parents are doctors and it's such an important job. I hope that one day I'll do that too."
+  ],
+  "questions": [
+    {
+      "num": 8,
+      "prompt": "When did he start feeling ill?",
+      "options": {
+        "A": "yesterday",
+        "B": "two days ago",
+        "C": "a week ago"
+      },
+      "answer": "C",
+      "script": "Doctor: I see. And how long have you been feeling like this?<br>Sam: Well, the headache only started yesterday, but <span class='highlight'>I've had a cold for a week.</span> I didn't go to school for the last two days and my mom made me stay in bed, but I still don't feel any better."
+    },
+    {
+      "num": 9,
+      "prompt": "They didn't see each other at the cinema because they",
+      "options": {
+        "A": "were at different cinemas.",
+        "B": "watched the film at different times.",
+        "C": "sat in different parts of the cinema."
+      },
+      "answer": "A",
+      "script": "Lizzie: Well, I was at the back of the Odeon too. How strange?<br>Dan: <span class='highlight'>Ah, that explains it, Lizzie. I saw it at the Plaza. That's why we didn't see each other.</span>"
+    },
+    {
+      "num": 10,
+      "prompt": "Which water sport did she try for the first time?",
+      "options": {
+        "A": "windsurfing",
+        "B": "sailing",
+        "C": "waterskiing"
+      },
+      "answer": "B",
+      "script": "Julia: Yes, I did. I found that the windsurfing course I did last year was a big help, because I could go straight out on the water. <span class='highlight'>I tried sailing too, but I didn't really like it.</span>"
+    },
+    {
+      "num": 11,
+      "prompt": "The boy advises the girl",
+      "options": {
+        "A": "not to wear shoes with heels to the party.",
+        "B": "to wear her school shoes to the party.",
+        "C": "to buy the blue shoes."
+      },
+      "answer": "C",
+      "script": "Ben: <span class='highlight'>Well, what about those blue ones over there?</span><br>Girl: Wow, I totally love those ones. You're brilliant, Ben."
+    },
+    {
+      "num": 12,
+      "prompt": "Compared to Zorro, his first dog, Jasper, was",
+      "options": {
+        "A": "smaller.",
+        "B": "more friendly.",
+        "C": "less lazy."
+      },
+      "answer": "A",
+      "script": "Boy: Hm, maybe he looks similar in this photo, but <span class='highlight'>Zorro's a lot bigger than Jasper was</span>, and he's much friendlier. But I miss Jasper, of course. He wasn't very friendly, and he was much lazier than Zorro, but for me, he was the best dog ever."
+    },
+    {
+      "num": 13,
+      "prompt": "They both expect to",
+      "options": {
+        "A": "continue studying after school.",
+        "B": "work with animals.",
+        "C": "do the same job as their fathers."
+      },
+      "answer": "A",
+      "script": "Jessie: No, not really. <span class='highlight'>I suppose I'll go to university</span>, but I don't know what to study, and I really don't know what job I'll end up doing.<br>Harry: Well, I want to do a gap year before university. <span class='highlight'>Then I'm going to study medicine.</span>"
+    }
+  ]
+}
