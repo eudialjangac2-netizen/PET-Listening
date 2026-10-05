@@ -1,0 +1,50 @@
+{
+  "id": "test9-part3",
+  "part": "Part 3",
+  "title": "Ready for B1 - Test 5 - Part 3 (Gap Fill)",
+  "type": "gapfill",
+  "instruction": "Nghe và điền một hoặc hai từ, một số, một ngày hoặc một giờ vào mỗi chỗ trống.",
+  "audio": "audio/test9-part3.mp3",
+  "noteTitle": "Weekend hike in the country",
+  "fullScript": [
+    "<b>Questions 14-19.</b><br>Trip Leader: Hello everyone. I'm going to give you some information about our weekend hike before we leave tomorrow morning. Please make notes, as there are many things you must remember. Our coach will be in front of the school's main entrance at 6:30 a.m. I know it's really early, but do not be late, as the journey's quite long. <span class='highlight'>We're going to set out at a quarter to seven.</span><br><br>You mustn't bring more than one <span class='highlight'>backpack</span>, because there isn't enough room on the coach, and you don't need too much luggage anyway. We will provide for tents and meals for everybody, but don't forget to bring your own sleeping bags. The weather forecast says it will be chilly until tomorrow night, so you need to pack warm clothes. However, it will be sunny on Sunday, so bring your swimming things, as you might need them when we get to the lake around midday.<br><br>Please remember that we will spend most of our weekend hiking in the countryside, so you don't need to bring too much money. <span class='highlight'>Ten pounds will be enough</span> for you to buy snacks and drinks when we stop in the little villages during our tour. Anyway, if you want, you can bring some extra money for Sunday afternoon.<br><br>Those who feel like shopping for souvenirs can take a bus to the nearest town, which is called Leavenworth, and is fourteen kilometers from the campsite. You can take the bus in front of the new stand <span class='highlight'>behind the campsite</span> and get there in half an hour. If you decide to go to Leavenworth, remember you'll have to be back to the campsite by 5:30.<br><br>You mustn't forget your <span class='highlight'>mobile phones</span>. If you have any problems, you can text or ring me on <span class='highlight'>096775523</span>."
+  ],
+  "questions": [
+    {
+      "num": 14,
+      "label": "Saturday departure time: at (14) ___ a.m. from school",
+      "acceptedAnswers": ["6:45", "6.45"],
+      "script": "Our coach will be in front of the school's main entrance at 6:30 a.m. I know it's really early, but do not be late, as the journey's quite long. <span class='highlight'>We're going to set out at a quarter to seven.</span>"
+    },
+    {
+      "num": 15,
+      "label": "What students must bring: no more than one (15) ___.",
+      "acceptedAnswers": ["backpack"],
+      "script": "You mustn't bring more than one <span class='highlight'>backpack</span>, because there isn't enough room on the coach."
+    },
+    {
+      "num": 16,
+      "label": "What students must bring: (16) £___ for food, drinks.",
+      "acceptedAnswers": ["10"],
+      "script": "<span class='highlight'>Ten pounds will be enough</span> for you to buy snacks and drinks when we stop in the little villages during our tour."
+    },
+    {
+      "num": 17,
+      "label": "Sunday afternoon: bus stop (17) ___ the campsite.",
+      "acceptedAnswers": ["behind"],
+      "script": "You can take the bus in front of the new stand <span class='highlight'>behind the campsite</span> and get there in half an hour."
+    },
+    {
+      "num": 18,
+      "label": "Remember to bring (18) ___ and call...",
+      "acceptedAnswers": ["mobile phones", "mobile phone"],
+      "script": "You mustn't forget your <span class='highlight'>mobile phones</span>."
+    },
+    {
+      "num": 19,
+      "label": "Call (19) ___ in case of emergency.",
+      "acceptedAnswers": ["096775523"],
+      "script": "If you have any problems, you can text or ring me on <span class='highlight'>096775523</span>."
+    }
+  ]
+}
