@@ -1,0 +1,80 @@
+{
+  "id": "test9-part4",
+  "part": "Part 4",
+  "title": "Ready for B1 - Test 5 - Part 4 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 1 đoạn hội thoại chung cho 6 câu từ 20 đến 25. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test9-part4.mp3",
+  "fullScript": [
+    "<b>Questions 20-25.</b><br><br><b>Presenter:</b> Now, you might remember last month we announced the winner of our young travel reporter competition. Well, that winner, Maggie Johnston, has been sent off to Summerford, where we can join her now. Hello Maggie, how does it feel to be on the road, so to speak?<br><br><b>Maggie Johnston:</b> Great, I'm having lots of fun here in Summerford.<br><br><b>Presenter:</b> What can you tell us about it?<br><br><b>Maggie Johnston:</b> Well, it is a fascinating place to visit and offers lots to do for everyone, but more importantly, lots for us teen travellers. The city is very well organized for tourists, with an information centre in the station so that you can get maps and help with hotels as soon as you arrive if you come by train. You can hire bikes here if you want to race around the city on two wheels.<br><br><b>Presenter:</b> So, what's there to do?<br><br><b>Maggie Johnston:</b> There are plenty of things to do. In the city centre, the main attraction is the 14th century castle, which is almost exactly the same as it was 600 years ago. The only recent changes are the roofs, which were repaired last year, and the entrance, but the original walls and towers are great. I loved the castle tour in particular, because all the guides are trained entertainers. History comes alive and is nothing like those boring lessons at school.<br><br><b>Presenter:</b> Anywhere else worth seeing?<br><br><b>Maggie Johnston:</b> The old university. Don't ask where it is, because it's all around you, like in Oxford or Cambridge. Almost every old building seems to belong to one department or another. The oldest building in the whole place, Barnard's Tower, is now the Science Library's home. But it's not all about the past here in Summerford. The new Eastfield Shopping Centre has over 150 different stores and cafes, and just north of the city centre, there's also a wonderful park. It's full of riding activities and beautiful landscaped grassy areas for tired old parents to relax in.<br><br><b>Presenter:</b> So, all sounds perfect then.<br><br><b>Maggie Johnston:</b> Well, maybe for a day trip. But if you want to spend the night in Summerford, I have to say you might be disappointed. There are very few hotels here, and they are not very modern, and not cheap at all. So take lots of money with you. There is a campsite outside the town, but who wants to be in a tent in the British rain? But I'm having a fantastic two days in Summerford, and we'll definitely come back again.<br><br><b>Presenter:</b> Okay, thanks Maggie. We'll catch you on your next trip."
+  ],
+  "questions": [
+    {
+      "num": 20,
+      "prompt": "The tourist information office is",
+      "options": {
+        "A": "in the centre of town.",
+        "B": "on most good maps.",
+        "C": "in the town’s station."
+      },
+      "answer": "C",
+      "script": "The city is very well organized for tourists, with <span class='highlight'>an information centre in the station</span> so that you can get maps and help with hotels as soon as you arrive if you come by train."
+    },
+    {
+      "num": 21,
+      "prompt": "The castle is original, except for",
+      "options": {
+        "A": "the entrance and the walls.",
+        "B": "the entrance and the roofs.",
+        "C": "the walls and towers."
+      },
+      "answer": "B",
+      "script": "The city centre, the main attraction is the 14th century castle, which is almost exactly the same as it was 600 years ago. <span class='highlight'>The only recent changes are the roofs, which were repaired last year, and the entrance</span>, but the original walls and towers are great."
+    },
+    {
+      "num": 22,
+      "prompt": "The castle guides are",
+      "options": {
+        "A": "trained teachers.",
+        "B": "good at entertaining.",
+        "C": "trained to take school groups."
+      },
+      "answer": "B",
+      "script": "I loved the castle tour in particular, because <span class='highlight'>all the guides are trained entertainers.</span> History comes alive and is nothing like those boring lessons at school."
+    },
+    {
+      "num": 23,
+      "prompt": "Bernard’s Tower is a part of",
+      "options": {
+        "A": "the science department.",
+        "B": "a home for old scientists.",
+        "C": "Oxford and Cambridge Universities."
+      },
+      "answer": "A",
+      "script": "Almost every old building seems to belong to one department or another. <span class='highlight'>The oldest building in the whole place, Barnard's Tower, is now the Science Library's home.</span>"
+    },
+    {
+      "num": 24,
+      "prompt": "In the park there are",
+      "options": {
+        "A": "rides and activities for young children.",
+        "B": "beautiful landscapes.",
+        "C": "activities for children and grassy areas for adults."
+      },
+      "answer": "C",
+      "script": "Just north of the city centre, there's also a wonderful park. <span class='highlight'>It's full of riding activities and beautiful landscaped grassy areas for tired old parents to relax in.</span>"
+    },
+    {
+      "num": 25,
+      "prompt": "The hotels in Somerford are",
+      "options": {
+        "A": "cheap and rather old.",
+        "B": "rather old and costly.",
+        "C": "small and old."
+      },
+      "answer": "B",
+      "script": "There are very few hotels here, and <span class='highlight'>they are not very modern, and not cheap at all.</span> So take lots of money with you."
+    }
+  ]
+}
