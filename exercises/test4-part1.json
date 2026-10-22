@@ -1,0 +1,59 @@
+{
+  "id": "test4-part1",
+  "part": "Part 1",
+  "title": "Simply for PET - Test 4 - Part 1 (Multiple Choice Pictures)",
+  "type": "mcq",
+  "rightPanelMode": "image",
+  "instruction": "Bạn sẽ nghe 7 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test4-part1.mp3",
+  "images": [
+    "images/test4-part1-trang1.jpg",
+    "images/test4-part1-trang2.jpg"
+  ],
+  "fullScript": [
+    "<b>Question 1. What does the girl like to do when she is on holiday?</b><br>Boy: Hi Jane. I hear you are going on holiday. Where are you going?<br>Girl: I’m going to France.<br>Boy: Are you going to spend some time on the beach?<br>Girl: No. I don’t like being in the sun. I prefer going to cities and sightseeing. I like to take photos of everything. My hobby is photography.<br>Boy: I didn’t know that. What about shopping? Girls always like buying new clothes and accessories in big department stores.<br>Girl: No, I don’t like shopping that much.",
+    "<b>Question 2. What are they going to do this evening?</b><br>Girl: It’s Saturday! What shall we do this evening?<br>Boy: Let’s go to the cinema and watch the latest film.<br>Girl: That’s a great idea! Let’s go.<br>Boy: Wait a minute. It’s raining a lot outside.<br>Girl: There goes the plan then! What about playing board games?<br>Boy: I’m terrible at board games. Let’s do something different.<br>Girl: There’s a good film on television at eight o’clock.<br>Boy: That sounds great.",
+    "<b>Question 3. How much did the girl pay for the pair of trainers?</b><br>Girl: I went shopping with my mum today and bought some new trainers. All the shoes were on special offer. They were sixty pounds fifty, but I got a fifty percent discount. That’s amazing! Only thirty pounds twenty-five for such nice trainers. I was thinking of buying two pairs. But my mum didn’t have so much money with her. She spent a lot of money on a supermarket. She paid seventy pounds twenty-five there. Maybe I can go back tomorrow and get another pair.",
+    "<b>Question 4. What fruit did the boy’s sister put in his lunch box in the end?</b><br>Girl: Frankie! Hurry up, you’ll be late for school.<br>Boy: I’m coming! I can’t find my history book!<br>Girl: It’s under your bed. I have put some grapes in your lunch box with your sandwiches.<br>Boy: I hate grapes.<br>Girl: Please can I have a banana instead?<br>Girl: Sure. I will get one out of the fridge. Do you want an apple, too?<br>Boy: No! Thanks.",
+    "<b>Question 5. What will the boy need to buy for his holiday?</b><br>Girl: Hey Kerim, are you ready for the school trip tomorrow?<br>Boy: Not yet. But I have packed most of the things I will need in my suitcase.<br>Girl: Have you packed some shorts?<br>Boy: Oh no, I haven’t. Here they are.<br>Girl: What’s the weather going to be like there?<br>Boy: Very hot! I must take my red T-shirt. Oh no, it has ice cream on it! I’ll have to get a new one when I go shopping with my mum tomorrow.<br>Girl: Don’t forget your hat. The sun is gonna be very strong.<br>Boy: Oh, I can’t find it. I’m going to buy a new hat as well.<br>Girl: Hold on, here it is.",
+    "<b>Question 6. How will they communicate with each other?</b><br>Boy: I hear you are moving to another city.<br>Girl: Yes. My father’s office is moving to Manchester. I’m very sad. I’m going to miss you and all my friends.<br>Boy: I hope we can stay in touch. We can email each other every day.<br>Girl: I can’t because I need a new computer, my old one is broken.<br>Boy: No problem. We both have mobile phones. We can call each other.<br>Girl: That’s a good idea, but won’t it be too expensive? Why don’t we write to each other? There’s a letterbox at the corner of the street.<br>Boy: I hate letters; they take too long to write.<br>Girl: Well, let’s do what you said then.",
+    "<b>Question 7. Which instrument does the boy want to learn to play?</b><br>Boy: I’d like to learn to play a musical instrument. Last year I wanted to play the drums, but my parents said we didn’t have a room in the house where I could practise. Since then I have been watching music shows on the television and I love the trumpet and the guitar. The trumpet is easier to carry around with me though. That’s why I want to learn that instrument. I also like it because it’s very loud. I hope my parents are happy about that."
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "answer": "B",
+      "script": "Girl: <span class='highlight'>I prefer going to cities and sightseeing. I like to take photos of everything.</span>"
+    },
+    {
+      "num": 2,
+      "answer": "A",
+      "script": "Girl: <span class='highlight'>There’s a good film on television at eight o’clock.</span><br>Boy: That sounds great."
+    },
+    {
+      "num": 3,
+      "answer": "A",
+      "script": "Girl: They were sixty pounds fifty, but I got a fifty percent discount. <span class='highlight'>Only thirty pounds twenty-five for such nice trainers.</span>"
+    },
+    {
+      "num": 4,
+      "answer": "B",
+      "script": "Boy: I hate grapes.<br>Girl: <span class='highlight'>Please can I have a banana instead?</span><br>Girl: Sure. I will get one out of the fridge."
+    },
+    {
+      "num": 5,
+      "answer": "C",
+      "script": "Boy: <span class='highlight'>I must take my red T-shirt. Oh no, it has ice cream on it! I’ll have to get a new one when I go shopping with my mum tomorrow.</span>"
+    },
+    {
+      "num": 6,
+      "answer": "B",
+      "script": "Boy: <span class='highlight'>We both have mobile phones. We can call each other.</span>"
+    },
+    {
+      "num": 7,
+      "answer": "A",
+      "script": "Boy: I love the trumpet and the guitar. <span class='highlight'>The trumpet is easier to carry around with me though. That’s why I want to learn that instrument.</span>"
+    }
+  ]
+}
