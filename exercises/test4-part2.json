@@ -1,0 +1,85 @@
+{
+  "id": "test4-part2",
+  "part": "Part 2",
+  "title": "Simply for PET Test 4 - Part 2 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 6 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test4-part2.mp3",
+  "fullScript": [
+    "<b>Question 8. You will hear two friends talking about their school trip on the river.</b><br>Boy: That was a really good trip. The tour guide knew a lot about history. He was also very funny but I didn't like the man in the cafe. I wanted a glass of lemon juice or hot chocolate, but he said he didn't have any more of either.<br>Girl: What did you have instead?<br>Boy: I had a glass of orange juice. I then asked him for a sandwich, but he didn't have any of that either. He was very rude.<br>Girl: If we had told that to Miss Helen, she would have complained to the captain of the boat and everything would be ok. He seemed to be really kind.<br>Boy: Anyway, the rest of the trip was excellent, so I didn't think it was worth it.",
+    "<b>Question 9. You will hear a boy telling a friend about his new house.</b><br>Girl: Hi Steve. I haven't seen you since last month. Haven't you moved yet?<br>Boy: Yes. We moved last week to a bigger house with a big garden.<br>Girl: I thought you were moving into a large flat in the centre of the city.<br>Boy: No. We moved into a house ten minutes from the centre. It was actually cheaper. That's very important for my parents. It has also two floors and three bedrooms.<br>Girl: I thought your mum wanted a place with fewer bedrooms.<br>Boy: Everyone seems to love the new place. So I guess she wouldn't mind at all even if it had two more bedrooms.",
+    "<b>Question 10. You will hear two friends talking about school.</b><br>Boy: You don't usually look so happy at the end of the school day.<br>Girl: Yes, because we've usually been given a lot of homework to do for the next day. Not today, though.<br>Boy: But you're a good student - you usually get high marks.<br>Girl: I know. But it's very tiring to study every day. Anyway do you remember the maths project I had to do last week?<br>Boy: Yes.<br>Girl: Well, the teacher said it was the best project in class and she gave me a nice ruler as a present.<br>Boy: Wow, that's great. Next time they can give you tickets to Disneyland.<br>Girl: I wish to but I think this is a very expensive present.",
+    "<b>Question 11. You will hear a boy talking about a train journey he had with his parents.</b><br>Girl: Mark! How was the journey with your parents?<br>Boy: We have just come from Manchester on the train. It was too long. I'm very exhausted. First the train was very late and then when we got to Birmingham, the train guard told us we had to get a bus.<br>Girl: Why did you have to catch a bus?<br>Boy: Engineers were working on the train track and the line was closed for about fifty miles.<br>Girl: Why didn't you travel another way? You should have got a taxi from the train station.<br>Boy: We would have done but they didn't tell us about the engineering work when we bought the ticket.",
+    "<b>Question 12. You will hear a girl telling her friend about her summer course.</b><br>Boy: Hello Sheila. How is your course going?<br>Girl: I don't really enjoy it. Most of the time I have to study.<br>Boy: Why don't you start a new hobby? I think you like taking photos, don't you?<br>Girl: Yes, but I don't have enough time to do so.<br>Boy: There's loads of stuff online for joining a photography club. You need to meet once during the week and once at the weekend. So it won't take much of your time studying. This will also be a good chance to meet new people and make friends.",
+    "<b>Question 13. You will hear two friends talking about their new teacher.</b><br>Girl: Hello, Peter. Have you met the new Physics teacher?<br>Boy: I had a class with him on Wednesday. We made an interesting experiment in the science lab.<br>Girl: He's really strange, isn't he? He has a lot of really long curly hair and all his clothes are black.<br>Boy: He might like rock music then. I don't think he's strange. The problem is that he speaks very fast and I can't understand what he says.<br>Girl: I don't have such a problem with him. Anyway, he doesn't look anything like our other teachers.<br>Boy: That's for sure. I guess we should wait and see."
+  ],
+  "questions": [
+    {
+      "num": 8,
+      "prompt": "What problem did the boy have on the boat?",
+      "options": {
+        "A": "There wasn't any fresh juice.",
+        "B": "The cafe assistant wasn't polite at all.",
+        "C": "All the staff were very rude to the students."
+      },
+      "answer": "B",
+      "script": "Boy: I had a glass of orange juice. I then asked him for a sandwich, but he didn't have any of that either. <span class='highlight'>He was very rude.</span>"
+    },
+    {
+      "num": 9,
+      "prompt": "What was the main reason the boy's family moved to the new house?",
+      "options": {
+        "A": "It has fewer bedrooms.",
+        "B": "It is nearer the city centre.",
+        "C": "It is cheaper."
+      },
+      "answer": "C",
+      "script": "Boy: No. We moved into a house ten minutes from the centre. <span class='highlight'>It was actually cheaper. That's very important for my parents.</span> It has also two floors and three bedrooms."
+    },
+    {
+      "num": 10,
+      "prompt": "The girl is feeling pleased because she",
+      "options": {
+        "A": "received a reward for her project.",
+        "B": "won tickets to Disneyland.",
+        "C": "got high marks at the end of the term."
+      },
+      "answer": "A",
+      "script": "Girl: <span class='highlight'>Well, the teacher said it was the best project in class and she gave me a nice ruler as a present.</span>"
+    },
+    {
+      "num": 11,
+      "prompt": "Why did their journey take a long time?",
+      "options": {
+        "A": "They had to travel all the way by bus.",
+        "B": "They had to travel part of the journey by bus.",
+        "C": "They travelled all the way in a taxi."
+      },
+      "answer": "B",
+      "script": "Boy: We have just come from Manchester on the train. It was too long. I'm very exhausted. <span class='highlight'>First the train was very late and then when we got to Birmingham, the train guard told us we had to get a bus.</span>"
+    },
+    {
+      "num": 12,
+      "prompt": "The boy suggests that the girl should",
+      "options": {
+        "A": "study more.",
+        "B": "take up a hobby.",
+        "C": "chat with people online."
+      },
+      "answer": "B",
+      "script": "Boy: <span class='highlight'>Why don't you start a new hobby? I think you like taking photos, don't you?</span><br>Girl: Yes, but I don't have enough time to do so.<br>Boy: There's loads of stuff online for joining a photography club."
+    },
+    {
+      "num": 13,
+      "prompt": "They agree that",
+      "options": {
+        "A": "he looks a little strange.",
+        "B": "he is different from the other teachers.",
+        "C": "he speaks fast and nobody can understand him."
+      },
+      "answer": "B",
+      "script": "Girl: <span class='highlight'>Anyway, he doesn't look anything like our other teachers.</span><br>Boy: <span class='highlight'>That's for sure.</span> I guess we should wait and see."
+    }
+  ]
+}
