@@ -1,0 +1,50 @@
+{
+  "id": "test4-part3",
+  "part": "Part 3",
+  "title": "Simply for PET - Test 4 - Part 3 (Gap Fill)",
+  "type": "gapfill",
+  "instruction": "Nghe và điền một hoặc hai từ, một số, một ngày hoặc một giờ vào mỗi chỗ trống.",
+  "audio": "audio/test4-part3.mp3",
+  "noteTitle": "A Film Actor",
+  "fullScript": [
+    "<b>Questions 14-19.</b><br>Man: Hi everyone. Today I will tell you about my typical day filming. It sounds like a great job, but it really is very tiring. Every day I get up at four in the morning and I have to be ready by four thirty to get in the car to the studio. In the winter it's still dark and as the studio is only half an hour away, <span class='highlight'>I'm there at five</span> and I don't get a chance to have a quick sleep.<br><br>As soon as I get to the studio, I go to the hairdresser who brushes my hair into the hairstyle of the character I am playing. This usually takes about half an hour. When she finishes doing my hair, I don't have to move from the chair because <span class='highlight'>the make-up lady comes to me</span> and prepares me for filming.<br><br>At the moment <span class='highlight'>I am playing a police officer</span>, so I don't need a lot of make-up. In my last film I played the part of a big monster and I needed a lot of make-up which took five hours to do. It wasn't comfortable sitting in the same chair for such a long time.<br><br>After make-up I am given my costume to put on. At this point I am now ready to act but it is never like that. <span class='highlight'>The film director is either late</span> or the engineers haven't finished with the scenery or lights. We don't usually start on time.<br><br>When they are ready, I go into the studio and we act out the different scenes. This takes all day until about five p.m. when they remove my make-up and <span class='highlight'>I get changed back into my normal clothes</span>.<br><br>A car then takes me home where <span class='highlight'>I have dinner</span> and go to bed usually at about ten p.m. Then the same happens the next day and every day during filming. And that's my typical day."
+  ],
+  "questions": [
+    {
+      "num": 14,
+      "label": "Roger arrives at the film studio at (14) ___ a.m.",
+      "acceptedAnswers": ["5", "five", "5:00", "5.00"],
+      "script": "In the winter it's still dark and as the studio is only half an hour away, <span class='highlight'>I'm there at five</span> and I don't get a chance to have a quick sleep."
+    },
+    {
+      "num": 15,
+      "label": "A woman does his (15) ___ after someone has brushed his hair.",
+      "acceptedAnswers": ["make-up", "makeup"],
+      "script": "When she finishes doing my hair, I don't have to move from the chair because <span class='highlight'>the make-up lady comes to me</span> and prepares me for filming."
+    },
+    {
+      "num": 16,
+      "label": "Roger is playing a (16) ___ in this new film.",
+      "acceptedAnswers": ["police officer"],
+      "script": "At the moment <span class='highlight'>I am playing a police officer</span>, so I don't need a lot of make-up."
+    },
+    {
+      "num": 17,
+      "label": "Filming is delayed because the film (17) ___ is often late.",
+      "acceptedAnswers": ["director"],
+      "script": "At this point I am now ready to act but it is never like that. <span class='highlight'>The film director is either late</span> or the engineers haven't finished with the scenery or lights."
+    },
+    {
+      "num": 18,
+      "label": "When filming ends, Roger puts on his usual (18) ___.",
+      "acceptedAnswers": ["clothes"],
+      "script": "This takes all day until about five p.m. when they remove my make-up and <span class='highlight'>I get changed back into my normal clothes</span>."
+    },
+    {
+      "num": 19,
+      "label": "Roger has (19) ___ after he gets home and sleeps early.",
+      "acceptedAnswers": ["dinner"],
+      "script": "A car then takes me home where <span class='highlight'>I have dinner</span> and go to bed usually at about ten p.m."
+    }
+  ]
+}
