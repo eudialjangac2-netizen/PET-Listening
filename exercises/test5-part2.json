@@ -1,0 +1,78 @@
+{
+  "id": "test5-part2",
+  "part": "Part 2",
+  "title": "Simply for PET Test 5 - Part 2 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 6 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test5-part2.mp3",
+  "fullScript": [],
+  "questions": [
+    {
+      "num": 8,
+      "prompt": "What does the girl say about it?",
+      "options": {
+        "A": "Everybody gets a membership discount.",
+        "B": "It's worth becoming a full member.",
+        "C": "Members pay extra for some classes."
+      },
+      "answer": "B",
+      "script": "<span class='highlight'>membership actually works out cheaper.</span>"
+    },
+    {
+      "num": 9,
+      "prompt": "How does the boy feel about it?",
+      "options": {
+        "A": "He finds it difficult to decide what to buy.",
+        "B": "He finds online shopping stressful.",
+        "C": "He finds online shopping satisfactory."
+      },
+      "answer": "C",
+      "script": "<span class='highlight'>Generally I've been happy with what I've bought, so it works for me. Stress-free shopping.</span>"
+    },
+    {
+      "num": 10,
+      "prompt": "What does the girl say about herself and her cousin?",
+      "options": {
+        "A": "They both liked outdoor activities.",
+        "B": "They enjoyed most of their time together.",
+        "C": "They had little in common."
+      },
+      "answer": "C",
+      "script": "<span class='highlight'>We had different ideas about how to spend our days.</span>"
+    },
+    {
+      "num": 11,
+      "prompt": "The girl tells the boy to",
+      "options": {
+        "A": "give more examples.",
+        "B": "change the subject.",
+        "C": "correct some mistakes."
+      },
+      "answer": "C",
+      "script": "<span class='highlight'>I'd check it first. ... but it still has some spelling and grammatical mistakes.</span>"
+    },
+    {
+      "num": 12,
+      "prompt": "What does the boy think about it?",
+      "options": {
+        "A": "The acting is quite good.",
+        "B": "He finds it amusing.",
+        "C": "It should be in English."
+      },
+      "answer": "B",
+      "script": "<span class='highlight'>It makes me laugh which is what I need at the end of the day.</span>"
+    },
+    {
+      "num": 13,
+      "prompt": "How do the girl's parents feel?",
+      "options": {
+        "A": "negative towards her new maths teacher",
+        "B": "worried about her changing class",
+        "C": "surprised by her progress in maths"
+      },
+      "answer": "C",
+      "script": "<span class='highlight'>I'm doing better at maths thanks to him. My parents are amazed as they had given up with my maths! They feel grateful to him.</span>"
+    }
+  ]
+}
