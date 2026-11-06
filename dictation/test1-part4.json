@@ -1,0 +1,459 @@
+{
+  "id": "test1-part4",
+  "segments": [
+    {
+      "start": 25.3,
+      "end": 28.44,
+      "text": "Hi Darren.",
+      "vi": "Chào Darren."
+    },
+    {
+      "start": 29.76,
+      "end": 33.37,
+      "text": "You are very successful for such a young writer.",
+      "vi": "Bạn rất thành công khi còn là một nhà văn trẻ như vậy.",
+      "vocab": [
+        {
+          "w": "successful",
+          "ipa": "/səkˈsesfəl/",
+          "vi": "thành công"
+        }
+      ]
+    },
+    {
+      "start": 33.59,
+      "end": 38.97,
+      "text": "Can you tell us what got you into writing stories?",
+      "vi": "Bạn có thể cho chúng tôi biết điều gì đã đưa bạn đến với việc viết truyện không?",
+      "vocab": [
+        {
+          "w": "get into",
+          "ipa": "/ɡet ˈɪntuː/",
+          "vi": "bắt đầu đam mê"
+        }
+      ]
+    },
+    {
+      "start": 38.99,
+      "end": 46.98,
+      "text": "Funnily enough I was never much of a reader and I certainly didn't read novels.",
+      "vi": "Nói cũng buồn cười, tôi chưa bao giờ là người thích đọc sách và chắc chắn không đọc tiểu thuyết.",
+      "vocab": [
+        {
+          "w": "funnily enough",
+          "ipa": "/ˈfʌnɪli ɪˈnʌf/",
+          "vi": "nói cũng buồn cười"
+        },
+        {
+          "w": "novel",
+          "ipa": "/ˈnɒvəl/",
+          "vi": "tiểu thuyết"
+        }
+      ]
+    },
+    {
+      "start": 47.13,
+      "end": 48.47,
+      "text": "I quite liked comics.",
+      "vi": "Tôi khá thích truyện tranh.",
+      "vocab": [
+        {
+          "w": "comic",
+          "ipa": "/ˈkɒmɪk/",
+          "vi": "truyện tranh"
+        }
+      ]
+    },
+    {
+      "start": 48.57,
+      "end": 53.06,
+      "text": "When I was thirteen I got quite ill and spent a long time in hospital.",
+      "vi": "Năm mười ba tuổi tôi bị ốm khá nặng và nằm viện một thời gian dài.",
+      "vocab": [
+        {
+          "w": "hospital",
+          "ipa": "/ˈhɒspɪtl/",
+          "vi": "bệnh viện"
+        }
+      ]
+    },
+    {
+      "start": 53.19,
+      "end": 56.99,
+      "text": "When I was allowed home, I had several months in bed when I couldn't really do much.",
+      "vi": "Khi được về nhà, tôi có vài tháng nằm trên giường mà thực sự không làm được gì nhiều.",
+      "vocab": [
+        {
+          "w": "several",
+          "ipa": "/ˈsevrəl/",
+          "vi": "vài"
+        }
+      ]
+    },
+    {
+      "start": 57.38,
+      "end": 60.31,
+      "text": "I was very bored and just started to write.",
+      "vi": "Tôi rất chán và bắt đầu viết.",
+      "vocab": [
+        {
+          "w": "bored",
+          "ipa": "/bɔːd/",
+          "vi": "chán"
+        }
+      ]
+    },
+    {
+      "start": 60.68,
+      "end": 63.51,
+      "text": "To this day I don't know why I did it.",
+      "vi": "Cho đến tận bây giờ tôi vẫn không biết vì sao mình làm vậy.",
+      "vocab": [
+        {
+          "w": "to this day",
+          "ipa": "/tə ðɪs deɪ/",
+          "vi": "cho đến tận ngày nay"
+        }
+      ]
+    },
+    {
+      "start": 63.93,
+      "end": 65.84,
+      "text": "And what effect did this have on you at the time?",
+      "vi": "Và điều đó đã tác động gì đến bạn vào lúc ấy?",
+      "vocab": [
+        {
+          "w": "effect",
+          "ipa": "/ɪˈfekt/",
+          "vi": "tác động, ảnh hưởng"
+        }
+      ]
+    },
+    {
+      "start": 65.94,
+      "end": 70.19,
+      "text": "Well, I was missing seeing my friends and having fun and generally I wasn't the happiest of teenagers.",
+      "vi": "À, tôi nhớ bạn bè và những lúc vui chơi, và nói chung tôi không phải là một thiếu niên vui vẻ nhất.",
+      "vocab": [
+        {
+          "w": "generally",
+          "ipa": "/ˈdʒenrəli/",
+          "vi": "nói chung"
+        },
+        {
+          "w": "teenager",
+          "ipa": "/ˈtiːneɪdʒə/",
+          "vi": "thiếu niên"
+        }
+      ]
+    },
+    {
+      "start": 70.39,
+      "end": 75.97,
+      "text": "I guess writing the book took me to another place in my head where I wasn't worried about being sick and I felt free in a way.",
+      "vi": "Tôi đoán việc viết sách đưa tôi đến một nơi khác trong đầu, nơi tôi không lo lắng về bệnh tật và tôi thấy tự do theo một cách nào đó.",
+      "vocab": [
+        {
+          "w": "worried",
+          "ipa": "/ˈwʌrid/",
+          "vi": "lo lắng"
+        },
+        {
+          "w": "in a way",
+          "ipa": "/ɪn ə weɪ/",
+          "vi": "theo một cách nào đó"
+        }
+      ]
+    },
+    {
+      "start": 76.36,
+      "end": 80.93,
+      "text": "I never dreamed that the book would become something that helped me and my family earn money.",
+      "vi": "Tôi chưa bao giờ mơ rằng cuốn sách lại trở thành thứ giúp tôi và gia đình kiếm tiền.",
+      "vocab": [
+        {
+          "w": "earn money",
+          "ipa": "/ɜːn ˈmʌni/",
+          "vi": "kiếm tiền"
+        }
+      ]
+    },
+    {
+      "start": 81.21,
+      "end": 88.39,
+      "text": "So when did you realise that your book was good enough to send to a publisher and how did you go about doing that?",
+      "vi": "Vậy khi nào bạn nhận ra sách đủ hay để gửi cho nhà xuất bản, và bạn đã làm việc đó như thế nào?",
+      "vocab": [
+        {
+          "w": "realise",
+          "ipa": "/ˈrɪəlaɪz/",
+          "vi": "nhận ra"
+        },
+        {
+          "w": "publisher",
+          "ipa": "/ˈpʌblɪʃə/",
+          "vi": "nhà xuất bản"
+        }
+      ]
+    },
+    {
+      "start": 88.75,
+      "end": 89.61,
+      "text": "I didn't.",
+      "vi": "Tôi không làm vậy."
+    },
+    {
+      "start": 89.81,
+      "end": 92.55,
+      "text": "I never for a second thought the book was any good.",
+      "vi": "Tôi chưa bao giờ nghĩ cuốn sách hay chút nào.",
+      "vocab": [
+        {
+          "w": "for a second",
+          "ipa": "/fər ə ˈsekənd/",
+          "vi": "dù chỉ một giây"
+        }
+      ]
+    },
+    {
+      "start": 92.67,
+      "end": 95.2,
+      "text": "I didn't even think anyone would ever read it.",
+      "vi": "Tôi thậm chí không nghĩ sẽ có ai đọc nó."
+    },
+    {
+      "start": 95.84,
+      "end": 100.62,
+      "text": "It was just for me a kind of therapy to give myself something to do.",
+      "vi": "Với tôi nó chỉ là một kiểu trị liệu để tự tìm việc làm.",
+      "vocab": [
+        {
+          "w": "therapy",
+          "ipa": "/ˈθerəpi/",
+          "vi": "liệu pháp, trị liệu"
+        }
+      ]
+    },
+    {
+      "start": 101.03,
+      "end": 103.86,
+      "text": "I had no plans whatsoever to be a writer.",
+      "vi": "Tôi hoàn toàn không có kế hoạch trở thành nhà văn.",
+      "vocab": [
+        {
+          "w": "whatsoever",
+          "ipa": "/ˌwɒtsəʊˈevə/",
+          "vi": "chút nào, hoàn toàn (nhấn mạnh)"
+        }
+      ]
+    },
+    {
+      "start": 104.31,
+      "end": 105.59,
+      "text": "So what happened?",
+      "vi": "Vậy chuyện gì đã xảy ra?"
+    },
+    {
+      "start": 105.94,
+      "end": 111.07,
+      "text": "Well, I didn't know it at the time but my family had been reading what I was writing.",
+      "vi": "À, lúc đó tôi không biết nhưng gia đình tôi đã đọc những gì tôi viết."
+    },
+    {
+      "start": 111.2,
+      "end": 116.58,
+      "text": "I think they were very worried about me and thought I was writing a diary about my feelings.",
+      "vi": "Tôi nghĩ họ rất lo cho tôi và tưởng tôi đang viết nhật ký về cảm xúc của mình.",
+      "vocab": [
+        {
+          "w": "diary",
+          "ipa": "/ˈdaɪəri/",
+          "vi": "nhật ký"
+        },
+        {
+          "w": "feelings",
+          "ipa": "/ˈfiːlɪŋz/",
+          "vi": "cảm xúc"
+        }
+      ]
+    },
+    {
+      "start": 116.95,
+      "end": 121.72,
+      "text": "My parents showed my elder sister and she sent a copy off to several publishers.",
+      "vi": "Bố mẹ cho chị gái tôi xem và chị ấy gửi một bản đến vài nhà xuất bản.",
+      "vocab": [
+        {
+          "w": "elder sister",
+          "ipa": "/ˈeldə ˈsɪstə/",
+          "vi": "chị gái"
+        },
+        {
+          "w": "send off",
+          "ipa": "/send ɒf/",
+          "vi": "gửi đi"
+        }
+      ]
+    },
+    {
+      "start": 121.75,
+      "end": 130.5,
+      "text": "The first thing I knew about it was when I got an email from a publishing house saying they wanted to meet me to discuss my story.",
+      "vi": "Điều đầu tiên tôi biết là khi nhận được email từ một nhà xuất bản nói họ muốn gặp tôi để bàn về câu chuyện của tôi.",
+      "vocab": [
+        {
+          "w": "publishing house",
+          "ipa": "/ˈpʌblɪʃɪŋ haʊs/",
+          "vi": "nhà xuất bản"
+        },
+        {
+          "w": "discuss",
+          "ipa": "/dɪˈskʌs/",
+          "vi": "thảo luận"
+        }
+      ]
+    },
+    {
+      "start": 130.52,
+      "end": 132.74,
+      "text": "Wow, you must have been so excited.",
+      "vi": "Ồ, chắc bạn đã rất hào hứng.",
+      "vocab": [
+        {
+          "w": "excited",
+          "ipa": "/ɪkˈsaɪtɪd/",
+          "vi": "hào hứng"
+        }
+      ]
+    },
+    {
+      "start": 133.13,
+      "end": 138.22,
+      "text": "No, I wasn't because I just thought it was a friend being silly and having some fun.",
+      "vi": "Không, tôi không vậy vì tôi chỉ nghĩ đó là một người bạn đang đùa vui.",
+      "vocab": [
+        {
+          "w": "silly",
+          "ipa": "/ˈsɪli/",
+          "vi": "ngớ ngẩn"
+        }
+      ]
+    },
+    {
+      "start": 138.79,
+      "end": 145.67,
+      "text": "Then, the letter came from the publisher offering me a large amount of money and I realised it was real.",
+      "vi": "Rồi lá thư từ nhà xuất bản đến, đề nghị tôi một khoản tiền lớn và tôi nhận ra đó là thật.",
+      "vocab": [
+        {
+          "w": "offer",
+          "ipa": "/ˈɒfə/",
+          "vi": "đề nghị"
+        },
+        {
+          "w": "a large amount of",
+          "ipa": "/ə lɑːdʒ əˈmaʊnt əv/",
+          "vi": "một lượng lớn"
+        }
+      ]
+    },
+    {
+      "start": 146.02,
+      "end": 149.36,
+      "text": "And now three years later, how is your life?",
+      "vi": "Và giờ ba năm sau, cuộc sống của bạn thế nào?"
+    },
+    {
+      "start": 149.49,
+      "end": 150.98,
+      "text": "What are your plans?",
+      "vi": "Bạn có kế hoạch gì?",
+      "vocab": [
+        {
+          "w": "plans",
+          "ipa": "/plænz/",
+          "vi": "kế hoạch, dự định"
+        }
+      ]
+    },
+    {
+      "start": 151.17,
+      "end": 156.5,
+      "text": "Actually, I'm about to have a bit of a break in order to concentrate on my final exams.",
+      "vi": "Thật ra tôi sắp nghỉ ngơi một chút để tập trung cho kỳ thi cuối cấp.",
+      "vocab": [
+        {
+          "w": "concentrate on",
+          "ipa": "/ˈkɒnsəntreɪt ɒn/",
+          "vi": "tập trung vào"
+        },
+        {
+          "w": "break",
+          "ipa": "/breɪk/",
+          "vi": "kỳ nghỉ ngắn"
+        }
+      ]
+    },
+    {
+      "start": 156.75,
+      "end": 158.9,
+      "text": "I want to study literature after school.",
+      "vi": "Tôi muốn học văn học sau khi học xong phổ thông.",
+      "vocab": [
+        {
+          "w": "literature",
+          "ipa": "/ˈlɪtrətʃə/",
+          "vi": "văn học"
+        }
+      ]
+    },
+    {
+      "start": 159.14,
+      "end": 162.22,
+      "text": "Then I might write another book or several books.",
+      "vi": "Sau đó tôi có thể viết thêm một hoặc nhiều cuốn sách nữa."
+    },
+    {
+      "start": 162.28,
+      "end": 163.18,
+      "text": "Who knows?",
+      "vi": "Biết đâu được?"
+    },
+    {
+      "start": 163.32,
+      "end": 168.83,
+      "text": "I may have a great career as a writer when I become an adult, or I may do a completely different job.",
+      "vi": "Tôi có thể có sự nghiệp viết lách tuyệt vời khi trưởng thành, hoặc tôi có thể làm một công việc hoàn toàn khác.",
+      "vocab": [
+        {
+          "w": "career",
+          "ipa": "/kəˈrɪə/",
+          "vi": "sự nghiệp"
+        },
+        {
+          "w": "adult",
+          "ipa": "/ˈædʌlt/",
+          "vi": "người lớn"
+        },
+        {
+          "w": "completely",
+          "ipa": "/kəmˈpliːtli/",
+          "vi": "hoàn toàn"
+        }
+      ]
+    },
+    {
+      "start": 169.28,
+      "end": 171.4,
+      "text": "Darren I wish you luck in the future.",
+      "vi": "Darren, tôi chúc bạn may mắn trong tương lai.",
+      "vocab": [
+        {
+          "w": "luck",
+          "ipa": "/lʌk/",
+          "vi": "may mắn"
+        }
+      ]
+    }
+  ]
+}
