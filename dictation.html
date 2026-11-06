@@ -113,7 +113,7 @@
   .full-input { width: 100%; min-height: 110px; padding: 4px; border: none; background: transparent; font-family: inherit; font-size: 20px; color: var(--ink); outline: none; resize: vertical; }
   .full-input::placeholder { color: #8da4b7; }
   .cloze { font-size: 21px; line-height: 2.7; }
-  .cloze .w { margin-right: 6px; }
+  .cloze .w { margin-right: 0; }
   .cz { font-family: inherit; font-size: 18px; text-align: center; padding: 4px 8px; border: 2px solid #9ec3e4; background: #fff; outline: none; color: var(--accent-deep); font-weight: 700; margin: 0 4px; border-radius: 20px; box-shadow: inset 0 -3px 0 rgba(111,163,209,.25); transition: all .15s; }
   .cz:focus { border-color: var(--accent-dark); box-shadow: 0 0 0 4px rgba(111,163,209,.25); }
   .actions-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-top: 16px; }
@@ -151,8 +151,9 @@
   .fold-body { padding: 4px 26px 22px; border-top: 2px dashed var(--line); }
   .lock-note { color: var(--muted); font-style: italic; padding-top: 14px; }
   .lbl { font-size: 13px; font-weight: 800; color: var(--muted); letter-spacing: .5px; margin: 16px 0 8px; }
-  .en-line { font-size: 21px; line-height: 2; }
-  .en-line .tw { cursor: pointer; border-bottom: 2px dotted #9ec3e4; margin-right: 5px; padding-bottom: 1px; border-radius: 4px; }
+  .en-line { font-size: 21px; line-height: 2; overflow-wrap: anywhere; word-break: normal; }
+  .fold-body, .res-line, .cloze { overflow-wrap: anywhere; }
+  .en-line .tw { cursor: pointer; border-bottom: 2px dotted #9ec3e4; padding-bottom: 1px; border-radius: 4px; }
   .en-line .tw:hover { background: var(--soft); border-bottom-color: var(--accent-dark); }
   .vi-line { font-style: italic; font-size: 17px; line-height: 1.6; }
   .link-btn { background: none; border: none; color: #2f55d4; font-weight: 700; cursor: pointer; font-size: 15px; padding: 6px 0; }
@@ -398,8 +399,27 @@ function buildCloze(i){
   toks.forEach((t,wi)=>{ const c=canon(t.core); t.hidden = c.length>=3 && !STOP.has(c) && rnd(hash(exercise.id+'|'+i+'|'+wi))<0.5; });
   if(toks.length>=3 && !toks.some(t=>t.hidden)){ let bi=0; toks.forEach((t,k)=>{ if(canon(t.core).length>canon(toks[bi].core).length) bi=k; }); toks[bi].hidden=true; }
   if(toks.length<3) toks.forEach(t=>t.hidden=true);
+  // chuỗi từ ẩn liền nhau tối đa 4 từ (từ thứ 5 được hiện lại) để ô điền không quá dài
+  let run=0; toks.forEach(t=>{ if(t.hidden){ run++; if(run>4){ t.hidden=false; run=0; } } else run=0; });
   return toks;
 }
+// Mỗi từ ẩn = 1 ô riêng: [{w:token}] hoặc [{gap:[token]}]
+function gapsOf(toks){ return toks.map(t=> t.hidden ? {gap:[t]} : {w:t}); }
+// Gõ dấu cách trong ô -> tự nhảy sang ô kế tiếp (phần chữ gõ thừa được chuyển sang ô sau)
+function cascade(el){
+  const all=[...document.querySelectorAll('.cz')]; const idx=all.indexOf(el);
+  const v=el.value.replace(/^\s+/,'');
+  if(!/\s/.test(v)){ el.value=v; growInput(el); return; }
+  const parts=v.split(/\s+/).filter(Boolean), trailing=/\s$/.test(v), next=all[idx+1];
+  el.value=parts[0]||''; growInput(el);
+  const rest=parts.slice(1).join(' ');
+  if(!next){ el.value=parts.join(' '); growInput(el); return; }
+  if(rest){ next.value=rest+(next.value?' '+next.value:''); growInput(next); cascade(next); }
+  const target = rest ? all[Math.min(all.length-1, idx+1)] : next;
+  target.focus(); const e=target.value.length; target.setSelectionRange(e,e);
+  if(rest && target.value.length && /\s/.test(target.value)) cascade(target);
+}
+function growInput(el){ const need=Math.max(el.dataset.min*1,el.value.length+2); el.style.width=need+'ch'; }
 function lcs(exp,got){
   const n=exp.length,m=got.length,dp=Array.from({length:n+1},()=>new Array(m+1).fill(0));
   for(let i=1;i<=n;i++) for(let j=1;j<=m;j++) dp[i][j]=exp[i-1]===got[j-1]?dp[i-1][j-1]+1:Math.max(dp[i-1][j],dp[i][j-1]);
@@ -491,10 +511,11 @@ function renderStage(){
   } else {
     if(!S.cloze) S.cloze=buildCloze(i);
     let k=0;
-    answer='<div class="cloze">'+S.cloze.map(t=>{
-      if(!t.hidden) return `<span class="w">${esc(t.pre+t.core+t.post)}</span>`;
-      const w=Math.max(4,t.core.length+2), v=S.vals[k++]||'';
-      return `${esc(t.pre)}<input class="cz" style="width:${w}ch" value="${esc(v)}" autocomplete="off" autocapitalize="off" spellcheck="false">${esc(t.post)} `;
+    answer='<div class="cloze">'+gapsOf(S.cloze).map(it=>{
+      if(it.w) return `<span class="w">${esc(it.w.pre+it.w.core+it.w.post)}</span> `;
+      const ws=it.gap, len=ws.map(t=>t.core).join(' ').length, w=Math.max(6,len+3), v=S.vals[k++]||'';
+      const hint='';
+      return `${esc(ws[0].pre)}<input class="cz" data-min="${w}" style="width:${Math.max(w,v.length+2)}ch" value="${esc(v)}"${hint} autocomplete="off" autocapitalize="off" spellcheck="false">${esc(ws[ws.length-1].post)} `;
     }).join('')+'</div>';
   }
   const vocab=(s.vocab||[]).map(v=>`<div class="vocab-row"><b>${esc(v.w)}</b>
@@ -502,7 +523,7 @@ function renderStage(){
       <span class="vocab-ipa">${esc(v.ipa||'')}</span><span>${esc(v.vi||'')}</span></div>`).join('');
   const scriptBody = lock ? `<div class="lock-note">🔒 Hãy bấm "Kiểm tra" câu này để mở script và bản dịch.</div>` : `
       <div class="lbl">ENGLISH · bấm vào từ để nghe phát âm</div>
-      <div class="en-line">${toks.map(t=>`<span class="tw" onclick="speak('${esc(t.core).replace(/'/g,"\\'")}')">${esc(t.pre+t.core+t.post)}</span>`).join('')}</div>
+      <div class="en-line">${toks.map(t=>`<span class="tw" onclick="speak('${esc(t.core).replace(/'/g,"\\'")}')">${esc(t.pre+t.core+t.post)}</span>`).join(' ')}</div>
       <div class="shadow-row"><button class="link-btn" id="btn-shadow" onclick="toggleShadow()">🎙️ Luyện shadowing câu</button><span id="shadow-out"></span></div>
       ${s.vi?`<div class="lbl">VIETNAMESE</div><div class="vi-line">${esc(s.vi)}</div>`:''}`;
 
@@ -525,7 +546,7 @@ function renderStage(){
     </div>
     <div class="answer-box" id="answer-box">${answer}</div>
     <div class="actions-row">
-      <div class="hint no-copy">${S.showRes?'':`Nhấn phím <kbd>Enter</kbd> để kiểm tra.<br><kbd>Alt</kbd>+<kbd>R</kbd> nghe lại · <kbd>Alt</kbd>+<kbd>←</kbd>/<kbd>→</kbd> đổi câu`}</div>
+      <div class="hint no-copy">${S.showRes?'':`${mode==='EASY'?'Gõ <kbd>dấu cách</kbd> để sang ô kế tiếp · ':''}Nhấn <kbd>Enter</kbd> để kiểm tra.<br><kbd>Alt</kbd>+<kbd>R</kbd> nghe lại · <kbd>Alt</kbd>+<kbd>←</kbd>/<kbd>→</kbd> đổi câu`}</div>
       <div class="btns">
         <button class="btn btn-ghost" onclick="resetSeg()">Làm lại</button>
         ${S.showRes ? (i<segs.length-1?`<button class="btn btn-primary" onclick="gotoSeg(cur+1)">Câu tiếp →</button>`:`<button class="btn btn-primary" onclick="finishAll()">🏁 Xem kết quả</button>`)
@@ -539,7 +560,7 @@ function renderStage(){
 
   const ta=$('in-full'); if(ta){ ta.focus(); ta.addEventListener('keydown',e=>{ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); checkSeg(); } }); }
   const cz=[...document.querySelectorAll('.cz')];
-  cz.forEach(el=>{ el.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); checkSeg(); } }); });
+  cz.forEach(el=>{ el.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); checkSeg(); } }); el.addEventListener('input',()=>cascade(el)); el.addEventListener('keydown',e=>{ if(e.key==='Backspace'&&el.value===''){ const i=cz.indexOf(el); if(i>0){ e.preventDefault(); const pv=cz[i-1]; pv.focus(); const n=pv.value.length; pv.setSelectionRange(n,n); } } }); });
   if(cz[0]) cz[0].focus();
   document.querySelectorAll('.cz,.full-input').forEach(el=>{ el.addEventListener('paste',e=>{ if(!isTeacher()) e.preventDefault(); }); el.addEventListener('drop',e=>{ if(!isTeacher()) e.preventDefault(); }); });
   paintPlayer();
@@ -569,12 +590,16 @@ function checkSeg(){
         +`<div class="res-typed">Em đã gõ: ${typed.trim()?esc(typed.trim()):'<i>(để trống)</i>'}${extra.length?` · <s>thừa/sai: ${extra.map(esc).join(', ')}</s>`:''}</div>`;
   } else {
     let k=0;
-    html='<div class="res-line">'+S.cloze.map(t=>{
-      if(!t.hidden) return `<span>${esc(t.pre+t.core+t.post)}</span> `;
-      const v=(S.vals[k++]||'').trim(); tt++;
-      if(canon(v)===canon(t.core)){ sc++; return `${esc(t.pre)}<span class="ok-word">${esc(t.core)}</span>${esc(t.post)} `; }
-      missed.push(t.core);
-      return `${esc(t.pre)}${v?`<span class="typed-wrong">${esc(v)}</span>`:''}<span class="fix-word">${esc(t.core)}</span>${esc(t.post)} `;
+    html='<div class="res-line">'+gapsOf(S.cloze).map(it=>{
+      if(it.w) return `<span>${esc(it.w.pre+it.w.core+it.w.post)}</span> `;
+      const ws=it.gap, v=(S.vals[k++]||'').trim();
+      const exp=ws.map(t=>canon(t.core)), gotT=tokenize(v), gotC=gotT.map(t=>canon(t.core));
+      const {me,mg}=lcs(exp,gotC); tt+=exp.length; sc+=me.size;
+      ws.forEach((t,j)=>{ if(!me.has(j)) missed.push(t.core); });
+      const extra=gotT.filter((t,j)=>!mg.has(j)).map(t=>t.core);
+      const allOk=me.size===exp.length && !extra.length;
+      const body=ws.map((t,j)=>`<span class="${me.has(j)?'ok-word':'fix-word'}">${esc(t.core)}</span>`).join(' ');
+      return `${esc(ws[0].pre)}${(!allOk&&extra.length)?`<span class="typed-wrong">${extra.map(esc).join(' ')}</span>`:''}${body}${esc(ws[ws.length-1].post)} `;
     }).join('')+'</div>';
   }
   const r=tt?sc/tt:0, cls=r>=0.9?'good':r>=0.5?'mid':'bad', ns=starsOf(r), first=!S.done;
