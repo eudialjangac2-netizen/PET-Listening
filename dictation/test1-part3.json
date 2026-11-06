@@ -2,14 +2,14 @@
   "id": "test1-part3",
   "segments": [
     {
-      "start": 41.2,
-      "end": 43.55,
+      "start": 52,
+      "end": 53.3,
       "text": "Hi everyone.",
       "vi": "Xin chào mọi người."
     },
     {
-      "start": 43.63,
-      "end": 57.48,
+      "start": 53.3,
+      "end": 57.3,
       "text": "I have chosen to tell you about my father's job for the project we had for today.",
       "vi": "Em đã chọn kể cho các bạn nghe về công việc của bố em, cho dự án mà chúng ta có hôm nay.",
       "vocab": [
@@ -151,7 +151,7 @@
     },
     {
       "start": 99.48,
-      "end": 102.0,
+      "end": 102,
       "text": "Six more people were working on the plane.",
       "vi": "Có thêm sáu người nữa làm việc trên máy bay."
     },
