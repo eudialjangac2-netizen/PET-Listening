@@ -2,14 +2,14 @@
   "id": "test1-part4",
   "segments": [
     {
-      "start": 25.3,
-      "end": 28.44,
+      "start": 29.5,
+      "end": 30.7,
       "text": "Hi Darren.",
       "vi": "Chào Darren."
     },
     {
-      "start": 29.76,
-      "end": 33.37,
+      "start": 30.7,
+      "end": 33.3,
       "text": "You are very successful for such a young writer.",
       "vi": "Bạn rất thành công khi còn là một nhà văn trẻ như vậy.",
       "vocab": [
@@ -22,7 +22,7 @@
     },
     {
       "start": 33.59,
-      "end": 38.97,
+      "end": 36,
       "text": "Can you tell us what got you into writing stories?",
       "vi": "Bạn có thể cho chúng tôi biết điều gì đã đưa bạn đến với việc viết truyện không?",
       "vocab": [
@@ -34,8 +34,8 @@
       ]
     },
     {
-      "start": 38.99,
-      "end": 46.98,
+      "start": 36,
+      "end": 40.7,
       "text": "Funnily enough I was never much of a reader and I certainly didn't read novels.",
       "vi": "Nói cũng buồn cười, tôi chưa bao giờ là người thích đọc sách và chắc chắn không đọc tiểu thuyết.",
       "vocab": [
@@ -52,8 +52,8 @@
       ]
     },
     {
-      "start": 47.13,
-      "end": 48.47,
+      "start": 40.7,
+      "end": 42.3,
       "text": "I quite liked comics.",
       "vi": "Tôi khá thích truyện tranh.",
       "vocab": [
@@ -65,8 +65,8 @@
       ]
     },
     {
-      "start": 48.57,
-      "end": 53.06,
+      "start": 42.3,
+      "end": 47,
       "text": "When I was thirteen I got quite ill and spent a long time in hospital.",
       "vi": "Năm mười ba tuổi tôi bị ốm khá nặng và nằm viện một thời gian dài.",
       "vocab": [
@@ -78,8 +78,8 @@
       ]
     },
     {
-      "start": 53.19,
-      "end": 56.99,
+      "start": 47,
+      "end": 51.2,
       "text": "When I was allowed home, I had several months in bed when I couldn't really do much.",
       "vi": "Khi được về nhà, tôi có vài tháng nằm trên giường mà thực sự không làm được gì nhiều.",
       "vocab": [
@@ -91,8 +91,8 @@
       ]
     },
     {
-      "start": 57.38,
-      "end": 60.31,
+      "start": 51.2,
+      "end": 54.5,
       "text": "I was very bored and just started to write.",
       "vi": "Tôi rất chán và bắt đầu viết.",
       "vocab": [
@@ -104,8 +104,8 @@
       ]
     },
     {
-      "start": 60.68,
-      "end": 63.51,
+      "start": 54.5,
+      "end": 57,
       "text": "To this day I don't know why I did it.",
       "vi": "Cho đến tận bây giờ tôi vẫn không biết vì sao mình làm vậy.",
       "vocab": [
@@ -117,8 +117,8 @@
       ]
     },
     {
-      "start": 63.93,
-      "end": 65.84,
+      "start": 57,
+      "end": 60.2,
       "text": "And what effect did this have on you at the time?",
       "vi": "Và điều đó đã tác động gì đến bạn vào lúc ấy?",
       "vocab": [
@@ -130,8 +130,8 @@
       ]
     },
     {
-      "start": 65.94,
-      "end": 70.19,
+      "start": 60.25,
+      "end": 68.42,
       "text": "Well, I was missing seeing my friends and having fun and generally I wasn't the happiest of teenagers.",
       "vi": "À, tôi nhớ bạn bè và những lúc vui chơi, và nói chung tôi không phải là một thiếu niên vui vẻ nhất.",
       "vocab": [
@@ -148,8 +148,8 @@
       ]
     },
     {
-      "start": 70.39,
-      "end": 75.97,
+      "start": 68.08,
+      "end": 75.94,
       "text": "I guess writing the book took me to another place in my head where I wasn't worried about being sick and I felt free in a way.",
       "vi": "Tôi đoán việc viết sách đưa tôi đến một nơi khác trong đầu, nơi tôi không lo lắng về bệnh tật và tôi thấy tự do theo một cách nào đó.",
       "vocab": [
@@ -166,8 +166,8 @@
       ]
     },
     {
-      "start": 76.36,
-      "end": 80.93,
+      "start": 75.94,
+      "end": 81.08,
       "text": "I never dreamed that the book would become something that helped me and my family earn money.",
       "vi": "Tôi chưa bao giờ mơ rằng cuốn sách lại trở thành thứ giúp tôi và gia đình kiếm tiền.",
       "vocab": [
@@ -179,8 +179,8 @@
       ]
     },
     {
-      "start": 81.21,
-      "end": 88.39,
+      "start": 81.08,
+      "end": 88.49,
       "text": "So when did you realise that your book was good enough to send to a publisher and how did you go about doing that?",
       "vi": "Vậy khi nào bạn nhận ra sách đủ hay để gửi cho nhà xuất bản, và bạn đã làm việc đó như thế nào?",
       "vocab": [
@@ -297,7 +297,7 @@
     },
     {
       "start": 121.75,
-      "end": 130.5,
+      "end": 129.5,
       "text": "The first thing I knew about it was when I got an email from a publishing house saying they wanted to meet me to discuss my story.",
       "vi": "Điều đầu tiên tôi biết là khi nhận được email từ một nhà xuất bản nói họ muốn gặp tôi để bàn về câu chuyện của tôi.",
       "vocab": [
@@ -314,7 +314,7 @@
       ]
     },
     {
-      "start": 130.52,
+      "start": 129.5,
       "end": 132.74,
       "text": "Wow, you must have been so excited.",
       "vi": "Ồ, chắc bạn đã rất hào hứng.",
