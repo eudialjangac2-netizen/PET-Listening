@@ -1,0 +1,293 @@
+{
+  "id": "test1-part3",
+  "segments": [
+    {
+      "start": 41.2,
+      "end": 43.55,
+      "text": "Hi everyone.",
+      "vi": "Xin chào mọi người."
+    },
+    {
+      "start": 43.63,
+      "end": 57.48,
+      "text": "I have chosen to tell you about my father's job for the project we had for today.",
+      "vi": "Em đã chọn kể cho các bạn nghe về công việc của bố em, cho dự án mà chúng ta có hôm nay.",
+      "vocab": [
+        {
+          "w": "project",
+          "ipa": "/ˈprɒdʒekt/",
+          "vi": "dự án"
+        }
+      ]
+    },
+    {
+      "start": 57.85,
+      "end": 60.81,
+      "text": "I chose the first project which focuses on jobs.",
+      "vi": "Em chọn dự án thứ nhất, tập trung vào chủ đề nghề nghiệp.",
+      "vocab": [
+        {
+          "w": "focus on",
+          "ipa": "/ˈfəʊkəs ɒn/",
+          "vi": "tập trung vào"
+        }
+      ]
+    },
+    {
+      "start": 61.03,
+      "end": 63.9,
+      "text": "I found the other topic on the environment a bit difficult.",
+      "vi": "Em thấy chủ đề còn lại, về môi trường, hơi khó.",
+      "vocab": [
+        {
+          "w": "environment",
+          "ipa": "/ɪnˈvaɪrənmənt/",
+          "vi": "môi trường"
+        }
+      ]
+    },
+    {
+      "start": 65.53,
+      "end": 69.33,
+      "text": "My father is a pilot for an international airline company.",
+      "vi": "Bố em là phi công của một hãng hàng không quốc tế.",
+      "vocab": [
+        {
+          "w": "pilot",
+          "ipa": "/ˈpaɪlət/",
+          "vi": "phi công"
+        },
+        {
+          "w": "international",
+          "ipa": "/ˌɪntəˈnæʃənəl/",
+          "vi": "quốc tế"
+        },
+        {
+          "w": "airline",
+          "ipa": "/ˈeəlaɪn/",
+          "vi": "hãng hàng không"
+        }
+      ]
+    },
+    {
+      "start": 69.71,
+      "end": 74.79,
+      "text": "He's been flying people around the world for the last sixteen years and he loves his job.",
+      "vi": "Bố đã chở mọi người bay khắp thế giới suốt mười sáu năm qua và bố rất yêu công việc của mình.",
+      "vocab": [
+        {
+          "w": "for the last sixteen years",
+          "ipa": "/fɔː ðə lɑːst ˌsɪksˈtiːn jɪəz/",
+          "vi": "suốt 16 năm qua"
+        }
+      ]
+    },
+    {
+      "start": 75.3,
+      "end": 79.03,
+      "text": "After he graduated from university, he became a teacher.",
+      "vi": "Sau khi tốt nghiệp đại học, bố trở thành giáo viên.",
+      "vocab": [
+        {
+          "w": "graduate",
+          "ipa": "/ˈɡrædʒueɪt/",
+          "vi": "tốt nghiệp"
+        }
+      ]
+    },
+    {
+      "start": 79.48,
+      "end": 82.4,
+      "text": "He taught in a primary school and he really enjoyed it.",
+      "vi": "Bố dạy ở một trường tiểu học và rất thích công việc đó.",
+      "vocab": [
+        {
+          "w": "primary school",
+          "ipa": "/ˈpraɪməri skuːl/",
+          "vi": "trường tiểu học"
+        },
+        {
+          "w": "enjoy",
+          "ipa": "/ɪnˈdʒɔɪ/",
+          "vi": "thích, tận hưởng"
+        }
+      ]
+    },
+    {
+      "start": 82.76,
+      "end": 90.94,
+      "text": "However, he'd always had a dream that one day he would fly, so he decided to go for an important career change and train as a pilot.",
+      "vi": "Tuy nhiên, bố luôn có ước mơ một ngày nào đó sẽ được bay, nên bố quyết định thay đổi nghề nghiệp quan trọng và học để trở thành phi công.",
+      "vocab": [
+        {
+          "w": "career change",
+          "ipa": "/kəˈrɪə tʃeɪndʒ/",
+          "vi": "thay đổi nghề nghiệp"
+        },
+        {
+          "w": "train as",
+          "ipa": "/treɪn æz/",
+          "vi": "được đào tạo thành"
+        }
+      ]
+    },
+    {
+      "start": 92.31,
+      "end": 98.71,
+      "text": "He will never forget his first flight when he was responsible for a plane with 80 happy holiday-makers on their way to Italy.",
+      "vi": "Bố sẽ không bao giờ quên chuyến bay đầu tiên, khi bố chịu trách nhiệm một chiếc máy bay chở 80 người đi nghỉ lễ vui vẻ trên đường đến Ý.",
+      "vocab": [
+        {
+          "w": "responsible",
+          "ipa": "/rɪˈspɒnsəbəl/",
+          "vi": "chịu trách nhiệm"
+        },
+        {
+          "w": "holiday-maker",
+          "ipa": "/ˈhɒlədeɪ ˌmeɪkə/",
+          "vi": "người đi nghỉ"
+        }
+      ]
+    },
+    {
+      "start": 99.48,
+      "end": 102.0,
+      "text": "Six more people were working on the plane.",
+      "vi": "Có thêm sáu người nữa làm việc trên máy bay."
+    },
+    {
+      "start": 102.41,
+      "end": 104.06,
+      "text": "He was very nervous.",
+      "vi": "Bố đã rất lo lắng.",
+      "vocab": [
+        {
+          "w": "nervous",
+          "ipa": "/ˈnɜːvəs/",
+          "vi": "lo lắng, hồi hộp"
+        }
+      ]
+    },
+    {
+      "start": 104.27,
+      "end": 108.55,
+      "text": "Everything went well though and he was so pleased when his first flight was behind him.",
+      "vi": "Tuy vậy mọi thứ đều suôn sẻ và bố rất vui khi chuyến bay đầu tiên đã qua.",
+      "vocab": [
+        {
+          "w": "pleased",
+          "ipa": "/pliːzd/",
+          "vi": "hài lòng, vui"
+        }
+      ]
+    },
+    {
+      "start": 109.79,
+      "end": 115.13,
+      "text": "He often gets nervous people asking him questions about how dangerous flying really is.",
+      "vi": "Bố thường gặp những hành khách lo lắng hỏi bố rằng bay thực sự nguy hiểm đến mức nào.",
+      "vocab": [
+        {
+          "w": "dangerous",
+          "ipa": "/ˈdeɪndʒərəs/",
+          "vi": "nguy hiểm"
+        }
+      ]
+    },
+    {
+      "start": 115.78,
+      "end": 118.84,
+      "text": "He tells them that it is the safest way to travel.",
+      "vi": "Bố nói với họ rằng đó là cách di chuyển an toàn nhất.",
+      "vocab": [
+        {
+          "w": "the safest way",
+          "ipa": "/ðə ˈseɪfɪst weɪ/",
+          "vi": "cách an toàn nhất"
+        }
+      ]
+    },
+    {
+      "start": 119.25,
+      "end": 131.74,
+      "text": "However, sometimes unexpected things happen during a flight, such as bad weather or difficult passengers, but he says that the most important thing a pilot can do is to always stay calm.",
+      "vi": "Tuy nhiên, đôi khi những điều bất ngờ xảy ra trong chuyến bay, như thời tiết xấu hay hành khách khó tính, nhưng bố nói điều quan trọng nhất một phi công có thể làm là luôn giữ bình tĩnh.",
+      "vocab": [
+        {
+          "w": "unexpected",
+          "ipa": "/ˌʌnɪkˈspektɪd/",
+          "vi": "bất ngờ"
+        },
+        {
+          "w": "passenger",
+          "ipa": "/ˈpæsɪndʒə/",
+          "vi": "hành khách"
+        },
+        {
+          "w": "stay calm",
+          "ipa": "/steɪ kɑːm/",
+          "vi": "giữ bình tĩnh"
+        }
+      ]
+    },
+    {
+      "start": 133.13,
+      "end": 142.58,
+      "text": "My father believes that what nervous passengers have in common is that they need to be in control of their life and when they get on a plane they have to give up that control.",
+      "vi": "Bố em tin rằng điểm chung của những hành khách lo lắng là họ cần kiểm soát cuộc sống của mình, và khi lên máy bay họ phải từ bỏ sự kiểm soát đó.",
+      "vocab": [
+        {
+          "w": "in common",
+          "ipa": "/ɪn ˈkɒmən/",
+          "vi": "điểm chung"
+        },
+        {
+          "w": "in control of",
+          "ipa": "/ɪn kənˈtrəʊl ɒv/",
+          "vi": "kiểm soát"
+        },
+        {
+          "w": "give up",
+          "ipa": "/ɡɪv ʌp/",
+          "vi": "từ bỏ"
+        }
+      ]
+    },
+    {
+      "start": 144.04,
+      "end": 147.88,
+      "text": "He always does his best to make passengers feel relaxed on the flight.",
+      "vi": "Bố luôn cố hết sức để hành khách cảm thấy thư giãn trong chuyến bay.",
+      "vocab": [
+        {
+          "w": "relaxed",
+          "ipa": "/rɪˈlækst/",
+          "vi": "thư giãn"
+        }
+      ]
+    },
+    {
+      "start": 148.2,
+      "end": 155.4,
+      "text": "Once he has taken off and he is cruising in the sky, he always has a coffee to make him feel extra awake and ready for anything.",
+      "vi": "Khi đã cất cánh và đang bay êm trên bầu trời, bố luôn uống một ly cà phê để thấy tỉnh táo hơn và sẵn sàng cho mọi tình huống.",
+      "vocab": [
+        {
+          "w": "take off",
+          "ipa": "/teɪk ɒf/",
+          "vi": "cất cánh"
+        },
+        {
+          "w": "cruise",
+          "ipa": "/kruːz/",
+          "vi": "bay ở độ cao ổn định"
+        },
+        {
+          "w": "awake",
+          "ipa": "/əˈweɪk/",
+          "vi": "tỉnh táo"
+        }
+      ]
+    }
+  ]
+}
