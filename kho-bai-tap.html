@@ -166,6 +166,10 @@
   let EXERCISES = [];
   let fullTestMode = false;
   let selectedIds = new Set();
+  let DICT_IDS = new Set();
+  async function loadDictationIds() {
+    try { const r = await fetch('dictation-manifest.json', { cache: 'no-store' }); if (r.ok) DICT_IDS = new Set(await r.json()); } catch (e) {}
+  }
 
   async function loadAllExercises() {
     try {
@@ -199,6 +203,11 @@
     return base + 'bai-tap.html?id=' + encodeURIComponent(id);
   }
 
+  function copyDictLink(id, btn) {
+    const url = window.location.href.replace(/kho-bai-tap\.html.*$/, '') + 'dictation.html?id=' + encodeURIComponent(id);
+    const done = () => { const t = btn.textContent; btn.textContent = '✅ Đã copy'; setTimeout(() => btn.textContent = t, 1500); };
+    if (navigator.clipboard) navigator.clipboard.writeText(url).then(done).catch(() => prompt('Copy link:', url)); else prompt('Copy link:', url);
+  }
   function copyLink(id, btn) {
     const url = buildExerciseUrl(id);
     navigator.clipboard.writeText(url).then(() => {
@@ -235,6 +244,10 @@
           <a class="ex-btn ex-btn-open" href="bai-tap.html?id=${encodeURIComponent(ex.id)}" target="_blank">▶️ Mở bài</a>
           <button class="ex-btn ex-btn-copy" onclick="copyLink('${ex.id}', this)">🔗 Copy link</button>
         </div>
+        ${DICT_IDS.has(ex.id) ? `<div class="ex-card-actions" style="margin-top:8px;">
+          <a class="ex-btn ex-btn-open" style="background:var(--pink-dark);" href="dictation.html?id=${encodeURIComponent(ex.id)}" target="_blank">✍️ Chép chính tả</a>
+          <button class="ex-btn ex-btn-copy" onclick="copyDictLink('${ex.id}', this)">🔗 Link</button>
+        </div>` : ''}
       </div>`;
   }
 
@@ -330,6 +343,7 @@
 
   (async function init() {
     contentEl.innerHTML = `<div class="empty-state"><div class="emoji">🐋💭</div>Đang tải danh sách bài tập...</div>`;
+    await loadDictationIds();
     EXERCISES = await loadAllExercises();
     document.getElementById('search-input').addEventListener('input', () => renderCards(EXERCISES));
     renderCards(EXERCISES);
