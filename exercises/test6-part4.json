@@ -1,0 +1,81 @@
+
+{
+  "id": "test6-part4",
+  "part": "Part 4",
+  "title": "Simply for PET - Test 6 - Part 4 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 1 đoạn hội thoại chung cho 6 câu từ 20 đến 25. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test6-part4.mp3",
+  "fullScript": [
+    "<b>Questions 20-25.</b><br><br><b>Man:</b> Carol, you’re a popular, young teacher. Can you tell us why you decided on a career in teaching?<br><br><b>Carol:</b> I actually wanted to be an actor but of course that is not the easiest of professions to be successful in and my parents weren’t happy with the idea, as well as my classmates. They always told me that I didn’t have any talent in acting. However, I had an amazing drama teacher at school that really helped me to believe in myself. She understood that I was a very shy child and she encouraged me to take drama seriously. So although I didn’t become an actor, I realised what a fantastic job teaching could be. I wanted to help other children in the same way that she helped me.<br><br><b>Man:</b> What does a good teacher should aim to do in your opinion?<br><br><b>Carol:</b> It’s not just about knowing your subject. There are a lot of very clever people who know lots about something but they wouldn’t be able to teach what they know to anyone. You have to be able to connect with your students first. The children need to be interested in you and what you have to say.<br><br><b>Man:</b> Every teacher will sometimes have a difficult class. How do you deal with that kind of situation?<br><br><b>Carol:</b> There is always a reason why children don’t behave well in a classroom. In my experience, it is usually because they are bored or tired. So what I do is I get them to stand up and jump up and down for a minute, then we walk around the room and clap our hands for another minute. I know it sounds strange but it works. Punishing them with extra homework activities or exams is not a solution.<br><br><b>Man:</b> How would you describe your achievements as a teacher?<br><br><b>Carol:</b> It’s quite a complicated job and you have to deal with lots of unexpected situations. On the whole, I think I do a really good job and I’m really pleased with what I have achieved over the years.<br><br><b>Man:</b> How does your parents feel now that you are so young and so successful at the same time?<br><br><b>Carol:</b> Certainly they are proud of me. I think they must also feel relieved that I didn’t follow my first aim to become an actor.<br><br><b>Man:</b> So what does the future hold in store for you, Carol? Do you think you would like to become the head teacher of a large school somewhere? Or would you still like to give acting a go?<br><br><b>Carol:</b> I don’t think either of those options is really for me. I want to stay in the classroom and be the best that I can be at what I do now. I’m very happy with my life just as it is.<br><br><b>Man:</b> Thank you Carol."
+  ],
+  "questions": [
+    {
+      "num": 20,
+      "prompt": "Who inspired Carol to become a teacher?",
+      "options": {
+        "A": "her parents",
+        "B": "her drama teacher",
+        "C": "her classmates"
+      },
+      "answer": "B",
+      "script": "I actually wanted to be an actor but of course that is not the easiest of professions to be successful in and my parents weren’t happy with the idea, as well as my classmates. They always told me that I didn’t have any talent in acting. <span class='highlight'>However, I had an amazing drama teacher at school that really helped me to believe in myself. She understood that I was a very shy child and she encouraged me to take drama seriously. So although I didn’t become an actor, I realised what a fantastic job teaching could be.</span> I wanted to help other children in the same way that she helped me."
+    },
+    {
+      "num": 21,
+      "prompt": "What is the most important thing about being a teacher, according to Carol?",
+      "options": {
+        "A": "show how much they know about their subject",
+        "B": "be more intelligent than their students",
+        "C": "communicate well with their students"
+      },
+      "answer": "C",
+      "script": "It’s not just about knowing your subject. There are a lot of very clever people who know lots about something but they wouldn’t be able to teach what they know to anyone. <span class='highlight'>You have to be able to connect with your students first. The children need to be interested in you and what you have to say.</span>"
+    },
+    {
+      "num": 22,
+      "prompt": "What does Carol have her students do if they aren’t working well?",
+      "options": {
+        "A": "extra homework",
+        "B": "a written test",
+        "C": "physical exercise"
+      },
+      "answer": "C",
+      "script": "There is always a reason why children don’t behave well in a classroom. In my experience, it is usually because they are bored or tired. <span class='highlight'>So what I do is I get them to stand up and jump up and down for a minute, then we walk around the room and clap our hands for another minute.</span> I know it sounds strange but it works. Punishing them with extra homework activities or exams is not a solution."
+    },
+    {
+      "num": 23,
+      "prompt": "How does Carol feel about her career as a teacher?",
+      "options": {
+        "A": "proud",
+        "B": "anxious",
+        "C": "disappointed"
+      },
+      "answer": "A",
+      "script": "It’s quite a complicated job and you have to deal with lots of unexpected situations. <span class='highlight'>On the whole, I think I do a really good job and I’m really pleased with what I have achieved over the years.</span>"
+    },
+    {
+      "num": 24,
+      "prompt": "Carol’s parents",
+      "options": {
+        "A": "are disappointed with what she has achieved so far.",
+        "B": "are very satisfied with her career progress.",
+        "C": "feel sorry they didn’t let her become an actor."
+      },
+      "answer": "B",
+      "script": "<span class='highlight'>Certainly they are proud of me.</span> I think they must also feel relieved that I didn’t follow my first aim to become an actor."
+    },
+    {
+      "num": 25,
+      "prompt": "What does Carol want to do in the future?",
+      "options": {
+        "A": "be a headteacher",
+        "B": "continue to teach",
+        "C": "do some acting"
+      },
+      "answer": "B",
+      "script": "I don’t think either of those options is really for me. <span class='highlight'>I want to stay in the classroom and be the best that I can be at what I do now.</span> I’m very happy with my life just as it is."
+    }
+  ]
+}
