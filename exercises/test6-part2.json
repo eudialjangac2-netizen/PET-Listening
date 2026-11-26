@@ -1,0 +1,86 @@
+
+{
+  "id": "test6-part2",
+  "part": "Part 2",
+  "title": "Simply for PET Test 6 - Part 2 (Multiple Choice)",
+  "type": "mcq",
+  "rightPanelMode": "text",
+  "instruction": "Bạn sẽ nghe 6 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test6-part2.mp3",
+  "fullScript": [
+    "<b>Question 8. You will hear two friends talking about a neighbour's dog.</b><br>Girl: That dog at number 22 is really unfriendly, isn't he? He really scared me this time. He started barking out of nowhere.<br>Boy: I think he's ok really. Actually he barks all the time because they are at work for so many hours every day.<br>Girl: When I walk past their garden he barks at me. I don't think they look after him at all.<br>Boy: They take him for a long walk in the morning and another one at night so they do look after him but he obviously isn't happy being left all day. I might have a word with them and ask them if they want me to go and play with him after school during the week.",
+    "<b>Question 9. You will hear two friends talking about a film.</b><br>Boy: Hi Stella! What happened to you yesterday? You just disappeared from the cinema.<br>Girl: Well, I did tell the teacher I wanted to leave.<br>Boy: What's the matter? I think the film was great.<br>Girl: It was nothing to do with that. But I had a terrible headache and I couldn't enjoy the film. The teacher called my dad who took me to the hospital. The doctor said that I was very anxious about the exams and that's why I had a headache. He suggested I stay at home and rest for a couple of days.",
+    "<b>Question 10. You will hear two friends talking about the maths lesson.</b><br>Boy: What did you think of maths today?<br>Girl: It was ok. You know me, maths is one of my favourite subjects.<br>Boy: Me too and I really like Mr Browning. But, I don't know, I just feel that I have to think about everything a lot more now. It used to be so much easier.<br>Girl: I was thinking the same thing but I guess that's only to be expected as we are nearly at the end of the course so we are doing more challenging things. Don't worry though we are both going to do well in the exam.<br>Boy: I'm sure you are right. But I'm still worried.",
+    "<b>Question 11. You will hear two friends talking about a school trip they went on.</b><br>Girl: That was the best school trip ever!<br>Boy: It was great, wasn't it? I did feel sorry for our teacher though. Did you see her face when she realised that the museum was closed all day?<br>Girl: Yes, she was very embarrassed. But it wasn't her fault. It was meant to be open but perhaps they didn't have any electricity.<br>Boy: It was fantastic for us. I hadn't been to a zoo for years and the monkeys were so funny.<br>Girl: I think the museum would have been very boring to be honest.<br>Boy: I'm sure almost everyone would agree with you on that one.",
+    "<b>Question 12. You will hear two friends talking about a football match.</b><br>Boy: Well, there was certainly plenty of action during that game.<br>Girl: You can say that again. We did well to win that one.<br>Boy: Our players were really in control for most of the match. They were very well trained by our new coach.<br>Girl: We were definitely the stronger team. It's just a shame that some of the crowd got out of control.<br>Boy: I know. I don't understand why supporters of the two teams attack to each other at football matches. It really makes me angry. It doesn't happen at rugby matches.",
+    "<b>Question 13. You will hear two friends talking about a new leisure centre.</b><br>Girl: Wow, what a fantastic swimming pool!<br>Boy: It was quite good. And the gym was really well-equipped but you would expect that in a new leisure centre.<br>Girl: The cafe looked nice too. We'll have to try it out next time and see what the food is like.<br>Boy: Good idea. What did you think about the design of the building as a whole?<br>Girl: I liked it as it was very modern and bright.<br>Boy: I thought it was fantastic, especially the big glass roof and the way everything is a bit unexpected in a really good way. To be honest I thought it was more like a work of art than a leisure centre."
+  ],
+  "questions": [
+    {
+      "num": 8,
+      "prompt": "The boy thinks the dog",
+      "options": {
+        "A": "needs more walks.",
+        "B": "is left alone for too long.",
+        "C": "is unfriendly."
+      },
+      "answer": "B",
+      "script": "Boy: I think he's ok really. <span class='highlight'>Actually he barks all the time because they are at work for so many hours every day.</span><br>Girl: When I walk past their garden he barks at me. I don't think they look after him at all.<br>Boy: They take him for a long walk in the morning and another one at night so they do look after him <span class='highlight'>but he obviously isn't happy being left all day.</span> I might have a word with them and ask them if they want me to go and play with him after school during the week."
+    },
+    {
+      "num": 9,
+      "prompt": "Why did the girl leave the cinema early?",
+      "options": {
+        "A": "She had an appointment with her dad.",
+        "B": "She didn't like the film.",
+        "C": "She felt unwell."
+      },
+      "answer": "C",
+      "script": "Boy: What's the matter? I think the film was great.<br>Girl: It was nothing to do with that. <span class='highlight'>But I had a terrible headache and I couldn't enjoy the film.</span> The teacher called my dad who took me to the hospital. The doctor said that I was very anxious about the exams and that's why I had a headache."
+    },
+    {
+      "num": 10,
+      "prompt": "What do they agree on?",
+      "options": {
+        "A": "They don't like the teacher.",
+        "B": "The work is getting harder.",
+        "C": "They won't pass the exam."
+      },
+      "answer": "B",
+      "script": "Boy: Me too and I really like Mr Browning. But, I don't know, <span class='highlight'>I just feel that I have to think about everything a lot more now. It used to be so much easier.</span><br>Girl: <span class='highlight'>I was thinking the same thing but I guess that's only to be expected as we are nearly at the end of the course so we are doing more challenging things.</span> Don't worry though we are both going to do well in the exam."
+    },
+    {
+      "num": 11,
+      "prompt": "What happened?",
+      "options": {
+        "A": "There was a change of plan.",
+        "B": "Their teacher got angry.",
+        "C": "The students were disappointed."
+      },
+      "answer": "A",
+      "script": "Boy: It was great, wasn't it? I did feel sorry for our teacher though. <span class='highlight'>Did you see her face when she realised that the museum was closed all day?</span><br>Girl: Yes, she was very embarrassed. But it wasn't her fault. It was meant to be open but perhaps they didn't have any electricity.<br>Boy: <span class='highlight'>It was fantastic for us. I hadn't been to a zoo for years and the monkeys were so funny.</span>"
+    },
+    {
+      "num": 12,
+      "prompt": "Who was the boy angry with?",
+      "options": {
+        "A": "the coach",
+        "B": "the players",
+        "C": "the fans"
+      },
+      "answer": "C",
+      "script": "Boy: Our players were really in control for most of the match. They were very well trained by our new coach.<br>Girl: We were definitely the stronger team. It's just a shame that some of the crowd got out of control.<br>Boy: I know. <span class='highlight'>I don't understand why supporters of the two teams attack to each other at football matches. It really makes me angry.</span> It doesn't happen at rugby matches."
+    },
+    {
+      "num": 13,
+      "prompt": "What did the boy like most about it?",
+      "options": {
+        "A": "the design of the building",
+        "B": "the gym's equipment",
+        "C": "the swimming pool"
+      },
+      "answer": "A",
+      "script": "Girl: Wow, what a fantastic swimming pool!<br>Boy: It was quite good. And the gym was really well-equipped but you would expect that in a new leisure centre.<br>Girl: The cafe looked nice too. We'll have to try it out next time and see what the food is like.<br>Boy: Good idea. What did you think about the design of the building as a whole?<br>Girl: I liked it as it was very modern and bright.<br>Boy: <span class='highlight'>I thought it was fantastic, especially the big glass roof and the way everything is a bit unexpected in a really good way. To be honest I thought it was more like a work of art than a leisure centre.</span>"
+    }
+  ]
+}
