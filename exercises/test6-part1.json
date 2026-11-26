@@ -1,0 +1,60 @@
+
+{
+  "id": "test6-part1",
+  "part": "Part 1",
+  "title": "Simply for PET - Test 6 - Part 1 (Multiple Choice Pictures)",
+  "type": "mcq",
+  "rightPanelMode": "image",
+  "instruction": "Bạn sẽ nghe 7 đoạn hội thoại ngắn. Với mỗi câu, chọn đáp án đúng A, B hoặc C.",
+  "audio": "audio/test6-part1.mp3",
+  "images": [
+    "images/test6-part1-trang1.jpg",
+    "images/test6-part1-trang2.jpg"
+  ],
+  "fullScript": [
+    "<b>Question 1. What will they eat?</b><br>Boy: Let's have chicken and chips for dinner tonight.<br>Woman: You know I'm on a diet, I can't eat that.<br>Boy: Oh sorry mum, I forgot. I know, let's have fish and chips. Fish is always good if you are on a diet.<br>Woman: Lukas, fish and chips is not healthy food. We can have the chicken as you first said but we'll just eat some healthy food with it.<br>Boy: OK, I'll go and buy some beans and carrots. But next time can we at least have some chips for me? You know I support you but ...",
+    "<b>Question 2. What will the girl wear to the party?</b><br>Boy: What's wrong, Minnie?<br>Girl: I can't decide what to wear for the party this afternoon. I'm thinking about wearing this dress.<br>Boy: I don't think you need to be smart, it's only a school party. Better to wear casual clothes.<br>Girl: Do you think if I wear my new jeans and a T-shirt it would be ok then?<br>Boy: The jeans are fine but why not wear a nice blouse?<br>Girl: Ok, good idea. I'll do that.",
+    "<b>Question 3. Where will the students' tour of the city centre end?</b><br>Woman: Listen everyone. We're going to have a tour of the city centre this morning before we go into the museum. If you don't want to follow the group to this tour, then see the map how to get to the café and wait for us there, as that will be the last place to visit today to relax. Now the rest of you who prefer the city tour let's see first the big zoo that there is in the city. You'll have the chance to see many wild animals and take photos of them.",
+    "<b>Question 4. Where was the boy's hat?</b><br>Girl: So where was your hat?<br>Boy: Well, I spent most of yesterday afternoon looking everywhere for it. I even returned at school to check if I had left it on my desk. But I never thought of checking my sister's school bag, where I noticed it was in this morning. I'd begun to think I'd lost it. I thought that it had fallen on the pavement outside my school and someone got it.<br>Girl: Fortunately you found it.",
+    "<b>Question 5. What will they do on Friday?</b><br>Girl: Do you want to go swimming after school on Friday? We said we were going to get fit, didn't we?<br>Boy: Yes, we did but I'm afraid I've hurt my shoulder so I can't swim at the moment. Shall we go for a long walk instead?<br>Girl: That's a bit boring. Let's go for a bike ride then.<br>Boy: I told you, I have a bad shoulder. How am I supposed to ride?<br>Girl: Oh yes. Ok, I guess it will have to be what you suggested then, but let's go to the beach at least so we can enjoy the sea view at the same time.",
+    "<b>Question 6. What was wrong with the boy?</b><br>Girl: Hi Roberto. Are you feeling better now?<br>Boy: Yes, thanks, Sonia. I just needed to get some fresh air.<br>Girl: I thought you were going to be very sick and have high temperature.<br>Boy: No, it's only a terrible headache. I was very tired trying to finish that difficult project we had on History. I think that you must be very sick though.<br>Girl: Yes, I still have the cough that I've had for three weeks.",
+    "<b>Question 7. What is on special offer today?</b><br>Man: Good morning everyone. This is a customer announcement. You'll be pleased to know that the new teenagers' clothes shop, 'Modern Teens' is opening today at 10 o'clock. 'Toys for you' has many toys half price just for today so don't miss out on those bargains. Finally, ladies and gentlemen don't forget to relax with coffee at Betty's bakery while your kids can try some lovely sweets and cakes. Happy shopping, everyone!"
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "answer": "B",
+      "script": "Woman: <span class='highlight'>We can have the chicken as you first said but we'll just eat some healthy food with it.</span><br>Boy: <span class='highlight'>OK, I'll go and buy some beans and carrots.</span>"
+    },
+    {
+      "num": 2,
+      "answer": "A",
+      "script": "Boy: <span class='highlight'>The jeans are fine but why not wear a nice blouse?</span><br>Girl: <span class='highlight'>Ok, good idea. I'll do that.</span>"
+    },
+    {
+      "num": 3,
+      "answer": "C",
+      "script": "Woman: <span class='highlight'>See the map how to get to the café and wait for us there, as that will be the last place to visit today to relax.</span>"
+    },
+    {
+      "num": 4,
+      "answer": "C",
+      "script": "Boy: <span class='highlight'>But I never thought of checking my sister's school bag, where I noticed it was in this morning.</span>"
+    },
+    {
+      "num": 5,
+      "answer": "B",
+      "script": "Boy: Shall we go for a long walk instead?<br>Girl: <span class='highlight'>Oh yes. Ok, I guess it will have to be what you suggested then, but let's go to the beach at least so we can enjoy the sea view at the same time.</span>"
+    },
+    {
+      "num": 6,
+      "answer": "A",
+      "script": "Boy: <span class='highlight'>No, it's only a terrible headache.</span>"
+    },
+    {
+      "num": 7,
+      "answer": "B",
+      "script": "Man: <span class='highlight'>'Toys for you' has many toys half price just for today</span> so don't miss out on those bargains."
+    }
+  ]
+}
