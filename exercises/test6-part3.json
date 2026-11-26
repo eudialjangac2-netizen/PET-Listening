@@ -1,0 +1,72 @@
+{
+  "id": "test6-part3",
+  "part": "Part 3",
+  "title": "Simply for PET - Test 6 - Part 3 (Gap Fill)",
+  "type": "gapfill",
+  "instruction": "Nghe và điền một hoặc hai từ, một số, một ngày hoặc một giờ vào mỗi chỗ trống.",
+  "audio": "audio/test6-part3.mp3",
+  "noteTitle": "School Geography Trip",
+  "fullScript": [
+    "<b>Questions 14-19.</b><br>Woman: OK everyone, listen carefully as I need to give you some information about the geography trip. First of all it is no longer on Monday 13th June, it is on Wednesday 14th, <span class='highlight'>sorry I mean Wednesday 15th June</span>. So please make sure you have the new date in your diary.<br><br>As you know we will be walking up quite a high mountain. Well, actually it's not really a mountain, it's a very high hill. You will be put into groups. You need to work together as a team to find your way to the meeting point at the end of the walk. There will be no technology for you to use. You will have to use the <span class='highlight'>map</span> that each group will be given.<br><br>As I mentioned before, it's quite a difficult walk. The coach will drive you to the bottom of the hill which is about 12 kilometres from our school and then you will have to walk the <span class='highlight'>four kilometres</span> to the top. Don't worry there is actually a car park near the top so you won't have to walk all the way back down again. We wouldn't make you walk 8 kilometres in one day.<br><br>There will be a doctor with you at all times to help anyone who might feel unwell. It'll be easy to see him as he will be walking with Mrs Jackson and he will be wearing a bright orange coat. His name is <span class='highlight'>Mr Walsh</span>, that's W-A-L-S-H. Don't forget to drink lots of water during the walk.<br><br>Now on the subject of keeping safe and well, it's a good idea to wear a sun hat but most important of all you need to make sure that you are wearing comfortable <span class='highlight'>boots</span> as you won't be walking on easy paths. No sandals or beach shoes.<br><br>We will have a packed lunch half way through the walk and drinks and cake at the end in the cafe. The coach will collect us at about 6 p.m., so if there's no heavy traffic, we should be back at school at <span class='highlight'>7 p.m.</span> Now are there any questions?"
+  ],
+  "questions": [
+    {
+      "num": 14,
+      "label": "Date of Geography trip: Wednesday (14) ___.",
+      "acceptedAnswers": [
+        "15th June",
+        "15 June",
+        "June 15",
+        "June 15th"
+      ],
+      "script": "First of all it is no longer on Monday 13th June, it is on Wednesday 14th, <span class='highlight'>sorry I mean Wednesday 15th June</span>. So please make sure you have the new date in your diary."
+    },
+    {
+      "num": 15,
+      "label": "Each group will be given: a (15) ___.",
+      "acceptedAnswers": [
+        "map"
+      ],
+      "script": "There will be no technology for you to use. You will have to use the <span class='highlight'>map</span> that each group will be given."
+    },
+    {
+      "num": 16,
+      "label": "Length of walk: (16) ___.",
+      "acceptedAnswers": [
+        "4 kilometres",
+        "four kilometres",
+        "4 kilometers",
+        "four kilometers",
+        "4 km"
+      ],
+      "script": "The coach will drive you to the bottom of the hill which is about 12 kilometres from our school and then you will have to walk the <span class='highlight'>four kilometres</span> to the top. Don't worry there is actually a car park near the top so you won't have to walk all the way back down again. We wouldn't make you walk 8 kilometres in one day."
+    },
+    {
+      "num": 17,
+      "label": "Person responsible for health issues: (17) Mr ___.",
+      "acceptedAnswers": [
+        "Walsh"
+      ],
+      "script": "There will be a doctor with you at all times to help anyone who might feel unwell. It'll be easy to see him as he will be walking with Mrs Jackson and he will be wearing a bright orange coat. His name is <span class='highlight'>Mr Walsh</span>, that's W-A-L-S-H."
+    },
+    {
+      "num": 18,
+      "label": "Type of shoes to wear: (18) ___.",
+      "acceptedAnswers": [
+        "boots"
+      ],
+      "script": "It's a good idea to wear a sun hat but most important of all you need to make sure that you are wearing comfortable <span class='highlight'>boots</span> as you won't be walking on easy paths. No sandals or beach shoes."
+    },
+    {
+      "num": 19,
+      "label": "Coach arrives at school at: (19) ___ p.m.",
+      "acceptedAnswers": [
+        "7",
+        "seven",
+        "7:00",
+        "7.00"
+      ],
+      "script": "The coach will collect us at about 6 p.m., so if there's no heavy traffic, we should be back at school at <span class='highlight'>7 p.m.</span>"
+    }
+  ]
+}
